@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas起步</title>
+    <style>
+        canvas{
+            border: medium double black;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="100">
+        your browser doesn't support the <code>canvas</code> element;
+    </canvas>
+    <script>
+        var ctx = document.getElementById("canvas").getContext("2d");
+//        console.log(ctx);
+        ctx.fillRect(10,10,50,50);
+    </script>
+</body>
+</html>

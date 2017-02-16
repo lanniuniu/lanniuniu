@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>try catch finally处理错误</title>
+</head>
+<body>
+<script>
+    try {//发生错误立即停止执行catch
+        var mine;
+        for(var i = 0;i<mine.length;i++){
+            document.writeln(mine[i]);
+        }
+    }catch (e){
+        console.log(e);
+    }finally {//无论是否发生错误都要执行
+        document.writeln("<hr>");
+        document.writeln("forever display");
+    }
+</script>
+</body>
+</html>

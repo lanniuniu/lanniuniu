@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom方法</title>
+</head>
+<body>
+    <div id="test">
+        <h1>学习才能使我快乐</h1>
+    </div>
+<script>
+    var p = document.createElement("p");//创建元素节点
+//    console.log(p.nodeName + p.nodeType);
+    var test = document.getElementById("test");
+    test.appendChild(p);//在元素节点的子节点的最后添加子节点
+    var txt = document.createTextNode("hello world");//创建文本节点
+    p.appendChild(txt);//向P元素节点插入txt文本节点
+
+    var txt2 = document.createTextNode("——懒牛牛");
+    test.insertBefore(txt2,p);//test为父元素，txt2为创建的新的文本节点，p目标元素，插入p元素之前
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+body{
+    background-color: #ccc;
+    margin: 10px 10%;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+span{
+    position: absolute;
+    left: 190px;
+    color: red;
+    font-weight:900;
+}
+span:hover{
+    cursor: pointer;
+
+}
+li{
+    list-style: none;
+    float: left;
+    padding: 30px;
+}
+img{
+    display: block;
+    clear: both;
+}

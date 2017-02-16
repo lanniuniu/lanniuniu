@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript图片库</title>
+</head>
+<style>
+    body{
+        background-color: #ccc;
+        margin: 10px 10%;
+    }
+    a{
+        text-decoration: none;
+        color: #000;
+        font-size: 20px;
+    }
+    span{
+        position: absolute;
+        left: 190px;
+        color: red;
+        font-weight:900;
+    }
+    span:hover{
+        cursor: pointer;
+
+    }
+    li{
+        list-style: none;
+        float: left;
+        padding: 30px;
+    }
+    img{
+        display: block;
+        clear: both;
+    }
+</style>
+<body>
+    <h2>多图片同窗预览</h2>
+    <ul>
+        <li><a href="../../img/cat.jpg" onclick="show(this);return false;">cat</a></li>
+        <li><a href="../../img/a.png" onclick="show(this);return false;">cry</a></li>
+        <li><a href="../../img/no.jpg" onclick="show(this);return false;">no</a></li>
+        <li><a href="../../img/a.png" onclick="show(this);return false;">a</a></li>
+    </ul>
+    <div style="position: relative;top: 20px;clear: both">
+        <span onclick="unshow()" title="点击关闭图片">&times;</span>
+        <img src="" alt="点击上面的链接显示相应图片" id="image" width="220px">
+    </div>
+    <script>
+        function show(href) {
+//            console.log(href);
+            var image = document.getElementById("image");
+            var NewSrc = href.getAttribute("href");
+            image.setAttribute("src",NewSrc);
+        }
+        function unshow() {
+            var image = document.getElementById("image");
+            image.setAttribute("src","")
+        }
+        console.log(document.getElementsByTagName("body")[0].childNodes.length)
+    </script>
+</body>
+</html>

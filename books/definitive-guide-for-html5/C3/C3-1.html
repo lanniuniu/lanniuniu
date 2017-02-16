@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript中使用style改变class属性及#定位</title>
+    <style>
+        .otherclass{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <a href="#id2">内部超链接（link到 名为id2的元素）</a><hr>
+    <a class="class1 class2" href="http://apress.com">Apress web site</a>
+    <p/>
+    <a href="http://w3c.org" class="class2 otherclass" id="id1">W3C web site</a>
+    <hr>
+    <p>121211111111111111111</p>
+    <hr>
+    <p>121211111111111111111</p>
+    <hr>
+    <p>121211111111111111111</p>
+    <hr>
+    <p>121211111111111111111</p>
+    <hr>
+    <p>121211111111111111111</p>
+    <hr>
+    <p>121211111111111111111</p>
+    <hr>
+    <p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr><p>121211111111111111111</p>
+    <hr>
+    <p id="id2">121211111111111111111</p>
+    <hr>
+<!--url后+id属性值可以直接跳转到相应的位置，叫片段标识符-->
+    <script>
+        var elems = document.getElementsByClassName("otherclass");
+//        console.log(elems)
+        for(var i =0; i<elems.length; i++){
+            var x =elems[i];
+            x.style.border = "thin solid black";
+            x.style.color = "white";
+            x.style.backgroundColor = "black";
+        }
+    </script>
+</body>
+</html>

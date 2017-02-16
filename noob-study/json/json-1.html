@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript创建json对象</title>
+</head>
+<style>
+    p{
+        font-size: 20px;
+    }
+</style>
+<body>
+
+    <h2>只有学习才能让我快乐</h2>
+    <p>
+        姓名：<span id="jname"></span><br>
+        网站地址：<span id="jurl"></span><br>
+    </p>
+</body>
+<script>
+    var a = {
+        "name" : "懒牛牛",
+        "address" : "www.baidu.com"
+    };
+    document.getElementById("jname").innerHTML = a.name;
+    document.getElementById("jurl").innerHTML = a.address;
+    console.log(a);
+</script>
+</html>

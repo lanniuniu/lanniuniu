@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖放起步</title>
+    <style>
+        #src >*{
+            float: left;
+        }
+        #target,#src>img{
+            border: thin solid black;
+            padding: 5px;
+            margin:5px;
+        }
+        #target{
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            display: table;
+        }
+        #target>p{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        #target>img{
+        }
+        img.dragged{
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div id="src">
+        <img src="../../img/cat.jpg" alt="mao" draggable="true" id="cat" width="100px" height="100px">
+        <div id="target">
+            <p id="msg"></p>
+        </div>
+    </div>
+    <script>
+        var src = document.getElementById("src");
+        var target = document.getElementById("target");
+        var msg = document.getElementById("msg");
+        var draggedID;
+        target.ondragenter = handleDrag;
+        target.ondragover = handleDrag;
+
+        function handleDrag(e) {
+            e.preventDefault();
+        }
+        target.ondrop = function (e) {
+            var newElem = document.getElementById(draggedID).cloneNode(false);
+            newElem.classList.remove("dragged")
+            target.innerHTML = '';
+            target.appendChild(newElem);
+            e.preventDefault();
+        };
+        src.ondragstart = function (e) {
+            e.target.classList.add("dragged");
+            draggedID = e.target.id;
+            console.log(e);
+        };
+        src.ondragend = function (e) {
+            e.target.classList.remove("dragged");
+            msg.innerHTML = "drop here";
+        };
+        src.ondrag = function (e) {
+            msg.innerHTML = e.target.id;
+        }
+
+    </script>
+</body>
+</html>

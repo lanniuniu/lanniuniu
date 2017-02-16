@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缩略语列表</title>
+</head>
+<body>
+    <h1>What is the Document Object Model</h1>
+    <p>
+        The <abbr title="World Wide Consortium">W3C</abbr> defines
+        the <abbr title="Document Object Model">DOM</abbr> as :
+    </p>
+    <blockquote cite="http://w3.org/DOM">
+        <p>
+            a platform- and language-neutral interface that will allow programs
+            and scripts to dynamically access and update the content,structure and style of documents.
+        </p>
+    </blockquote>
+    <p>
+        It's an <abbr title="Application programming interface">API</abbr>
+        that can be used to navigate <abbr title="HyperText Markup Language">HTML</abbr> and <abbr
+            title="Extendsible Markup Language">XML</abbr> documents
+    </p>
+    <script>
+        function displayAttr() {
+            //获取全部缩略语存入数组
+            var abbr = document.getElementsByTagName("abbr");
+            if (abbr.length < 1){
+                return false;
+            }
+            var list = [];
+            for (var i = 0;i < abbr.length; i++){
+                list[abbr[i].lastChild.nodeValue] = abbr[i].getAttribute("title");
+            }
+            createList(list);
+        }
+        function createList(list) {
+            //创建元素节点赋值文本节点，形成自定义列表
+            var dl = document.createElement("dl");
+            for (var key in list){
+                var definiton = list[key];
+
+                var dt = document.createElement("dt");
+                var dt_text = document.createTextNode(key);
+                dt.appendChild(dt_text);
+
+                var dd = document.createElement("dd");
+                var dd_text = document.createTextNode(definiton);
+                dd.appendChild(dd_text);
+
+                dl.appendChild(dt);
+                dl.appendChild(dd);
+            }
+            //创建h2列表头
+            var h2 = document.createElement("h2");
+            var h2_text = document.createTextNode("abbr list")
+            h2.appendChild(h2_text);
+
+            document.body.appendChild(h2);
+            document.body.appendChild(dl);
+        }
+        function displaylink() {
+            //获取所有的blackquote元素的cite属性
+            var quote = document.getElementsByTagName("blockquote");
+            var quote_array = new Array();
+            for (var i = 0;i<quote.length;i++){
+                if (!quote[i].getAttribute("cite")){
+                    continue;
+                }
+                quote_array[i] = quote[i].getAttribute("cite")
+
+                //创建链接
+                var link = document.createElement("a");
+                var link_text = document.createTextNode("来源");
+                var link_href = quote_array[i];
+
+                link.appendChild(link_text);
+                link.setAttribute("href",link_href);
+                link.setAttribute("target","blank");
+
+                //创建上标元素
+                var sup = document.createElement("sup");
+                sup.appendChild(link);
+
+                //添加链接到blockquote上面
+                var allQuoteNodes = quote[i].getElementsByTagName("*");
+                if (allQuoteNodes.length < 1){
+                    continue;
+                }
+
+                var lastElement = allQuoteNodes[allQuoteNodes.length-1];
+                lastElement.appendChild(sup);
+            }
+
+
+        }
+        window.onload = function(){
+            //页面加载的时候调用
+            displayAttr();
+            displaylink();
+        }
+    </script>
+</body>
+</html>

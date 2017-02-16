@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML</title>
+</head>
+<body>
+    <div id="test">
+        <h1>my title</h1>
+        <p style="font-size: 25px">this is <em>my</em> content</p>
+    </div>
+    <div id="test2" style="margin-top: 30px">
+        <p style="font-size: 10px">test1</p>
+    </div>
+    <script>
+        var test = document.getElementById("test");
+//        console.log(test.innerHTML);//1.innerHTML可以用于读取给定元素的所有子元素节点2.用于在子元素写入内容,并不是插入内容，而是重新定义
+        var test2 = document.getElementById("test2");
+//        test2.innerHTML = "<p style='font-size: 25px'>test2</p>";
+
+    </script>
+</body>
+</html>

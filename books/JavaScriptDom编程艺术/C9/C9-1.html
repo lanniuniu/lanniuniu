@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript设置css样式</title>
+</head>
+<body>
+    <p id="test" style="color: green;font-size: 25px;font-weight: 900; font-family: 'Arial',sans-serif">test</p>
+    <script>
+        window.onload = function () {
+            var test = document.getElementById("test");
+            test.style.color = "black";
+            console.log(test.style);
+        }
+    </script>
+</body>
+</html>

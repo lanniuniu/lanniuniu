@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用定理定位</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        th,td{
+            padding:4px;
+        }
+        th{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Longitude:</th><td id="longitude">-</td>
+            <th>Latitude:</th><td id="latitude">-</td>
+        </tr>
+        <tr>
+            <th>Altitude</th><td id="altitude">-</td>
+            <th>Accuracy</th><td id="accuracy">-</td>
+        </tr>
+        <tr>
+            <th>Altitude Accuracy:</th><td id="altitudeAccuracy">-</td>
+            <th>Heading:</th><td id="heading">-</td>
+        </tr>
+        <tr>
+            <th>Speed:</th><td id="speed">-</td>
+            <th>Time Stamp:</th><td id="timestamp">-</td>
+        </tr>
+    </table>
+    <script>
+        navigator.geolocation.getCurrentPosition(displayPositon);
+        function displayPositon(pos) {//pos回调函数的入参是地理位置信息
+            console.log(pos);
+            var id = ['longitude','latitude','altitude','accuracy','altitudeAccuracy','heading','speed']
+            for(var i=0;i<id.length;i++){
+                document.getElementById(id[i]).innerHTML = pos.coords[id[i]];
+            }
+            document.getElementById("timestamp").innerHTML = pos.timestamp;
+        }
+    </script>
+</body>
+</html>

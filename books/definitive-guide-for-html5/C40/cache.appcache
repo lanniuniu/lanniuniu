@@ -1,0 +1,8 @@
+CACHE MANIFEST
+
+CACHE:
+C40-1.html
+../../img/cat.jpg
+
+FALLBACK:
+* offline.html

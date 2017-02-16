@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨文档消息传递</title>
+</head>
+<body>
+<h1 id="banner">this is the nested document</h1>
+<script>
+//    window.addEventListener("message",receiveMessage,false);
+    function receiveMessage(e) {
+        if (e.origin == "localhost"){
+            displayMessage(e.data);
+        }else {
+            displayMessage("Message Discarded")
+        }
+    }
+    function displayMessage(msg) {
+        document.getElementById("banner").innerHTML = msg;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组风格获取已命名元素</title>
+</head>
+<body>
+<pre id="result">
+
+</pre>
+<img src="../../img/ox_cat.jpg" alt="cat"  name="namecat" id="idcat">
+<img src="../../img/cat.jpg" alt="ccat" name="namecat">
+<script>
+    var result = document.getElementById("result");
+    var elem = document.namecat;
+    console.log(elem.namedItem);
+</script>
+</body>
+</html>

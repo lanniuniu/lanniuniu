@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+    <ul>
+        <li value="0">apple</li>
+        <li class="sale" title="sweet" value="1">orange</li>
+        <li class="sale" value="2">banana</li>
+    </ul>
+
+    <script>
+        var fruit = document.getElementsByTagName("li");
+        var sale = document.getElementsByClassName("sale");
+        var title = fruit[1].getAttribute("title");//获取属性
+        console.log(title);
+        fruit[1].setAttribute("value","100");//设置属性的值
+        console.log(fruit[1].value);
+//        alert(typeof fruit);
+    </script>
+</body>
+</html>

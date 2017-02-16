@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>填充和笔触</title>
+    <style>
+        canvas{
+            border: thin solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="140">
+
+    </canvas>
+    <script>
+        var ctx = document.getElementById("canvas").getContext("2d");
+
+        var offset = 10;
+        var size = 50;
+        var count = 5;
+        ctx.lineWidth = 3;
+        var fillColors = ["black","grey","lightgrey","red","blue"];
+        for(var i = 0; i<count; i++){
+            ctx.fillStyle = fillColors[i];
+            ctx.strokeStyle = fillColors[i];
+            ctx.fillRect(i*(offset+size)+offset,offset,size,size);
+            ctx.strokeRect(i*(offset+size)+offset,(2*offset)+size,size,size);
+        }
+    </script>
+</body>
+</html>

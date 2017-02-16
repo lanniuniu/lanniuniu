@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSSRuleList对象</title>
+    <style>
+        p{
+            border: medium double black;
+            background-color: lightgrey;
+        }
+        #block1{
+            color: white;
+            border: thick solid black;
+            background-color: gray;
+        }
+        table{
+            border: thin solid black;
+            border-collapse: collapse;
+        }
+        td{
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+<p id="block1">There are lots of different kinds fruit;There are lots of different kinds fruit;
+    There are lots of different kinds fruit;There are lots of different kinds fruit;
+</p>
+<p id="block2">There are lots of different kinds fruit;There are lots of different kinds fruit;
+    There are lots of different kinds fruit;There are lots of different kinds fruit;
+</p>
+<div><button id="pressme">press me</button></div>
+<div id="placeholder"></div>
+<script>
+    var placeholder = document.getElementById("placeholder");
+    processStyleSheet();
+    document.getElementById("pressme").onclick = function () {
+        document.styleSheets[0].cssRules[1].selectorText = "#block2";
+        if(placeholder.hasChildNodes()){
+            var childCount = placeholder.childNodes.length;
+            for(var i=0;i<childCount;i++){
+                placeholder.removeChild(placeholder.firstChild);
+            }
+        }
+        processStyleSheet();
+        console.log(document.styleSheets[0].cssRules[0])
+//        document.getElementById("block1").style.color = "black";
+    };
+    function processStyleSheet() {
+        var rulesList = document.styleSheets[0].cssRules;
+        for (var i=0;i<rulesList.length;i++){
+            var rule = rulesList[i];
+            var newElem = document.createElement("table");
+            newElem.setAttribute("border","1");
+            addRow(newElem,"parentStyleSheet",rule.parentStyleSheet.title);
+            addRow(newElem,"selectorText",rule.selectorText);
+            addRow(newElem,"cssText",rule.cssText);
+            placeholder.appendChild(newElem);
+        }
+    }
+    function addRow(elem,header,value){
+        elem.innerHTML += "<tr><td>" + header + ":</td><td>" + value+"</td></tr>"
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制元素的可见性</title>
+    <style>
+        tr > th{
+            text-align: left;
+            background-color: gray;
+            color: white;
+        }
+        tr >th:only-of-type{
+            text-align: right;
+            background-color: lightgray;
+            color: gray;
+        }
+    </style>
+    <script>
+        window.onload = control;
+        function control() {
+            var buttons = document.getElementsByTagName("button");
+            for(var i=0; i<buttons.length;i++){
+                buttons[i].onclick = function (e) {
+                    document.getElementById("first").style.visibility = e.target.innerHTML;
+                    console.log(e.target.innerHTML);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Rank</th><th>Name</th><th>Color</th><th>Size</th>
+    </tr>
+    <tr id="first">
+        <th>Favorite:</th><td>Apples</td><td>Greens</td><td>Medium</td>
+    </tr>
+    <tr>
+       <th>2nd Favorite</th><td>Oranges</td><td>Orange</td><td>Large</td>
+    </tr>
+</table>
+<p>
+    <button>visible</button>
+    <button>collapse</button>
+    <button>hidden</button>
+</p>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>共享存储sessionStorage和会话存储sessionStorage</title>
+    <style>
+    body > *{
+    float: left;
+    }
+    table {
+    border-collapse: collapse;
+    margin-left: 50px;
+    }
+    th,td{
+    padding: 4px;
+    }
+    th {
+    text-align: right;
+    }
+    input{
+    border: thin solid black;
+    padding:2px;
+    }
+    label{
+    min-width: 50px;
+    display: inline-block;
+    text-align: right;
+    }
+    #countmsg,#buttons{
+    margin-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    }
+    </style>
+</head>
+<body>
+<div>
+    <div><label>Key:</label><input type="text" id="key" placeholder="enter key" autofocus="autofocus" tabindex="-1"></div>
+    <div><label>Value:</label><input type="text" id="value" placeholder="enter value" tabindex="1"></div>
+    <div id="buttons">
+        <button id="add" tabindex="3">ADD</button>
+        <button id="clear" tabindex="2">CLEAR</button>
+    </div>
+    <p id="countmsg">theres are <span id="count"></span> items</p>
+</div>
+<table id="data" border="1">
+    <tr><th>Item Count</th><td>-</td></tr>
+</table>
+<script>
+    //本地缓存与会话缓存区别 1.会话缓存只在一个标签或者窗口内有效，包括内嵌iframe。 2.会话缓存生命在关闭文档的时候结束
+    displayData();//显示缓存个数和缓存内容
+
+    var buttons = document.getElementsByTagName("button");
+    for (var i = 0; i<buttons.length; i++){
+        buttons[i].onclick = handleButtonPress;
+    }
+    function handleButtonPress(e) {
+        switch (e.target.id){
+            case 'add':
+                var key = document.getElementById("key").value;
+                var val = document.getElementById("value").value;
+                sessionStorage.setItem(key,val);
+                break;
+            case 'clear':
+                sessionStorage.clear();
+                break;
+        }
+        displayData();
+    }
+    function displayData() {
+        var tableElem = document.getElementById("data");
+        tableElem.innerHTML = "";
+        var itemCount = sessionStorage.length;
+        document.getElementById("count").innerHTML = itemCount;
+        for(var i = 0;i<itemCount; i++){
+            var key = sessionStorage.key(i);
+            var val = sessionStorage[key];
+            tableElem.innerHTML += "<tr><th>" + key + ":</th><td>" + val + "</td></tr>";
+        }
+        console.log(sessionStorage)
+    }
+</script>
+</body>
+</html>

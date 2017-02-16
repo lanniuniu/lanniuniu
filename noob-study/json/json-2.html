@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript处理字符串为json</title>
+</head>
+<body>
+<p>
+    网站名: <span id="name"></span><br>
+    网站地址: <span id="url"></span><br>
+</p>
+
+
+<script>
+    var txt = {
+        "sites": [
+            { "name":"菜鸟教程" , "url":"www.runoob.com" },
+            { "name":"google" , "url":"www.google.com" },
+            { "name":"微博" , "url":"www.weibo.com" }
+        ],
+        "niupi" :[
+            { "name":"菜鸟教程" , "url":"www.runoob.com" },
+            { "name":"google" , "url":"www.google.com" },
+            { "name":"微博" , "url":"www.weibo.com" }
+        ]
+    };
+//    var json = JSON.parse(txt);//内置函数字符串转JSON
+//    var string = JSON.stringify(json);
+
+    console.log(txt);
+//    console.log(json);
+//    console.log(string);
+</script>
+</body>
+</html>

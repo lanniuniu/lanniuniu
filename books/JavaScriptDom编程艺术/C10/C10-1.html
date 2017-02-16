@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript动画</title>
+</head>
+<body>
+    <span id="ID" style="font: 2em normal;
+            position: absolute;
+            top: 10px;
+            left:10px;">懒牛牛</span>
+    <script>
+        function move() {
+            var text = document.getElementById("ID");
+            var x = parseInt(text.style.left);
+            var y = parseInt(text.style.top);
+            var last = 400;
+            if (x<last){
+                x++;
+                y++;
+                text.style.left = x + "px";
+                text.style.top = y+ "px";
+            }
+            if (x<last){
+                setTimeout("move()",10);
+            }else {
+                return true;
+            }
+        }
+        window.onload = move;
+    </script>
+</body>
+</html>

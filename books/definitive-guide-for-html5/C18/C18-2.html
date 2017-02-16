@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择限定范围内的input元素</title>
+    <style>
+        :in-range{
+            outline: medium solid green;
+        }
+        :out-of-range{
+            outline: medium solid red;
+        }
+    </style>
+</head>
+<body>
+<label for="price">
+    $per:
+    <input type="number" min="0" max="10" value="1" id="value" name="price">
+</label>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨文档消息传递</title>
+</head>
+<body>
+<p id="status">
+    ready
+</p>
+<button id="send">send message</button>
+<p>
+    <!--<iframe src="C27-4-2.html"-->
+            <!--frameborder="0" name="nested" width="90%" height="75px"></iframe>-->
+</p>
+<script>
+    document.getElementById("send").onclick = function () {
+        window["nested"].postMessage("I like apples","C27-4-2.html");
+        document.getElementById("status").innerHTML = "message sent"
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作cookie</title>
+</head>
+<body>
+<p id="cookieData">
+
+</p>
+<button id="add">add cookie</button>
+<button id="update">update cookie</button>
+<script>
+    window.onload = function () {
+        cookieCount = 0;
+        console.log(document.cookie)
+    };
+
+    document.getElementById("update").onclick = updateCookie;
+    document.getElementById("add").onclick = addCookie;
+    readCookie();
+
+    function updateCookie() {
+        readCookie();
+    }
+    function addCookie() {
+        cookieCount++;
+        document.cookie = "cookie_" + cookieCount + "=value_" + cookieCount + ";max-age=5";
+    }//添加到cookie的额外字段用“;”表示
+    function readCookie() {
+        document.getElementById("cookieData").innerHTML = document.cookie;
+    }
+</script>
+</body>
+</html>

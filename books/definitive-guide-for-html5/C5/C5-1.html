@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用对象字面量</title>
+</head>
+<body>
+<script>
+    var data = {
+        name : "liupeng",
+        ID : [1,2,3],
+        love : function () {
+            document.writeln(this.name + ",ID :" + this.ID[0] + " "  + "his loves are study");
+        }
+    }
+    data.love();
+    document.writeln("<hr   >");
+    //遍历对象
+    for (var i in data){
+        document.writeln(data[i]);
+    }
+    delete data.love;//删除对象的属性
+    document.writeln("<hr   >");
+    for (var i in data){
+        document.writeln(data[i]);
+    }
+    document.writeln("<hr   >");
+    //使用in表达式判断是否具有属性
+    var hasLove = "love" in data;
+    document.writeln(hasLove);
+    document.writeln("ID" in data);
+
+</script>
+</body>
+</html>

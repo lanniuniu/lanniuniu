@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变</title>
+    <style>
+        canvas{
+            border: thin solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="140">
+
+</canvas>
+<script>
+    var ctx = document.getElementById("canvas").getContext("2d");
+    var grad = ctx.createLinearGradient(0,0,500,140);
+    grad.addColorStop(0,"red");
+    grad.addColorStop(0.5,"white");
+    grad.addColorStop(1,"black");
+
+    ctx.fillStyle = grad;
+    ctx.fillRect(0,0,500,140);
+</script>
+</body>
+</html>

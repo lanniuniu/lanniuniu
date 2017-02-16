@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡和反向过渡</title>
+    <style>
+        #sorry{
+            font-size: large;
+            color: gray;
+            -webkit-transition-delay: 10ms;
+            -webkit-transition-duration: 250ms;
+        }
+        #sorry:hover{
+            font-size: x-large;
+            color: #00CC00;
+            -webkit-transition-delay: 100ms;
+            -webkit-transition-duration: 500ms;
+            -webkit-transition-property: position,padding,font-size,color,font-weight;
+        }
+    </style>
+</head>
+<body>
+<p>
+    懒牛牛懒牛牛<span id="sorry">咳买啦塞</span>懒牛牛懒牛牛懒牛牛
+</p>
+</body>
+</html>

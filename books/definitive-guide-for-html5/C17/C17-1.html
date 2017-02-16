@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css计数器</title>
+    <style>
+        body{
+            counter-reset: counterA;
+        }
+        p:before{
+            content: counter(counterA);
+            counter-increment: counterA;
+        }
+    </style>
+</head>
+<body>
+    <p>增学医</p><hr>
+    <p>增学医</p><hr>
+    <p>增学医</p><hr>
+    <p>增学医</p><hr>
+    <p>增学医</p><hr>
+    <p>增学医</p><hr>
+    <p>增学医</p><hr>
+    <p>增学医</p><hr>
+</body>
+</html>

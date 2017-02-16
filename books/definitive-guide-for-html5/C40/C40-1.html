@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.appcache">
+<head>
+    <meta charset="UTF-8">
+    <title>创建离线web应用程序</title>
+    <style>
+        img{
+            border: medium double black;
+            padding: 5px;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+<img src="" alt="cat">
+<button>click me</button>
+<a href="offline.html">点我</a>
+<script>
+    document.getElementsByTagName("button")[0].onclick = function () {
+        document.getElementsByTagName("img")[0].src = "../../img/cat.jpg"
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>反复设置样式</title>
+    <style>
+        body{
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+        table{
+            margin: auto;
+            border:1px solid #699;
+        }
+        caption{
+            margin: auto;
+            padding: 0.2em;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        th{
+            font-weight: normal;
+            font-style: italic;
+            text-align: left;
+            border: 1px dotted #669999;
+            background-color: #99CC66;
+            color: #000;
+        }
+        th,td{
+            width: 10em;
+            padding: 0.5em;
+        }
+        tr:nth-child(odd){
+            background-color: #ffc;
+        }
+        tr:nth-child(even){
+            background-color: #fff;
+        }
+        .trOver{
+            font-weight: bold;
+        }
+        .trOut{
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>学生表</caption>
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>班级</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>刘鹏</td>
+            <td>2班</td>
+        </tr>
+        <tr>
+            <td>增学医</td>
+            <td>2班</td>
+        </tr>
+        <tr>
+            <td>小红</td>
+            <td>x班</td>
+        </tr>
+        </tbody>
+    </table>
+    <script>
+        function bold() {
+            var tr = document.getElementsByTagName("tr");
+            for (var i= 0;i<tr.length;i++){
+                tr[i].onmouseover = function () {
+                    this.style.fontWeight = "bold";
+                };
+                tr[i].onmouseout = function () {
+                    this.style.fontWeight = "normal";
+                };
+            }
+        }
+        function changeBackground() {
+            var tr = document.getElementsByTagName("tr");
+            for (var i = 0; i<tr.length; i++){
+                tr[i].onmouseover = function () {
+                    this.className = "trOver";
+                };
+                tr[i].onmouseout = function () {
+                    this.className = "trOut";
+                }
+            }
+        }
+        window.onload = changeBackground;
+    </script>
+</body>
+</html>

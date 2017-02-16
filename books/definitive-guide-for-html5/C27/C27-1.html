@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取窗口信息</title>
+</head>
+<body>
+<table border="1">
+    <button id="scroll">scroll</button>
+    <tr>
+        <th>outWidth:</th><td id="ow"></td><th>outerHeight:</th><td id="oh"></td>
+    </tr>
+    <hr><hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111<hr>111
+    <script>
+        document.getElementById("ow").innerHTML = window.screen.width;
+        document.getElementById("oh").innerHTML = window.screen.height;
+        document.getElementById("scroll").onclick = scroll;
+        function scroll() {
+            window.scrollTo(0,200);
+        }
+    </script>
+</table>
+</body>
+</html>

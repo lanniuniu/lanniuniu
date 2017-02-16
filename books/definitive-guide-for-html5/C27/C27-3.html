@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器历史插入条目</title>
+</head>
+<body>
+<p id="msg"></p>
+<button id="banana">banana</button>
+<button id="apple">apple</button>
+<script>
+    var sel = "No selection made";
+    if (window.location.search == "?banana"){
+        sel = "Selection:banana;";
+    }else if (window.location.search == "?apple"){
+        sel = "Selection:apple;";
+    }
+    document.getElementById("msg").innerHTML = sel;
+    var buttons = document.getElementsByTagName("button");
+    for(var i=0;i<buttons.length;i++){
+        buttons[i].onclick = function (e) {
+            document.getElementById("msg").innerHTML = e.target.innerHTML;
+            window.history.pushState("","","?"+e.target.id);
+        }
+    }
+</script>
+</body>
+</html>
