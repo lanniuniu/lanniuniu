@@ -124,6 +124,16 @@ num1.forEach((value)=>{//遍历操作数组，无返回值
 });
 publicFunc.cutOff();
 
+/*
+归并方法
+reduce()
+reduceRight()
+ */
+let res5 = num1.reduce(function (prev, next, index, array) {//前一项当后一项的参数
+    return prev-next;
+});
+console.log(res5);
+publicFunc.cutOff();
 
 
 
