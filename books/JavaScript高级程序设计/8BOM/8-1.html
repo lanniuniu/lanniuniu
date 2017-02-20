@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+     window对象
+     在browser中，既是访问浏览器窗口的一个接口，也是ECMAScript的Global对象
+
+     全局作用域
+     全局变量会成为window对象属性，并且不能被delete删除，但是直接在window对象定义的属性可以
+     尝试访问为声明的变量会抛出错误，但通过查询window对象，可以知道某个为声明的变量是否存在
+
+     */
+
+    /*
+     窗口关系及框架
+     如果页面中包含框架，则每个框架都有自己的window对象
+     window.frames[0] window.frames['topFrame']
+     top.frames[0]  top.frames['topFrame']
+     frames[0]  frames['topFrame']
+
+     top对象指最高（最外）层的框架
+     parent指当前框架的直接上层框架
+     self指向window
+     */
+
+    /*
+     窗口位置
+     screenLeft screenRight screenX screenY
+     moveTo() moveBy() 禁用
+     */
+
+    /*
+    innerWidth、innerHeight 视口大小
+    outerWidth outerHeight  返回浏览器窗口本身的尺寸
+    document.documentElement.clientWidth 页面视口信息
+    resizeTo() resizeBy() 禁用
+     */
+
+    /*
+    导航和打开窗口
+    window.open()
+    window.open("url","窗口或框架","长宽间距")
+    可以使用resizeTo()等类似的函数来操作window.open返回的对象
+    新创建的window对象有opener属性，保存着打开它的原始窗口对象，可以和原始窗口通信，设置为null就断开
+     */
+
+    /*
+    弹出窗口屏蔽程序
+    若window.open()返回null，那么就被屏蔽了
+     */
+
+    /*
+    间歇调用和超时调用
+    setTimeout() clearTimeout()
+    setInterval() clearInterval()
+    使用超时调用来模拟间歇调用是最佳模式，没必要跟踪id，且后一个调用可能会在前一个间歇调用结束前启动
+     */
+
+    /*
+    系统对话框
+    alert() confirm()返回boolean来表示用户点的是否
+    prompt() 提示框 接受两个参数，显示给用户的文本提示和文本输入域的默认值
+    window.print() 打印
+    window.find() 查找
+
+     */
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

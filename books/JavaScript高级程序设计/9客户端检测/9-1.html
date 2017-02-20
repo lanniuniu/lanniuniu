@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    宗旨：先考虑通用方法，万不得已使用客户端检测以增强方案
+     */
+
+    /*
+    能力检测
+
+    使用typeof进行能力检测
+     */
+    function isHostMethod(object, property) {
+        var t = typeof object[property];
+        return t == 'function'||(!!(t=='object' && object[property]))||t=='unknown';
+    }
+
+    /*
+    怪癖（bug）检测
+     */
+
+    /*
+    用户代理检测
+
+    用户代理字符串检测技术
+    1.编写脚本将主要检测五大呈现引擎：IE Gecko WebKit KHTML Opera
+    2.识别浏览器
+    3.识别平台
+    4.识别windows操作系统
+    5.识别移动设备
+    5.识别游戏系统
+
+    完整的代码P242
+     */
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
