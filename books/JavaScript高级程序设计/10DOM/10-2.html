@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    DOM操作技术
+    动态脚本：插入外部文件和直接插入javascript代码
+    创建script元素
+     */
+
+    /*
+    动态样式
+    创建link元素或style元素
+     */
+
+    /*
+    操作表格
+    传统构造和表格特殊方法构造
+    HTML DOM为table tbody tr添加一些方法
+    insertRow deleteRow
+    rows
+    cells
+     */
+
+
+    //创建table
+    let table = document.createElement("table");
+    table.border = 1;
+    table.width = "100%";
+
+    //创建tbody
+    let tbody = document.createElement("tbody");
+    table.appendChild(tbody);
+
+    //创建第一行
+    tbody.insertRow(0);
+    tbody.rows[0].insertCell(0);
+    tbody.rows[0].cells[0].appendChild(document.createTextNode("1 1"));
+    tbody.rows[0].insertCell(1);
+    tbody.rows[0].cells[1].appendChild(document.createTextNode("2 1"));
+    //插入文档
+    document.body.appendChild(table);
+
+
+    /*
+    使用NodeList 动态的
+    减少访问NodeList，因为每次访问NodeList，都会运行一次基于文档的查询，
+     从而影响性能。可以考虑从NodeList取值缓存
+     */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

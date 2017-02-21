@@ -35,10 +35,134 @@
     normalize() 处理文档树中的文本节点
      */
 
+    /*
+    Document类型
 
+    document对象是HTMLDocument的一个实例，表示整个html页面
+    window.document
 
+    文档的子节点
+    documentElement属性始终指向<html>元素
+    childNodes列表访问文档元素
+    document.body直接指向<body>
 
+    文档信息
+    document.title <title>
+    document.URL
+    document.domain
+    document.referrer 链接到本页的url
 
+    查找元素
+    getElementById()
+    getElementsByTagName()  返回HTMLCollection对象，
+        用方括号或item()(数字索引) namedItem(name)（字符串索引）
+
+    HTMLDocument类型 特有方法 getElementsByName
+
+    特殊集合
+    document.anchors 包含文档中所有<a>
+     document.forms
+     document.images
+     document.links 带有href属性的<a>
+     */
+
+    /*
+    DOM 一致性检测
+    document.implementation.hasFeature() 接受要检测的dom功能的名称和版本号
+     */
+
+    /*
+    文档写入
+    document.write()  可以在里面添加script元素
+     document.writeIn() 区别在于在末尾添加换行符
+     document.open()
+     document.close()
+     */
+
+    /*
+    Element类型
+
+    id title lang dir className
+
+    取得特性
+    getAttribute()
+    setAttribute()
+    removeAttribute()
+
+    自定义特性加上data-前缀
+
+    attributes属性 包含一个NamedNodeMap 有如下方法
+     attributes.getNamedItem()
+     attributes.removeNamedItem()
+     attributes.setNamedItem()
+     item() 返回位于数字pos位置处的节点
+     也可以使用简写方式 attributes['']
+
+     */
+
+    /*
+    创建元素
+    createElement()
+    然后添加入文档
+     */
+
+    /*
+    元素的子节点
+    childNodes
+     */
+
+    /*
+    Text类型
+    nodeType为3
+    appendData()
+    deleteData()
+    insertData()
+    replaceData()
+    splitText()
+    substringData()
+    length
+
+     */
+
+    /*
+    创建文本节点
+    createTextNode()
+
+    规范化文本节点
+    如果存在相邻同胞文本节点，使用normalize()会将多个文本节点合并
+     */
+
+    /*
+    分割文本节点
+    normalize的逆方法 splitText() 接受起点参数，返回起点参数以后的字符
+     */
+
+    /*
+    Comment类型
+    注释
+     */
+
+    /*
+    CDATASection类型
+    XML
+     */
+
+    /*
+    DocumentType类型
+    document.doctype
+    name、entities、notations
+     */
+
+    /*
+    DocumentFragment类型
+    仓库 将来可能要使用的文档片段
+    createDocumentFragment()
+     */
+
+    /*
+    Attr类型(不建议使用)
+    name value specified
+     */
 
 
 

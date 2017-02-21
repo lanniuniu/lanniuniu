@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>click me</button><br>
+
+<form action="">
+    <label for="男">男<input type="radio" id="男" name="sex" value="0"></label>
+    <label for="女">女<input type="radio" id="女" name="sex" value="1"></label>
+    <input type="submit" >
+    <div>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p id="love">love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+        <p>love qinqin</p>
+    </div>
+
+
+</form>
+<script>
+    /*
+    元素遍历
+    childElementCount  返回子元素的个数
+    firstElementChild  第一个子元素
+    lastElementChild  最后一个子元素
+    previousElementSibling  前一个子元素
+    nextElementSibling  后一个子元素
+     */
+
+    /*
+    HTML5
+
+    与类相关的扩充
+    getElementsByClassName() 返回nodeList
+
+    (className可以添加删除和替换类名）
+    classList属性
+    add() remove() contains() toggle()
+     */
+
+    /*
+    焦点管理
+    document.activeElement
+    获取焦点的方式 页面加载、用户输入、再代码调用focus()方法
+
+    document.hasFocus()用于文档是否获得焦点
+     */
+
+    /*
+    HTMLDocument的变化
+
+    document.readyState
+    loading 正在加载文档
+    complete 已经加载完文档
+
+    document.head
+     */
+
+    /*
+    字符集属性
+    document.charset
+    document.defaultCharset
+     */
+
+    /*
+    自定义数据类型
+    data-
+    访问dataset属性来访问自定义属性的值
+     */
+
+    /*
+    插入标记
+    innerHTML 返回调用元素的所有子节点对应的html标记
+    outerHTML 返回调用它的元素及所有的子节点的HTML标签
+    insertAdjacentHTML() 接受插入位置（beforebegin前一个同辈、afterend后一个同辈
+    、afterbegin第一个子元素、beforeend最后一个子元素、）
+    和要插入的html文本
+     */
+
+    /*
+    内存与性能问题
+    插入标记前要删除相关对象和处理程序
+     */
+
+    /*
+    scrollIntoView()方法 类似锚的功能
+    可以再所有HTML元素上调用，接受boolean入参，通过滚动浏览器窗口或某个容器元素，
+    调用元素就可以出现在视口中
+     */
+    let button = document.getElementsByTagName("button");
+    button[0].onclick = function () {
+        document.querySelector("#love").scrollIntoView();
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
