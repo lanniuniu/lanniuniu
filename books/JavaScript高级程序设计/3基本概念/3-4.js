@@ -34,7 +34,7 @@ NaN为false
 /*
 乘性操作符
 乘法（*）、除法（/）、求模(求余)（%）
-先Number(),再计算
+"先Number(),再计算"
 Infinity*0=NaN
 
  Infinity/Infinity=NaN

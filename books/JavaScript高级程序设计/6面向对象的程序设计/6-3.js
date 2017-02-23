@@ -10,6 +10,8 @@ let publicFunc = require('../public');
  */
 
 //组合继承
+
+//组合创建对象Func1
 function Func1(name) {
     this.name = name;
     this.colors = ['red','blue'];
@@ -17,7 +19,7 @@ function Func1(name) {
 Func1.prototype.sayName = function () {
     console.log(this.name);
 };
-
+//
 function Func2(name, age) {
     //继承属性
     Func1.call(this,name);

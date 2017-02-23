@@ -12,7 +12,7 @@ let publicFunc = require('../public');
 /*
 Global对象
 
-URI（uniform resource identifiers）编码方法（强烈推荐使用）
+URI（uniform resource identifiers）统一资源标识符 编码方法（强烈推荐使用）
 encodeURI() encodeURIComponent() 前一个对整体编码 而后一个对某一段编码
 decodeURI() decodeURIComponent()
 

@@ -43,11 +43,11 @@ Array.isArray()
 转换方法
 toString() toLocaleString() valueOf() join()
 
-栈方法 先进后出
+栈方法 先进后出(尾部操作)
 push()  增
 pop()   删
 
-队列方法 先进先出
+队列方法 先进先出（首部操作）
 shift() 删
 unshift() 增
 

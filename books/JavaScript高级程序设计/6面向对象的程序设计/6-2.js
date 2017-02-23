@@ -9,7 +9,7 @@ let publicFunc = require('../public');
 工厂模式 构造函数模式 原型模式 组合使用构造函数模式和原型模式  动态原型模式 寄生构造函数模式 稳妥构造函数模式
  */
 
-//工厂模式
+//工厂模式 无法知道一个对象的类型
 function createPerson(name, age) {
     let o = new Object();
     o.name = name;

@@ -25,17 +25,17 @@ console.log(fun1()[0]());//10
 
 //通过创建另一个匿名函数强制闭包
 function fun2() {
-    let result = new Array();
-    for(var i;i<10;i++){
+    var result = new Array();
+    for(var i=0;i<10;i++){
         result[i]=function (num) {
             return function () {
                 return num;
-            }
-        }(i)
+            };
+        }(i);
     }
+    return result;
 }
-console.log(fun2);//10
-
+console.log(fun2()[1]());
 //匿名函数的执行环境具有全局性，this通常指向全局对象
 
 //内存泄漏
@@ -56,7 +56,8 @@ function fun4() {
     element = null;
 }
 
-
+//使用闭包可以模仿块级作用域
+//闭包可以创建私有变量和共有特权方法和变量
 
 
 
