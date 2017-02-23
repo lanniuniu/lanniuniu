@@ -11,6 +11,7 @@ var set1 = new Set();
 for(let i of set1){
     console.log(i);
 }
+//map() 方法返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组。
 console.log('-------------');
 //Set函数可以接受一个数组（或类似数组的对象）作为参数，用来初始化。
 var set = new Set([1, 2, 3, 4, 4]);

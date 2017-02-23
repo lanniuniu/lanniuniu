@@ -1,6 +1,6 @@
-var birth = '2000/01/01';
+let birth = '2000/01/01';
 
-var Person = {
+let Person = {
 
     name: '张三',
 
