@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+<button id="qin">love qinqin</button>
 <script>
     /*
     事件对象
@@ -17,7 +18,7 @@
     eventPhase
     preventDefault()
     stopImmediatePropagation()
-    stopPropagation)_
+    stopPropagation()
     target
     trusted
     type
@@ -39,17 +40,61 @@
     DOM3
 
     UI事件
-        load：在js或在html
+        load：当页面完全加载后（包括所有图像、JavaScript、css文件外部资源），就会触发。
+            在js（加监听器）或在html（body添加onload属性）
+
         unload：清楚引用，避免内存泄漏
-    焦点
-    鼠标
-    滚轮
-    文本
-    键盘
-    合成 处理IME的输入序列 可以让用户输入在屋里键盘上找不到的字符
-    变动
-    变动名称
+        resize
+        scroll:
+
      */
+    (function scriptLoad() {
+        window.addEventListener('load',function () {
+            console.log('script loaded');
+        },false);
+    })();
+
+
+    /*
+    焦点
+    blur：失去焦点，不会冒泡
+    focus:获得焦点 不冒泡
+    伙伴：document.hasFocus() document.activeElement
+    确定浏览器是否支持这些事件，document.implementation.hasFeature()
+    */
+
+    /*
+     鼠标和滚轮
+     click
+     dblclick
+     mousedown
+     mouseenter
+     mouseleter
+     mousemove
+     mouseout
+     mouseover
+     mouseup
+    */
+
+    /*
+    客户区坐标位置 事件对象的clientX和clientY
+    页面坐标  事件对象的pageX和pageY
+    屏幕坐标位置  事件对象的screenX和screenY
+
+    */
+    (function locationXY() {
+        window.addEventListener('mousemove',function (event) {
+            console.log('页面坐标:'+event.pageX+','+event.pageY+'\/n客户区坐标:'+
+                event.clientX+','+event.clientY)
+        });
+    })();
+
+
+//    文本
+//    键盘
+//    合成 处理IME的输入序列 可以让用户输入在屋里键盘上找不到的字符
+//    变动 在底层dom结构发生变化时触发
+
 
     /*
     HTML5事件
