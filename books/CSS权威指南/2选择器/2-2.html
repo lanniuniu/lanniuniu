@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        伪类选择器
+
+        链接伪类 a:link未访问 a:visited已访问
+
+        动态伪类 :focus当前拥有焦点的元素 :hover指示鼠标停留在哪个元素上 :active被用户输入激活
+
+        选择第一个子元素 ul:first-child{}
+        根据语言选择 *:lang(fr){}
+
+         */
+
+        /*
+        伪元素选择器
+
+        伪元素能够在文档中插入假想的元素，从而得到某种效果。4个：设置首字母样式、设置第一行样式、
+            设置之前和之后元素的样式
+         */
+        p:first-letter{
+            font-size: 20px;
+            color: red;
+        }
+        p:first-line{
+            font-size: 20px;
+        }
+        p:before{
+            content: "I ";
+        }
+        p:after{
+            content: " forever";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<p style="width: 5%">love qinqin!</p>
+</body>
+</html>

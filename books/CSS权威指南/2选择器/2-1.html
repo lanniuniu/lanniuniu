@@ -22,6 +22,17 @@
         属性选择器
 
         简单属性选择：仅仅希望有某个属性，不要求值是什么 h1[name] h1[name][class]同时有
+        根据具体属性值选择：选择某个属性等于确定的值 h1[class="someClass someClass2"][title="someTitle"]
+        根据部分属性值选择：可以根据任意一词进行选择，例如class p[class~="someClass"]
+            ^开头 $结尾 *包含 |等于或者（开头-） p[class="en-"]
+         */
+
+        /*
+        后代选择器
+
+        ul li{} 后代
+        div > p{} 子元素
+        div + p{} 相邻兄弟元素
          */
     </style>
 </head>
