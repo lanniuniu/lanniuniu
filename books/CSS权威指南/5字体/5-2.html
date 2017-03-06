@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
     <style>
         /*
         字体加粗
@@ -21,7 +22,49 @@
                 xx-small x-small small medium large x-large xx-large
             相对大小
                 larger smaller
+
+            百分数
+                根据从父元素继承的大小来计算 比如父元素为12px 当百分数为120% 那么大小为14.4px
+
+            字体大小和继承 可能会取整
          */
+
+        /*
+        有风格的字体
+        font-style
+            italic斜体 oblique倾斜 normal inherit
+
+        font-variant 字体变形
+            small-caps小型大写字母文本 normal inherit
+
+         */
+        p {
+            font-variant: small-caps;
+        }
+        p > button{
+            font: caption;
+        }
+        /*
+        font 涵盖所有字体属性
+            font可以增加行高（虽然line-height是一个文本属性，但也可以跟在字体大小后面）12px/13px
+
+            使用系统字体
+            caption icon menu message-box small-caption status-bar
+         */
+
+        /*
+        @font-face
+            可以在文档中下载一个远程字体来使用
+            需要跨域访问
+            可以引入本地字体文件或加载服务器 从而解决跨域问题
+         */
+        @font-face {
+            font-family: "BlippoBlaD";
+            src: url("../../../static/font/BlippoBlaD.ttf");
+        }
+        #love {
+            font-family: 'BlippoBlaD';
+        }
 
 
 
@@ -39,6 +82,10 @@
     </style>
 </head>
 <body>
-
+<p>
+    The Best Love Is QinQin <button>love</button>
+</p>
+<div id="love">love qinqin!</div>
+love
 </body>
 </html>
