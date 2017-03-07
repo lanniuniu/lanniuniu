@@ -15,9 +15,37 @@
         }
 
         /*
+        水平对齐
+        text-align 仅适用于块级元素 但他并不是对块级元素于整个页面的对称，
+                    而是对块级元素里面的内容进行设置
+        left center right justify（两端对齐） inherit
 
          */
+        div:nth-child(2){
+            text-align: center;
+        }
 
+        /*
+        垂直对齐
+
+        行高line-height：指文本行基线之间的距离，而不是字体的大小
+        line-height控制了行间距，值与字体大小只差就是行间距
+        内容区=字体大小+行间距*2 = line-height
+
+        vertical-align
+            baseline(基线对齐)、sub、super(上下标字体大小相同)、
+            top、text-top middle bottom text-bottom(文本的位置) text的程度要深一些
+            percentage(计算该元素的百分比) length(长度对齐，相对于变化钱上升或下降指定的高度)
+             inherit
+         */
+        div:nth-child(3){
+            vertical-align: middle;
+        }
+        /*.love{*/
+            /*vertical-align: bottom;*/
+        /*}*/
+
+        /*p:nth-child() :规定属于其父元素的第二个子元素的每个 p 的背景色：*/
 
 
 
@@ -40,6 +68,15 @@
         love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!
     </p>
 </div>
-
+<div>
+    <p>love qinqin</p>
+</div>
+<div>
+    <p>
+        love qinqin love qinqin love qinqin love qinqin love qinqin
+        <img class="love" src="../../../static/img/cat.jpg">love</img>love qinqin love qinqin
+        <img class="love" src="../../../static/img/cat.jpg">love</img>
+    </p>
+</div>
 </body>
 </html>

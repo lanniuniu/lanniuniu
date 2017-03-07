@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        字间隔和字母间隔
+
+        字间隔：word-spacing  length normal inherit
+        字母间隔：letter-spacing  length normal inherit
+         */
+
+        /*
+        文本转换
+        text-transform  uppercase(全大写) lowercase capitalize(首字母大写)
+                        none inherit
+         */
+
+        /*
+        文本装饰
+        text-decoration none underline(下划线) overline(上划线) line-through(中间穿过)
+         blink(闪烁) inherit
+         */
+        p:nth-child(1){
+            text-decoration: underline;
+        }
+
+        /*
+        文本阴影
+        text-shadow
+        第一个是颜色 第二个是右左 第三个是下上 第四个是模糊半径
+         */
+        p:nth-child(2){
+            text-shadow: gray 2px -1px 1px;
+        }
+
+        /*
+        处理空白符 处理对源文档的空格、换行、tab字符的处理
+        white-space
+            normal(丢掉多余的空白符，包括换行 空格 多个空格)
+            nowrap(丢掉换行和多个空格 直到出现br，否则不会换行，哪怕超出边界，也不会换行)
+            pre(保留换行、空格、多个空格)
+            pre-wrap(保留空格、多个空格，但换行符要换行,超出边界回换行)
+            pre-line(丢掉空格、多个空格，但换行符要换行,超出边界回换行)
+            inherit
+         */
+        p:nth-child(3){
+            white-space: nowrap;
+        }
+
+        p:nth-child(4){
+            white-space: pre-wrap;
+        }
+
+        p:nth-child(5){
+            white-space: pre-line;
+        }
+
+        /*
+        文本方向
+        direction
+            ltr rtl inherit
+
+        unicode-bidi
+            normal embed bidi-override inherit
+         */
+
+        p:nth-child(6){
+            unicode-bidi: bidi-override;
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<p>
+    love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!love qinqin!
+</p>
+<p>
+    love qinqin!
+</p>
+<p>
+    love qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  love
+    love qinqin
+</p>
+<p>
+    love qinqin    lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  love
+    love qinqin
+</p>
+<p>
+    love qinqin    lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  lovelove qinqin  love
+    love qinqin
+</p>
+<p>
+    abcdefghijklmnopqrstuvwxyz
+</p>
+</body>
+</html>
