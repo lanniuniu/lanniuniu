@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        改变角色
+        display
+
+        行内块元素
+            inline-block
+            表现得像行内元素，但可以设置高宽度
+         */
+        p span{
+            display: inline-block;
+            width: 4em;
+            /*height: 3em;*/
+            border: 1px solid gray;
+            vertical-align: middle;
+        }
+        /*
+        run-in
+            使块级元素成为下一个元素的行内部分
+         */
+        #love{
+            display: run-in;/*chrome 不支持 ie支持*/
+        }
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <p>liuliu<span>love qinqin!</span>liuliu</p>
+    <h1 id="love">love qinqin</h1>
+    <p>love qinqin!love qinqin!love qinqin!love qinqin!</p>
+</body>
+</html>
