@@ -13,10 +13,27 @@
 
         /*
         内外边距
+        margin padding
+        如果元素有背景，背景被延续到内边距
 
-        
+        百分数和外边距
+            百分数以父元素的width来计算
+            可以混合使用百分数和长度值
          */
 
+        /*
+        行内元素与外边距
+        改变内外边距并不会影响行高,有透明的编剧
+            （影响行高的有line-height font-size vertical-align）
+        但可以改变左右的视觉呈现
+
+         */
+        div span{
+            padding-bottom: 50px;
+        }
+        div:nth-child(2){
+
+        }
 
 
 
@@ -29,6 +46,11 @@
     </style>
 </head>
 <body>
-
+<div>
+    <span>love qinqin </span>
+</div>
+<div>
+    <p>love qinqin</p>
+</div>
 </body>
 </html>
