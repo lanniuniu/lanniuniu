@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        前景色
+            color
+            前景色color会影响边框颜色，使用border-color可以设置边框特有颜色
+
+        影响表单元素
+        color可以继承
+         */
+
+        /*
+        背景
+            (内边距和内容框的区域为背景)
+            background-color color inherit transparent(透明)
+         */
+        h1{
+            color: white;
+            background-color: rgb(20%,20%,20%);
+        }
+
+        /*
+        背景图像
+        background-image
+
+        有方向的重复
+        background-repeat
+            repeat repeat-x repeat-y no-repeat inherit
+        背景定位
+        background-position
+        将相对于元素的内边距边界放置原图像
+            left center right bottom percentage length
+            百分数是相对于设置background的元素的大小
+         */
+
+        div:nth-child(2){
+            padding: 2em;
+            background-image: url("../../../static/img/cat.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /*background-position: center;*/
+        }
+
+        /*
+        关联
+        background-attachment
+            默认值scroll fixed inherit
+            fixed背景不动
+         */
+
+        /*
+        background汇总
+            顺序: color image repeat attachment position
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div>
+    <h1>love qinqin</h1>
+</div>
+<div>
+    <p>
+        love qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqin
+        love qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqin
+        love qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqin
+        love qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqin
+        love qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqin
+        love qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqin
+        love qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqin
+        love qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqinlove qinqin
+    </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        浮动
+        导致一个元素浮动，并且允许其他内容“围绕”该图像
+        float: left right none inherit
+         1.从文档正常流中删除
+         2.浮动会是元素(块级元素和行内元素)成为块级框
+         3.浮动元素的左右外边界不能超过其包含块的左右内边界
+         4.浮动元素的顶端不能比之前所有浮动元素或块级元素更高
+
+         clear:left right both none inherit
+            不允许元素所在位置左边或者右边或者双边，不准有浮动的元素
+         */
+        div:nth-child(1){
+            background-color: #000099;
+            width: 100px;
+            height: 100px;
+        }
+        div:nth-child(2){
+            background-color: #2aabd2;
+            width: 150px;
+            height: 150px;
+            float: right;
+        }
+        div:nth-child(3){
+            background-color: #00AA88;
+            width: 200px;
+            height: 200px;
+            /*clear: right;*//* 第三个div右边有浮动元素2，清除后，3元素会换行*/
+        }
+        div:nth-child(4){
+            background-color: #00CC00;
+            width: 250px;
+            height: 250px;
+            float: right;
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div>1.love qinqin!</div>
+<div>2.love qinqin!</div>
+<div>3.love qinqin!</div>
+<div>4.love qinqin!</div>
+</body>
+</html>
