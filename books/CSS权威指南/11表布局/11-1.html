@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        表显示值
+        table {display: table;}
+        tr {display: table-row;}
+        thead {display: table-header-group;}
+        tbody {display: table-row-group;}
+        tfoot {display: table-footer-group;}
+        col {display: table-column;}
+        colgroup {display: table-column-group;}
+        td,th {display: table-cell;}
+        caption {display: table-caption;}
+
+        列接收样式：
+            border background width visibility
+         */
+
+        /*
+        表层
+            单元格 行 行组 列 列组 表
+        对应表各个方面的样式都在其各自的层上绘制。
+
+        表标题  caption-side 应用于display:table-caption的元素
+        表单元格边框 border-collapse：collapse（合并） separate inherit
+            应用于display:table inline-table的元素
+
+         */
+        #table1{
+            border: 1px solid black;
+            border-spacing: 1em 1em;
+        }
+        #table1 caption{
+            caption-side: bottom;
+        }
+        #table1 th{
+            border: 1px solid gray;
+        }
+        #table1 td{
+            display: inline-table;
+            border-collapse: collapse;
+        }
+        /*
+        边框间隔
+        border-spacing
+         计算值：两个绝对长度  当border-collapse 为separate时才有用
+         */
+
+        /*
+        处理空白单元格
+        empty-cells：show hide inherit
+         */
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<table id="table1">
+    <caption>
+        love
+    </caption>
+    <tr>
+        <th>name</th><th>age</th>
+    </tr>
+    <tr>
+        <td>qinqin</td><td>18</td>
+    </tr>
+</table>
+</body>
+</html>
