@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        计数器
+
+        计数器的起点counter-reset
+            可以设置起点 默认0
+        计数器的增量counter-increment
+            可以设置增量 默认1
+
+        需要结合counter 和content属性结合使用
+         */
+        body{
+            counter-reset: firstClass 0 secondClass 0 thirdClass 0;
+        }
+        h1:before{
+            counter-reset: secondClass 0 thirdClass 0;
+            counter-increment: firstClass;
+            content: counter(firstClass) ".";
+        }
+        h2:before{
+            counter-reset: thirdClass 0;
+            counter-increment: secondClass;
+            content: counter(firstClass)"." counter(secondClass)".";
+        }
+        h3:before{
+            /*counter-reset: ;*/
+            counter-increment:thirdClass 1;
+            content: counter(firstClass)"." counter(secondClass)"." counter(thirdClass)".";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<h1>love qinqin</h1>
+<h2>love qinqin</h2>
+<h1>love qinqin</h1>
+<h2>love qinqin</h2>
+<h3>love qinqin</h3>
+<h3>love qinqin</h3>
+<h3>love qinqin</h3>
+<h2>love qinqin</h2>
+<h1>love qinqin</h1>
+<h2>love qinqin</h2>
+<h3>love qinqin</h3>
+<h3>love qinqin</h3>
+</body>
+</html>

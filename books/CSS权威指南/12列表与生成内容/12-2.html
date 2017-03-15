@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        插入生成内容
+        使用伪元素before、after
+         */
+        div:nth-child(1) p:before{
+            content: "love ";
+            color: red;
+        }
+
+        /*
+        指定内容
+        content
+            string uri（外部资源） counter attr（插入属性值）
+         */
+        div:nth-child(2) a:before{
+            content: ""attr(href)"";
+            color: red;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div>
+    <p>qinqin</p>
+</div>
+<div>
+    <a href="https://baidu.com">qinqin</a>
+</div>
+</body>
+</html>
