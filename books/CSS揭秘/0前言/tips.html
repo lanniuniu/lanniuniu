@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        不支持的浏览器支持属性极具误导性，所以说不如没有
+        linear-gradient 线性渐变
+        radial-gradient 径向渐变
+        */
+        div:nth-child(1){
+            /*
+            ie 角度 （已正y轴为0deg，逆时针旋转）
+            */
+            background: linear-gradient(90deg, yellow, red);
+            /*
+            chrome 角度（以正x轴为0deg，逆时针旋转）
+             */
+            background: -webkit-linear-gradient(90deg, yellow, red);
+        }
+
+        /*
+        针对支持或不支持某些特性的浏览器来分别编写样式
+        通过js判断进行浏览器检测来实现不同浏览器的适配，做到“渐进增强，平稳退化”
+         */
+        h1{
+            color: gray;
+        }
+        .textShadow h1{
+            color: transparent;
+            text-shadow:gray 0 0 0.3em;
+        }
+
+        /*
+        DRY（don't repeat yourself）
+        相信你的眼镜，而不是数字
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div>
+    love qinqin
+</div>
+<div class="textShadow">
+    <h1>love qinqin</h1>
+</div>
+</body>
+</html>
