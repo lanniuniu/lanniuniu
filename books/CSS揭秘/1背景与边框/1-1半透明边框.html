@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>半透明边框</title>
+    <style>
+        /*
+        背景知识：RGBA/HSLA
+        RGBA ：A（Alpha透明度。取值0~1之间）
+
+        HSLA(H,S,L,A)
+            取值：
+            H：
+            Hue(色调)。0(或360)表示红色，120表示绿色，240表示蓝色，也可取其他数值来指定颜色。取值为：0 - 360
+            S：
+            Saturation(饱和度)。取值为：0.0% - 100.0%
+            L：
+            Lightness(亮度)。取值为：0.0% - 100.0%
+            A：
+            Alpha透明度。取值0~1之间。
+         */
+        p{
+            width: 600px;
+            height: 400px;
+            line-height: 400px;
+            text-align: center;
+            background-image: url("../../../static/img/cat.jpg");
+            background-color: white;
+            border: 10px solid hsla(0,0%,90%,.5);
+            /*
+            默认情况下，背景会延伸道边框所在的区域下层
+            background-clip: padding-box;会只延伸道padding层
+             */
+            background-clip: padding-box;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>love qinqin</p>
+</div>
+<script>
+    let allP = document.querySelectorAll("p");//断点调试
+    console.log(allP);
+</script>
+</body>
+</html>

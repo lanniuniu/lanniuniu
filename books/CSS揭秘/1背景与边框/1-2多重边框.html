@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多重边框</title>
+    <style>
+        /*
+        背景知识：box-shadow
+        右左 上下 模糊距离 阴影半径 color inset（外部阴影和内部阴影）
+         */
+        div:nth-child(1) div{
+            /*
+            水平垂直居中
+             */
+            text-align: center;
+            line-height: 50px;
+
+            width: 20em;
+            height:50px;
+            margin: 5em auto;
+            /*
+            利用box-shadow实现多重边框
+             */
+            box-shadow: 0 0 0 10px #655,
+            0 0 0 15px deeppink,
+            0 2px 5px 15px rgba(0,0,0,.6);
+            background: yellowgreen;
+        }
+
+        div:nth-child(2) div{
+            /*
+            水平垂直居中
+             */
+            text-align: center;
+            line-height: 50px;
+
+            width: 20em;
+            height:50px;
+            margin: 5em auto;
+            /*
+            利用outline和border实现双重边框
+             */
+            background: yellowgreen;
+            border: 10px solid #655;
+            outline: 5px solid deeppink;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>miss qinqin</div>
+</div>
+<div>
+    <div>love qinqin</div>
+</div>
+</body>
+</html>
