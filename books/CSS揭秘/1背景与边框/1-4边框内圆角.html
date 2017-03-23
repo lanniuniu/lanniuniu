@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>边框内圆角</title>
+    <style>
+        /*
+        实现：内侧有圆角 外侧直角
+         */
+        /*
+        两个元素实现
+         */
+        body > div:nth-child(1) > div{
+            width: 8rem;
+            height: 4rem;
+            text-align: center;
+            line-height: 4rem;
+
+            background-color: tan;
+            border-radius: 0.8rem;
+            padding: 1rem;
+        }
+        body > div:nth-child(1){
+            width: 10rem;
+            background-color: #655;
+            padding: 1rem;
+        }
+
+        /*
+         单元素实现
+         使用outline，但outline是不会跟着圆角走。使用box-shadow来填充4个角。利用勾股定理，box-shadow
+         的阴影半径至少为（（根号2）-1）* 圆角半径
+          */
+        body > div:nth-child(2){
+            width: 8rem;
+            height: 4rem;
+            text-align: center;
+            line-height: 4rem;
+            margin: 2rem 1rem;
+
+            background-color: tan;
+            border-radius: 0.8rem;
+            padding: 1rem;
+            outline: 1rem solid #655;
+            /*
+            box-shadow填充空白
+             */
+            box-shadow: 0 0 0 0.42rem #655;
+        }
+
+
+
+
+
+
+
+
+
+    </style>
 </head>
 <body>
-$END$
+<div>
+    <div>love qinqin</div>
+</div>
+<div>
+    miss qinqin
+</div>
 </body>
 </html>
