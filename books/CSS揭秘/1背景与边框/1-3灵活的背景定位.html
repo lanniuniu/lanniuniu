@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灵活的背景定位</title>
+    <style>
+        /*
+        background-position 的扩展语法方案
+        可以指定背景图片距离任意角的偏移量
+         */
+        body > div:nth-child(1) div{
+            width: 400px;
+            height: 300px;
+            font-size: 2rem;
+            float: left;
+            background: url("../../../static/img/a.png") no-repeat #58a;
+            background-position: right 2rem bottom 2rem;
+            text-align: center;
+            line-height: 200px;
+            padding: 2rem;
+            /*
+            background-origin 默认padding-box content-box border-box
+            默认偏移是按着padding-box的外边距来偏移的
+            background-origin能改变这种行为
+             */
+            background-origin: content-box;
+        }
+
+        /*
+        calc()方案 calc函数允许我们计算，函数内的加减运算符前后要添加空白符
+         */
+        body > div:nth-child(2) div{
+            width: 400px;
+            height: 300px;
+            font-size: 2rem;
+            float: left;
+            margin-left: 1rem;
+            background: url("../../../static/img/a.png") no-repeat #58a;
+            background-position: calc(100% - 2rem) calc(100% - 2rem);
+            text-align: center;
+            line-height: 200px;
+            padding: 2rem;
+            /*
+            background-origin 默认padding-box content-box border-box
+            默认偏移是按着padding-box的外边距来偏移的
+            background-origin能改变这种行为
+             */
+            background-origin: content-box;
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div>
+    <div>love qinqin</div>
+</div>
+<div>
+    <div>love qinqin</div>
+</div>
+</body>
+</html>
