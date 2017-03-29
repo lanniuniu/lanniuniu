@@ -3,11 +3,18 @@
  */
 @customBlue: rgb(125,149,246);
 @customLightBlue: rgb(180,194,255);
+@customGray: rgb(153,153,153);
 .white-word {
     color: white;
 }
 .lightBlue-word {
     color: @customLightBlue;
+}
+.gray-word{
+    color: @customGray;
+}
+html{
+    font-size: 26.66px;
 }
 /*
 页眉
@@ -16,6 +23,9 @@
     background-color: @customBlue;
     text-align: center;
     display: block;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
 
     div:nth-child(1) {
         display: inline;
@@ -36,13 +46,13 @@
 
 #header{
     background: @customBlue;
-    height: 410px;
+    height: 15rem;
     #time {
-        height: 200px;
+        height: 7.5rem;
         text-align: center;
-        line-height: 200px;
-        span{
-
+        line-height: 7.5rem;
+        span:nth-child(1){
+            margin-right: 3rem;
         }
         span:nth-child(2){
             border:2px solid rgb(107,130,235);
@@ -50,6 +60,71 @@
             padding: 4px 10px;
             box-shadow: 0 3px 10px 1px rgb(107,130,235);
         }
+        span:nth-child(3){
+            margin-left: 3rem;
+        }
+    }
+    #targetWeight {
+        text-align: center;
+        color: white;
+        img{
+            width: 1rem;
+        }
+        span{
+            color: white;
+        }
+    }
+}
+
+#content {
+    height: 30rem;
+    z-index: 0;
+    text-align: center;
+    #card {
+        background: white;
+        margin: auto;
+        z-index: 1;
+        position: relative;
+        bottom: 3.7rem;
+        width: 23rem;
+        height: 23rem;
+        text-align: center;
+        border: 1px solid inherit;
+        box-shadow: 0 3px 10px 1px rgb(236,229,250);
+        border-radius: 1rem;
+        #currentWeight{
+            color: @customBlue;
+            font-size: 6rem;
+            position: relative;
+            top: 4rem;
+        }
+        #morePlan{
+            position: relative;
+            top: 8rem;
+            >span{
+                display: block;
+                width: 11.5rem;
+                float: left;
+                text-align: center;
+                >*{
+                    display: block;
+                    text-align: center;
+                }
+                >img{
+                    margin: auto;
+                    width: 4rem;
+                }
+            }
+        }
+    }
+    >span {
+        background-color: @customBlue;
+        color: white;
+        padding: 1rem 5rem;
+        position: relative;
+        top: 1rem;
+        border: 1px solid transparent;
+        border-radius: 3rem;
     }
 }
 

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <link rel="stylesheet" href="http://localhost/ifYou/document/gulp/practice/dest/css/index.min.css">
-    <script src="http://localhost/ifYou/document/gulp/practice/dest/js/index.min.js"></script>
 </head>
 <body>
 <nav id="nav">
@@ -21,9 +21,32 @@
 <header id="header">
     <div id="time">
         <span class="white-word">01月16日</span>
-        <span class="white-word">01月17日</span>
+        <span class="white-word" id="currentTime">01月17日</span>
         <span class="lightBlue-word">01月18日</span>
     </div>
+    <div id="targetWeight">
+        <img src="http://localhost/ifYou/static/img/准心.png" >
+        目标体重：<span>50kg</span>
+    </div>
 </header>
+<section id="content">
+    <section id="card">
+        <section id="currentWeight">
+            <span>45<span>kg</span></span>
+        </section>
+        <section id="morePlan">
+            <span>
+                <img src="http://localhost/ifYou/static/img/历史记录.png" alt="历史纪录">
+                <span class="gray-word">历史纪录</span>
+            </span>
+            <span>
+                <img src="http://localhost/ifYou/static/img/更多数据.png" alt="更多数据">
+                <span class="gray-word">更多数据</span>
+            </span>
+        </section>
+    </section>
+    <span>其他信息</span>
+</section>
+<script src="http://localhost/ifYou/document/gulp/practice/dest/js/index.min.js"></script>
 </body>
 </html>

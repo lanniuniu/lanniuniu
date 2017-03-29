@@ -1,0 +1,145 @@
+/*
+全局类样式
+ */
+.white-word {
+  color: white;
+}
+.lightBlue-word {
+  color: #b4c2ff;
+}
+.gray-word {
+  color: #999999;
+}
+html {
+  font-size: 26.66px;
+}
+/*
+页眉
+ */
+#nav {
+  background-color: #7d95f6;
+  text-align: center;
+  display: block;
+  height: 53.32px;
+  height: 2rem;
+  line-height: 53.32px;
+  line-height: 2rem;
+  font-size: 26.66px;
+  font-size: 1rem;
+}
+#nav div:nth-child(1) {
+  display: inline;
+  float: left;
+  padding-left: 26.66px;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+#nav div:nth-child(2) {
+  display: inline;
+}
+#nav div:nth-child(3) {
+  display: inline;
+  float: right;
+  padding-right: 26.66px;
+  padding-right: 1rem;
+  cursor: pointer;
+}
+#header {
+  background: #7d95f6;
+  height: 399.9px;
+  height: 15rem;
+}
+#header #time {
+  height: 199.95px;
+  height: 7.5rem;
+  text-align: center;
+  line-height: 199.95px;
+  line-height: 7.5rem;
+}
+#header #time span:nth-child(1) {
+  margin-right: 79.98px;
+  margin-right: 3rem;
+}
+#header #time span:nth-child(2) {
+  border: 2px solid #6b82eb;
+  border-radius: 1rem;
+  padding: 4px 10px;
+  box-shadow: 0 3px 10px 1px #6b82eb;
+}
+#header #time span:nth-child(3) {
+  margin-left: 79.98px;
+  margin-left: 3rem;
+}
+#header #targetWeight {
+  text-align: center;
+  color: white;
+}
+#header #targetWeight img {
+  width: 26.66px;
+  width: 1rem;
+}
+#header #targetWeight span {
+  color: white;
+}
+#content {
+  height: 799.8px;
+  height: 30rem;
+  z-index: 0;
+  text-align: center;
+}
+#content #card {
+  background: white;
+  margin: auto;
+  z-index: 1;
+  position: relative;
+  bottom: 98.642px;
+  bottom: 3.7rem;
+  width: 613.18px;
+  width: 23rem;
+  height: 613.18px;
+  height: 23rem;
+  text-align: center;
+  border: 1px solid inherit;
+  box-shadow: 0 3px 10px 1px #ece5fa;
+  border-radius: 1rem;
+}
+#content #card #currentWeight {
+  color: #7d95f6;
+  font-size: 159.96px;
+  font-size: 6rem;
+  position: relative;
+  top: 106.64px;
+  top: 4rem;
+}
+#content #card #morePlan {
+  position: relative;
+  top: 213.28px;
+  top: 8rem;
+}
+#content #card #morePlan > span {
+  display: block;
+  width: 306.59px;
+  width: 11.5rem;
+  float: left;
+  text-align: center;
+}
+#content #card #morePlan > span > * {
+  display: block;
+  text-align: center;
+}
+#content #card #morePlan > span > img {
+  margin: auto;
+  width: 106.64px;
+  width: 4rem;
+}
+#content > span {
+  background-color: #7d95f6;
+  color: white;
+  padding: 26.66px 133.3px;
+  padding: 1rem 5rem;
+  position: relative;
+  top: 26.66px;
+  top: 1rem;
+  border: 1px solid transparent;
+  border-radius: 3rem;
+}

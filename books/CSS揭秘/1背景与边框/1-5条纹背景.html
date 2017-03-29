@@ -2,9 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>条纹背景</title>
+    <style>
+        /*
+        css线性渐变、background-size
+            linear-gradient chrome以正x轴为0deg 其他以正y 顺时针旋转
+                （如果某个色标的位置值比整个列表中在它之前的色标的位置值都要小，则该色标的
+                位置值会被设置为它前面所有色标位置值的最大值）
+        css重复线性渐变 repeating-linear-gradient 色标是无限循环重复的，直到填满整个背景
+            background-size :length percentage contain(以最长的背景框为准)
+                cover(完全装下最大图像)
+         */
+
+        /*
+        通用样式
+        */
+        p {
+            width: 30rem;
+            height: 15rem;
+            text-align: center;
+            line-height: 15rem;
+            float: left;
+            margin-left: 1rem;
+            color: #fff;
+        }
+        /*
+        通过垂直的线性渐变和调整背景大小来形成条纹背景
+         */
+        div:nth-child(1) p{
+            background: linear-gradient(#fb3 50%,#58a 50%);/* 等宽背景*/
+            /*background: linear-gradient(#fb3 30%,#58a 30%);!* 不等宽背景*!*/
+            /* 也可以设置多色多条条纹 */
+            background-size: 100% 3rem;
+        }
+
+        /*
+        通过调整线性渐变的参数来形成垂直条纹
+         */
+        div:nth-child(2) p{
+            background: linear-gradient(90deg,#fb3 30%,#58a 30%);
+            background-size: 3rem 100%;
+        }
+
+        /*
+        斜向条纹
+        利用“贴片”思想，4个条纹形成无缝连接的图
+         */
+        div:nth-child(3) p{
+            background: linear-gradient(45deg,#fb3 25%,#58a 0,#58a 50%,#fb3 0,
+            #fb3 75%,#58a 0);
+            /*
+            根据勾股定理来计算条纹最小宽度
+             */
+            background-size: 4.24rem 4.24rem;
+        }
+
+        /*
+        更好的斜向条纹
+        重复线性渐变
+         */
+        div:nth-child(4) p {
+            background: repeating-linear-gradient(45deg,#fb3,#fb3 1.5rem,
+            #58a 0,#58a 3rem);/*最后的3rem
+                不是background-size，而是渐变色标的长度，所以不用算background-size）*/
+        }
+
+        /*
+        灵活的同色系条纹
+        可以向4子div那样指定两个同色系条纹，
+        下面介绍透明叠加颜色来形成
+         */
+        div:nth-child(5) p {
+            background: #58a;
+            background-image: repeating-linear-gradient(30deg,
+            hsla(0,0%,100%,0.1),hsla(0,0%,100%,0.1) 1.5rem,
+            transparent 0,transparent 3rem); /* 透明是原色，前一种颜色是叠加 */
+        }
+
+    </style>
 </head>
 <body>
-$END$
+<div>
+    <p>
+        love qinqin
+    </p>
+</div>
+<div>
+    <p>
+        miss qinqin
+    </p>
+</div>
+<div>
+    <p>
+        love qinqin
+    </p>
+</div>
+<div>
+    <p>
+        miss qinqin
+    </p>
+</div>
+<div>
+    <p>
+        love qinqin
+    </p>
+</div>
 </body>
 </html>
