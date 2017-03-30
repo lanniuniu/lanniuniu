@@ -1,0 +1,21 @@
+{
+  "name": "webpack-example",
+  "version": "1.0.0",
+  "description": "A webpack example.",
+  "scripts": {
+    "build": "webpack --watch",
+    "dev": "webpack-dev-server --progress --colors --open"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "liuPeng",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.27.3",
+    "path": "^0.12.7",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
