@@ -1,0 +1,8 @@
+#ºöÂÔ.idea
+#.idea/
+
+#ºöÂÔgulpµÄnode¿é
+document/gulp/practice/node_modules/
+
+#ºöÂÔwebpackµÄnode¿é
+document/webpack/practice/node_modules/

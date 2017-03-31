@@ -7,4 +7,3 @@
 require('./../style/index.css');
 let say  = document.querySelector("div");
 say.innerHTML = 'love qinqin';
-

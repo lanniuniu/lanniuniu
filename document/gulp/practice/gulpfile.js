@@ -52,7 +52,7 @@ gulp.task('browserSync',()=>{
         port: 81,
     });
     gulp.watch('./app/js/*.js',['esProcessor']);
-    gulp.watch('./app/css/*.css',['postcss']);
+    gulp.watch('./app/style/*.css',['postcss']);
     gulp.watch('./app/**/*').on('change', browserSync.reload);
 });
 
@@ -64,11 +64,11 @@ gulp.task('postcss',function(){
         postcssNested,
         // autoprefixer,
     ];
-    return gulp.src('app/css/*.css')
+    return gulp.src('app/style/*.css')
         .pipe(gulpPostcss(postcssPlugin))
         .pipe(gulpAllPlugin.less())
         .pipe(gulpAllPlugin.rename({suffix: '.min'}))
-        .pipe(gulp.dest('./dest/css'));
+        .pipe(gulp.dest('./dest/style'));
 });
 
 //默认任务

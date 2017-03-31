@@ -18,21 +18,21 @@
 // $ jx --version
 // v0.10.32
 // 包代码
-// 例如，我们的 Node.js 项目包含以下几个文件，其中 index.js 是主文件：
+// 例如，我们的 Node.js 项目包含以下几个文件，其中 entry.js 是主文件：
 // drwxr-xr-x  2 root root  4096 Nov 13 12:42 images
 // -rwxr-xr-x  1 root root 30457 Mar  6 12:19 index.htm
-// -rwxr-xr-x  1 root root 30452 Mar  1 12:54 index.js
+// -rwxr-xr-x  1 root root 30452 Mar  1 12:54 entry.js
 // drwxr-xr-x 23 root root  4096 Jan 15 03:48 node_modules
 // drwxr-xr-x  2 root root  4096 Mar 21 06:10 scripts
 // drwxr-xr-x  2 root root  4096 Feb 15 11:56 style
-// 接下来我们使用 jx 命令打包以上项目，并指定 index.js 为 Node.js 项目的主文件：
-// $ jx package index.js index
+// 接下来我们使用 jx 命令打包以上项目，并指定 entry.js 为 Node.js 项目的主文件：
+// $ jx package entry.js index
 // 以上命令执行成功，会生成以下两个文件：
 // index.jxp 这是一个中间件文件，包含了需要编译的完整项目信息。
 // index.jx 这是一个完整包信息的二进制文件，可运行在客户端上。
 // 载入 JX 文件
 // 我们使用 jx 命令打包项目：
-// $ node index.js command_line_arguments
+// $ node entry.js command_line_arguments
 // 使用 JXcore 编译后，我们可以使用以下命令来执行生成的 jx 二进制文件：
 // $ jx index.jx command_line_arguments
 
