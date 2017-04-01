@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪随机背景</title>
+    <style>
+        /*
+        利用最小公倍数、线性渐变来形成伪随机背景
+         */
+
+        /*
+        公共样式
+         */
+        p {
+            width: 100%;
+            height: 8rem;
+            background: hsl(20,40%,90%);
+            text-align: center;
+            line-height: 8rem;
+        }
+        /*
+        质数形成的最小公倍数超出屏幕的分辨率就可以形成最小公倍数
+         */
+        div:nth-child(1) p{
+            background-image: linear-gradient(90deg,#fb3 11px,transparent 0),
+            linear-gradient(90deg,#ab4 23px,transparent 0),
+            linear-gradient(90deg,#655 41px,transparent 0);
+            background-size: 41px 100%,61px 100%,83px 100%;
+        }
+        /*
+        蝉原则：通过质数来增加随机真实性的想法，这不仅使用于背景，而且还用于其他涉及有规律重复的情况
+         */
+    </style>
+</head>
+<body>
+<div>
+    <p>love qinqin</p>
+</div>
+</body>
+</html>
