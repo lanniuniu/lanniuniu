@@ -3846,7 +3846,7 @@ var isHTMLTag = makeMap(
 var isSVG = makeMap(
   'svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,' +
   'font-face,g,glyph,public,line,marker,mask,missing-glyph,path,pattern,' +
-  'polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,view',
+  'polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,views',
   true
 );
 

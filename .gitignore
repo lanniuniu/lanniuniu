@@ -4,5 +4,14 @@
 #忽略gulp的node块
 document/gulp/practice/node_modules/
 
+#忽略gulp的scale项目
+document/gulp/scale/
+
 #忽略webpack的node块
 document/webpack/practice/node_modules/
+document/webpack/practice-v2.0/node_modules/
+
+#忽略webpack的实例
+document/webpack/new_bid_front/
+
+
