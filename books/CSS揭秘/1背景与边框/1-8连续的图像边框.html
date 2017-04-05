@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>连续的图像边框</title>
+    <style>
+
+        /*
+        两个背景进行层叠覆盖
+         */
+        body> div{
+            text-align: center;
+            width: 300px;
+            height: 200px;
+            line-height: 200px;
+            float: left;
+            margin-left: 1rem;
+        }
+        body > div:nth-child(1){
+            background-image: url('../../../static/img/cat.jpg');
+            background-size: cover;
+            padding: 2rem;
+        }
+        body > div:nth-child(1) > div{
+            background: white;
+        }
+
+        /*
+        根据background-clip的不同延展
+         */
+        body > div:nth-child(2){
+            border: 2rem solid transparent;
+            background: linear-gradient(white,white),
+            url('../../../static/img/cat.jpg');
+            background-origin: border-box;
+            background-size: cover;
+            background-clip: padding-box,border-box;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>love qinqin</div>
+</div>
+<div>
+    love qinqin
+</div>
+
+</body>
+</html>
