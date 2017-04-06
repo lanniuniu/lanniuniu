@@ -36,6 +36,18 @@
             background-size: cover;
             background-clip: padding-box,border-box;
         }
+
+        /*
+        渐变图案
+         */
+        body > div:nth-child(3) {
+            /*padding: 1rem;*/
+            border: 2rem solid transparent;
+            background: linear-gradient(white,white) padding-box,
+            repeating-linear-gradient(-45deg,red 0,red 12.5%,
+                    transparent 0,transparent 25%,#58a 0,#58a 37.5%,transparent 0,
+            transparent 50%) 0/7rem 7rem;/* 0是position 7是size */
+        }
     </style>
 </head>
 <body>
@@ -45,6 +57,8 @@
 <div>
     love qinqin
 </div>
-
+<div>
+    love qinqin
+</div>
 </body>
 </html>
