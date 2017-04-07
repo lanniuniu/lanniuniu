@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切角效果</title>
+    <style>
+        /*
+        解决方案：css渐变
+         */
+        div{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            margin-left: 20px;
+            float: left;
+        }
+        div:nth-child(1){
+            background-color: #58a;
+            background: linear-gradient(135deg,transparent 33%, #58a 0) left,
+            linear-gradient(-135deg,transparent 33%, red 0) right;/* 正x轴，顺时针旋转 */
+            background-size: 50% 100%;/* 一个参数是水平被怎么分，第二个是竖直 */
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div>
+    love qinqin
+</div>
+</body>
+</html>
