@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>平行四边形</title>
+    <style>
+        /*
+        背景知识：基本的css变形
+         */
+
+        /*
+        通过2d变化和嵌套元素方案进行变化和反变化
+         */
+        body > div:nth-child(1){
+            width: 10rem;
+            height: 10rem;
+            background-color: #0e77ca;
+            line-height: 10rem;
+            text-align: center;
+            float: left;
+            margin-left: 3rem;
+            transform: skewX(-30deg);
+        }
+        body > div:nth-child(1) >div{
+            font-size: 1.5rem;
+            transform: skewX(30deg);
+        }
+
+        /*
+        通过伪元素
+         */
+        body > div:nth-child(2){
+            font-size: 1.5rem;
+            float: left;
+            margin-left: 3rem;
+            position: relative;
+            line-height: 10rem;
+            width: 10rem;
+            text-align: center;
+        }
+        body > div:nth-child(2)::before{
+            width: 10rem;
+            height: 10rem;
+            background-color: #0e77ca;
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: skew(-30deg);
+        }
+
+        /*
+        总结：
+        利用伪元素以及定位属性产生一个方块，然后设置其样式。并将其放置其宿主元素的下层，
+        可以实现多重背景、边框内圆角、背景透视、多重边框
+         */
+    </style>
+</head>
+<body>
+<div>
+    <div>love qinqin</div>
+</div>
+
+<div>
+    love qinqin
+</div>
+
+</body>
+</html>

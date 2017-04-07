@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菱形图片</title>
+    <style>
+        /*
+        基于变形的方案
+        缺点：无法实现非正方形的变形
+         */
+        div:nth-child(1){
+            width: 200px;
+            transform: rotate(45deg);
+            margin: 60px;
+            overflow: hidden;
+            background-color: black;
+            float: left;
+        }
+        div:nth-child(1)>img{
+            max-width: 100%;
+            transform: rotate(-45deg) scale(1.42);
+        }
+
+        /*
+        裁剪路径方案
+        clip-path
+        polygon()参数上右下左四个点的坐标进行裁剪
+        缺点：浏览器的实现
+         */
+        body > img{
+            display: block;
+            width: 283px;
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            margin: 20px;
+            float: left;
+            -webkit-transition:clip-path 0.3s linear;
+            cursor: pointer;
+        }
+        body > img:hover{
+            cursor: pointer;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="../../../static/img/他好.jpg" alt="...">
+</div>
+<img src="../../../static/img/他好.jpg" alt="...">
+<img src="../../../static/img/cat.jpg" alt="...">
+
+</body>
+</html>
