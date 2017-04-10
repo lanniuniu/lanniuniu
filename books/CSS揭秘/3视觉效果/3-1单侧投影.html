@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单侧投影</title>
+    <style>
+        /*
+        box-shadow 利用它的第四个参数——扩展半径来增大或缩小投影的尺寸
+         */
+        div{
+            width: 200px;
+            height: 150px;
+            background-color: #ffdb12;
+            text-align: center;
+            line-height: 150px;
+            margin: 20px;
+            float: left;
+        }
+        /*
+        单侧投影
+         */
+        div:nth-child(1){
+            box-shadow: 0 6px 4px -4px black;
+        }
+        /*
+        邻边投影
+         */
+        div:nth-child(2){
+            box-shadow: 3px 3px 6px -3px black;
+        }
+        /*
+        双侧投影
+        技巧：单侧投影运用两次
+         */
+        div:nth-child(3){
+            box-shadow: 6px 0 5px -5px black,-6px 0 5px -5px black;
+        }
+    </style>
+</head>
+<body>
+<div>
+    love qinqin
+</div>
+<div>
+    love qinqin
+</div>
+<div>
+    love qinqin
+</div>
+</body>
+</html>
