@@ -12,20 +12,64 @@
             height: 200px;
             text-align: center;
             line-height: 200px;
-            margin-left: 20px;
+            margin: 20px;
             float: left;
+            background-color: #58a;
         }
         div:nth-child(1){
-            background-color: #58a;
             background: linear-gradient(135deg,transparent 33%, #58a 0) left,
             linear-gradient(-135deg,transparent 33%, red 0) right;/* 正x轴，顺时针旋转 */
             background-size: 50% 100%;/* 一个参数是水平被怎么分，第二个是竖直 */
             background-repeat: no-repeat;
         }
+
+        /*
+        同理进行四角切换
+         */
+        div:nth-child(2){
+            background: linear-gradient(45deg,transparent 50%, #58a 0) bottom left,
+            linear-gradient(135deg,transparent 50%, #58a 0) top left,
+            linear-gradient(225deg,transparent 50%, #58a 0) top right,
+            linear-gradient(315deg,transparent 50%, #58a 0) bottom right;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+        }
+
+        /*
+        弧形切角
+        背景知识：径向渐变
+        radical-gradient(center,shape size,start-color,...,last-color)
+         */
+        div:nth-child(3){
+            background: radial-gradient(circle at 0 0,transparent 50%,#58a 0) top left,
+            radial-gradient(circle at 100% 0,transparent 50%,#58a 0) top right,
+            radial-gradient(circle at 100% 100%,transparent 50%,#58a 0) bottom right,
+            radial-gradient(circle at 0 100%,transparent 50%,#58a 0) bottom left;
+            background-repeat: no-repeat;
+            background-size: 50.3% 50%;
+        }
+
+        /*
+        斜面切角
+        背景知识：polygon多边形，
+         */
+        div:nth-child(4){
+            clip-path: polygon(
+                20px 0, 100% 0, 100% 100%, 0 100%, 0 20px
+            );
+        }
     </style>
 </head>
 <body>
 <div>
+    love qinqin
+</div>
+<div>
+    love qinqin
+</div>
+<div>
+    love qinqin
+</div><div>
     love qinqin
 </div>
 </body>
