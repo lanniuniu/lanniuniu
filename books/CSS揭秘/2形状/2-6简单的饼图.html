@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单的饼图</title>
+    <style>
+        /*
+        基于transform的解决方案
+         */
+        div{
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: yellowgreen;
+            text-align: center;
+            line-height: 200px;
+            margin: 50px;
+            float: left;
+            color: transparent;
+            font-size: 24px;
+            background-image: linear-gradient(90deg,transparent 50%,#655 0);
+        }
+        div::before{
+            content: '';
+            width: 100px;
+            height: 200px;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 100px;
+            background-color: inherit;
+            margin: 58px;
+            border-radius: 0 100% 100% 0 / 50%;
+            transform-origin: left;
+            transform: rotate(0.1turn);
+        }
+    </style>
+</head>
+<body>
+<div>
+    love qinqin
+</div>
+</body>
+</html>
