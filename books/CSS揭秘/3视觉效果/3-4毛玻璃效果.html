@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>毛玻璃效果</title>
+    <style>
+        /*
+        使用滤镜blur效果不佳，因为它对文字也进行了模糊处理
+         */
+        body, main::before{
+            background: url("../../../static/img/me.jpg") 0 / cover fixed;
+            padding: 30px;
+        }
+        main{
+            position: relative;
+            background: hsla(0,0%,100%,0.3);
+            overflow: hidden;
+        }
+        main::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            filter: blur(20px);
+            margin: -30px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+<main>
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+</main>
+</body>
+</html>
