@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>不规则投影</title>
+    <style>
+        /*
+        背景知识：filter 滤镜效果
+        box-shadow不会对伪元素或半透明的装饰有太好的体验
+         */
+        div{
+            text-align: center;
+            margin: 50px;
+            float: left;
+        }
+        div:nth-child(1){
+            width: 200px;
+            height: 150px;
+            line-height: 150px;
+            color: #fff;
+            background-color: #ffcf12;
+            border-radius: 0.8rem;
+            position: relative;
+            /*box-shadow: 3px 3px 3px black;!* box-shadow方案不行，没有对伪元素产生阴影 *!*/
+            filter: drop-shadow(3px 3px 3px black)
+        }
+        div:nth-child(1)::after{
+            content: '';
+            background-color: #ffcf12;
+            position: absolute;
+            top: 40px;
+            left: 200px;
+            right: 0;
+            bottom: 110px;
+            width: 2rem;
+            height: 4rem;
+            background: linear-gradient(45deg,#ffcf12 50%,transparent 0) top,
+            linear-gradient(135deg,#ffcf12 50%,transparent 0) bottom;
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+            transform: scale(0.6);
+            transform-origin: left;
+        }
+
+        div:nth-child(2){
+            width: 180px;
+            border: 10px dotted #ffcf12;
+            height: 130px;
+            line-height: 130px;
+            /*box-shadow: 3px 3px 3px black;!* box-shadow方案不行，没有对伪元素产生阴影 *!*/
+            filter: drop-shadow(3px 3px 3px black)
+        }
+
+        div:nth-child(3){
+            width: 200px;
+            height: 150px;
+            line-height: 150px;
+            /* 不能使用裁剪方案，因为它对阴影也会裁剪 */
+            /*background-color: #ffcf12;*/
+            /*clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px),*/
+            /*calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px), 0 20px);*/
+            /* 所以使用线性渐变的方案 */
+            background: linear-gradient(135deg, transparent 20px,#ffcf12 0) top left,
+            linear-gradient(-135deg, transparent 20px,#ffcf12 0) top right,
+            linear-gradient(-45deg, transparent 20px,#ffcf12 0) bottom right,
+            linear-gradient(45deg, transparent 20px,#ffcf12 0) bottom left;
+            background-size: 51% 50%;
+            background-repeat: no-repeat;
+            /*box-shadow: 3px 3px 3px black;!* box-shadow方案不行，没有对伪元素产生阴影 *!*/
+            filter: drop-shadow(3px 3px 3px black)
+        }
+        /*
+        任何非透明的部分都会被一视同仁地打上投影
+         */
+    </style>
+</head>
+<body>
+<div>
+    love qinqin
+</div>
+<div>
+    love qinqin
+</div>
+<div>
+    love qinqin
+</div>
+</body>
+</html>

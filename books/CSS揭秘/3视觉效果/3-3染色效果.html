@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>染色效果</title>
+    <style>
+        /*
+        基于滤镜的方案
+         */
+        body{
+            background-color: #5d79e9;
+        }
+        img{
+            width: 200px;
+            clip-path: circle(100px at 100px 122px);
+            filter: sepia(1) saturate(4) hue-rotate(295deg);
+            transition: 0.2s filter;
+            cursor: pointer;
+            margin: 20px;
+            float: left;
+        }
+        img:hover{
+            filter: none;
+        }
+
+        div{
+            width: 200px;
+            height: 257px;
+            margin: 20px;
+            float: left;
+            background-size: cover;
+            background-image: url("../../../static/img/me.jpg");
+            clip-path: circle(100px at 100px 122px);
+            cursor: pointer;
+            background-color: hsl(335, 100%, 50%);
+            background-blend-mode: luminosity;
+            transition: 0.2s background-color;
+        }
+        div:hover{
+            background-color: transparent;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="../../../static/img/me.jpg" alt="可以吧">
+<div>
+
+</div>
+</body>
+</html>
