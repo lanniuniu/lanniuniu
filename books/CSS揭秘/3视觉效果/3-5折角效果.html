@@ -22,11 +22,51 @@
             background: linear-gradient(-135deg, transparent 50%, rgba(0,0,0,0.4) 0) no-repeat
             100% 0 / 1.414rem 1.414rem,
             linear-gradient(-135deg, transparent 1rem, #5d79e9 0);
-            ;
+        }
+
+        /*
+        其他角度
+        用三角函数配合
+         */
+        div:nth-child(2){
+            /*
+            不用伪元素方案，看上去很假
+             */
+            background: linear-gradient(-150deg, transparent 50%, rgba(0,0,0,0.4) 0) no-repeat
+            100% 0 / 2rem 1.232rem,
+            linear-gradient(-150deg, transparent 1rem, #5d79e9 0);
+        }
+
+        /*
+        使用伪元素
+        */
+        div:nth-child(3){
+            background: #5d79e9;
+            position: relative;
+            border-radius: 0.5rem;
+            background: linear-gradient(-150deg,transparent 1rem, #5d79e9 0);
+        }
+        div:nth-child(3)::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(to left bottom,transparent 50%, rgba(0,0,0,0.4) 0)
+        100% 0 no-repeat;
+            transform: rotate(-35deg) translate(0.54rem,-0.77rem);
+            transform-origin: bottom right;
+            width: 1rem;
+            height: 2.1rem;
         }
     </style>
 </head>
 <body>
+<div>
+    love qinqin
+</div>
+<div>
+    love qinqin
+</div>
 <div>
     love qinqin
 </div>
