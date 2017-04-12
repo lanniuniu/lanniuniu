@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>连字符断行</title>
+    <style>
+        /*
+        背景知识：hyphens(连字符): none manual auto
+        谷歌不支持
+        火狐支持
+         */
+        p{
+            width: 200px;
+            height: 180px;
+            padding: 10px;
+            background-color: #5d79e9;
+            color: #fff;
+            overflow: scroll;
+            text-align: justify;
+        }
+        p:nth-child(1){
+            hyphens: manual;/* 默认值 */
+        }
+
+        p:nth-child(2){
+            hyphens: auto;
+        }
+    </style>
+</head>
+<body>
+<p>
+    congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations
+</p>
+<p>
+    congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations congratulations
+</p>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本行的斑马条纹</title>
+    <style>
+        /*
+        表格的斑马很容易实现，tr:nth-child(even){ background }
+        但文本行用这个就力不从心
+         */
+        body{
+            margin: 0;
+        }
+        p{
+            margin: 0;
+            padding: 0.5rem;
+            white-space: pre;
+            line-height: 1.5rem;
+            background: beige;
+            background: linear-gradient(rgba(0,0,0,0.2) 50%, transparent 0);
+            background-size: auto 3rem;
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+<p>love qinqin
+    while(true){
+        let date = new Date();
+        if(data.getDate() === 1 && data.getMonth() ===3){
+        alert(`${date}love qinqin`);
+        }
+    }
+
+</p>
+</body>
+</html>

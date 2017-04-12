@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入换行</title>
+    <style>
+        /*
+        背景知识：1.:not(selector) 非选择器
+        2.+ 紧跟的子元素
+        3.~ 所有跟在其后的子元素子元素
+        4.white-space 处理空白字符
+         */
+
+        dt,dd{
+            display: inline;
+        }
+        dd{
+            margin: 0;
+            font-weight: bolder;
+        }
+        dd + dd::before{
+            content: ', ';
+            margin-left: -0.3rem;
+        }
+        dd + dt::before{
+            content: '\A';
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt>Name:</dt>
+    <dd>QinQin</dd>
+
+    <dt>Hobby:</dt>
+    <dd>Movie</dd>
+    <dd>Reading</dd>
+</dl>
+</body>
+</html>
