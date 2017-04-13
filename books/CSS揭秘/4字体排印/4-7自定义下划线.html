@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义下划线</title>
+    <style>
+        /*
+        线性渐变背景色
+         */
+        p{
+            width: 200px;
+        }
+        a:nth-child(1){
+            text-decoration: none;
+            background: linear-gradient(gray,gray) no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 1.15rem;
+            color: inherit;
+            text-shadow: 0.1rem 0 white,-0.1rem 0 white;/* 利用text-shadow防止
+            下划线穿过某些字母的降部 */
+        }
+        /*
+        线性渐变模拟波浪线
+         */
+        a:nth-child(2){
+            text-decoration: none;
+            color: inherit;
+            background: linear-gradient(-45deg, transparent 40%, red 0, red 60%, transparent 0) 0 1em,
+            linear-gradient(45deg, transparent 40%, red 0, red 60%, transparent 0) .1em 1em;
+            background-repeat: repeat-x;
+            background-size: .4rem .2rem;
+            text-shadow: .1rem 0 white, -.1rem 0 white;
+        }
+    </style>
+</head>
+<body>
+<p>
+    love qinqin <a href="#">love qinqin love qinqin</a>love qinqin
+    love qinqinlove qinqinlove <a href="#">qinqinlove qinqinlove qinqin</a> love qinqin
+</p>
+</body>
+</html>
