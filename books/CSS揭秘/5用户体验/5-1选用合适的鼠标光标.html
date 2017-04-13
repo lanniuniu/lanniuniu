@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选用合适的鼠标光标</title>
+    <style>
+        /*
+        使用cursor合适的属性值来增强用户体验
+         */
+
+        /*
+        提示禁用状态
+         */
+        button{
+            border: 1px solid #58a;
+            background-color: #5d79e9;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.3rem;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            transition: 0.1s box-shadow;
+            margin: 1px;
+        }
+        button:active{
+            box-shadow: 0 0 3px black;
+        }
+        button[disabled="disabled"]{
+            cursor: not-allowed;/* 哈哈，本末倒置了吗？本喵只是一时兴起玩下按钮嘛。 */
+        }
+        button:focus{
+            outline: none;
+        }
+
+        /*
+        隐藏鼠标光标
+         */
+        div{
+            background: #58a;
+            cursor: none;
+        }
+    </style>
+</head>
+<body>
+<span>disabled:</span><button disabled="disabled">love</button>
+<br>
+<span>no disabled:</span><button>love</button>
+<div>
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+</div>
+</body>
+</html>
