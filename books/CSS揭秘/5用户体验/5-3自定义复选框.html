@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义复选框</title>
+    <style>
+        /*
+        隐藏checkbox，用伪元素来代替，配合label来扩大点击区域
+         */
+        input[type="checkbox"]:nth-child(1) + label::before{
+            content: '\a0';/*  不换行空格 */
+            background: silver;
+            display: inline-block;
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-right: 0.2rem;
+            border-radius: 0.2rem;
+            vertical-align: 0.2rem;
+            line-height: 0.65rem;
+        }
+        input[type="checkbox"]:nth-child(1):checked + label::before{
+            content: '\2713';/*  不换行空格 */
+            background: yellowgreen;
+        }
+        input[type="checkbox"]:nth-child(1){
+            position: absolute;
+            clip: rect(0,0,0,0);
+        }
+        input[type="checkbox"]:nth-child(1):focus + label::before{
+            box-shadow: 0 0 0.1rem 0.1rem #58a;
+        }
+
+        /*
+        开关式按钮
+        将label设计为按钮
+         */
+        #qinQin{
+            position: absolute;
+            clip: rect(0,0,0,0);
+        }
+        #qinQin + label{
+            display: inline-block;
+            padding: 0.3rem 0.5rem;
+            background: #ccc;
+            background-image: linear-gradient(#ddd, #bbb);
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 0.3rem;
+            box-shadow: 0 1px white inset;
+            text-align: center;
+            text-shadow: 0 1px 1px white;
+        }
+        #qinQin:checked + label, #qinQin:active + label{
+            box-shadow: 0.05rem 0.1rem 0.2rem rgba(0,0,0,0.6) inset;
+            border-color: rgba(0,0,0,0.3);
+            background: #bbb;
+        }
+
+    </style>
+</head>
+<body>
+<input type="checkbox" id="love">
+<label for="love">love</label>
+
+<input type="checkbox" id="qinQin">
+<label for="qinQin">qinqin</label>
+</body>
+</html>
