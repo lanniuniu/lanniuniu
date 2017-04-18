@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过阴影来弱化背景</title>
+    <style>
+        /*
+        伪元素方案
+        缺点：伪元素无法绑定独立的js事件处理函数
+        如果要点击遮罩层来实现对弹出层的关闭，就难以判断了
+         */
+        div{
+            margin: 50px auto;
+            width: 200px;
+            height: 200px;
+            z-index: 1;
+            background: white;
+            text-align: center;
+            line-height: 50px;
+        }
+        .dimmed::before{
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            background: rgba(0,0,0,0.8);
+        }
+
+        /*
+        box-shadow方案
+        添加box-shadow的扩张参数为整个页面
+        视口单位vw vh
+         */
+        dialog::backdrop{
+            background: rgba(0,0,0,0.8);
+        }
+    </style>
+
+</head>
+<body>
+<!--伪元素方案-->
+<div>
+    <p>love qinqin</p>
+    <button id="love">love</button>
+    <button onclick="document.querySelector('#modal').showModal()">love2</button>
+</div>
+<!--dialog元素方案(仅有Chrome和Opera支持)-->
+<dialog id="modal">
+    love qinqin
+    <button onclick="this.parentNode.close()">close</button>
+</dialog>
+<script>
+    (function aa(){
+        document.querySelector("#love").addEventListener("click",function () {
+            if (document.body.className === 'dimmed'){
+                document.body.className = '';
+            }else {
+                document.body.className = 'dimmed';
+            }
+        })
+    })()
+</script>
+</body>
+</html>
