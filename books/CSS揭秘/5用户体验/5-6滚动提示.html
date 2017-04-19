@@ -6,6 +6,15 @@
     <meta name="generator" content="phpstorm">
     <title>滚动提示</title>
     <style>
+        /*
+        背景知识
+        <attachment> = fixed | local | scroll（默认值）
+        1）fixed：背景图像相对于窗体固定。演示页面
+        2）scroll：背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟着滚动，
+            因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起滚动。
+        3）local：背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像也会跟着滚动，
+        因为背景图像总是要跟着内容。（CSS3）
+        */
         ul{
             width: 10rem;
             height: 8rem;
@@ -18,7 +27,7 @@
             background-repeat: no-repeat;
             background-size: 100% 15px,100% 50px;
             background-attachment: scroll,local;
-        }
+            }
     </style>
 </head>
 <body>
