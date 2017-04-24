@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>交互式的图片对比控件</title>
+    <style>
+        /*
+        背景知识：
+        resize:both horizontal vertical none 调整元素的大小
+         */
+        
+        /*
+        resize方案
+         */
+        #resize{
+            position: relative;
+            display: inline-block;
+            margin: 50px;
+        }
+
+        #resize > div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 39%;/* 初始宽度 */
+            overflow: hidden;/* 可以裁剪图片 */
+            resize: horizontal;/* 谷歌不支持，火狐支持 */
+            max-width: 100%;
+            min-width: 0;
+        }
+        #resize > div::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 15px;
+            height: 15px;
+            background: linear-gradient(135deg,transparent 50%,rgb(222,222,222) 50%);
+            cursor: ew-resize;
+        }
+        #resize img{
+            display: block;
+        }
+        #resize > img{
+            width: 218px;
+            height: 218px;
+        }
+    </style>
+</head>
+<body>
+<div id="resize">
+    <div>
+        <img src="../../../static/img/no.jpg" alt="#">
+    </div>
+    <img src="../../../static/img/cry.png" alt="#">
+</div>
+
+</body>
+</html>
