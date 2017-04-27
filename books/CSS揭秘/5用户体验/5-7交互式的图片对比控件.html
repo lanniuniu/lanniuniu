@@ -48,6 +48,44 @@
             width: 218px;
             height: 218px;
         }
+
+        /*
+        范围输入控件
+        用javascript增强用户体验
+        该方案目前优势在于浏览器支持更好
+         */
+        #input{
+            position: relative;
+            display: inline-block;
+            margin: 50px;
+        }
+
+        #input > div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 50%;/* 初始宽度 */
+            overflow: hidden;/* 可以裁剪图片 */
+            min-width: 1%;
+        }
+        #input  > input{
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            transform-origin: left bottom;
+            filter: contrast(0.5) opacity(0.5);
+            mix-blend-mode: luminosity;
+        }
+        #input img{
+            display: block;
+        }
+        #input > img{
+            width: 218px;
+            height: 218px;
+        }
+
     </style>
 </head>
 <body>
@@ -57,6 +95,25 @@
     </div>
     <img src="../../../static/img/cry.png" alt="#">
 </div>
+<div id="input">
+    <img src="../../../static/img/no.jpg" alt="#">
+    <img src="../../../static/img/cry.png" alt="#">
+</div>
+<script>
+    let inputDiv = document.querySelector('#input');
+    let newdiv = document.createElement('div');
+    let img = document.querySelector('#input>img');
+    newdiv.appendChild(img);
+    inputDiv.insertBefore(newdiv,inputDiv.childNodes[0]);
 
+    //创建滑块
+    let range = document.createElement('input');
+    range.type = "range";
+    range.value = '50%';
+    range.oninput = function () {
+        newdiv.style.width = this.value + '%';
+    };
+    inputDiv.appendChild(range);
+</script>
 </body>
 </html>
