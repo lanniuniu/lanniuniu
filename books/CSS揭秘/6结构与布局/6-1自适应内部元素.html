@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>自适应内部元素</title>
+    <style>
+        /*
+        背景知识：
+        width(height) :min-content
+        值为这个容器内部最大的不可断行元素的宽度
+         */
+        figure{
+            max-width: 300px;
+            width: min-content;
+            margin: auto;
+        }
+        figure figcaption{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<p>love qinqin</p>
+<figure>
+    <figcaption>love</figcaption>
+    <img src="../../../static/img/cat.jpg" alt="#">
+</figure>
+</body>
+</html>
