@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>根据兄弟元素的数量来设置样式</title>
+    <style>
+        /*
+        背景知识：
+        p:nth-of-type(1) = p:nth-child(1)
+
+        p:nth-last-type(2)
+        规定属于其父元素的第二个 p 元素的每个 p，从最后一个子元素开始计数：
+
+        element1~element2 之后(和nth-last-type的顺序隔离)，但不包括本元素的所有兄弟元素
+
+         */
+        li{
+            list-style: none;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            border-radius: 5px;
+            background-color: blueviolet;
+        }
+        #love li:nth-last-child(3)~li{
+            background-color: pink;
+        }
+
+        /*
+        根据兄弟元素的数量范围来匹配元素
+        :nth-child() 参数可以有n  ∞> n >0
+        n+3 选择第三个及其以后的
+        -n+3 选择前三
+         */
+        #qinqin li:nth-child(n+2):nth-child(-n+4){
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+<div id="love">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<div id="qinqin">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+</body>
+</html>
