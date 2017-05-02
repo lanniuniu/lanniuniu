@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>垂直居中</title>
+    <style>
+        /*
+        基于绝对定位的解决方案
+        transform 使用百分数值是根据自身的宽度和高度为基准来进行换算和移动的
+        其它往往是父元素
+         */
+        div{
+            background-color: blueviolet;
+            margin-bottom: 10px;
+            height: 300px;
+            position: relative;
+        }
+        #love > img{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        /*
+        基于视口单位的解决方案
+        只试用于视口居中
+         */
+
+        /*
+        基于Flexbox（伸缩盒） 的解决方案
+        在flex中，可以试用align-items:center;justify-content:center;
+         */
+        #forever {
+            display: flex;
+        }
+        #forever > img{
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+<div id="love">
+    <img src="../../../static/img/no.jpg" alt="#">
+</div>
+<div id="qinqin">
+    <img src="../../../static/img/no.jpg" alt="#">
+</div>
+<div id="forever">
+    <img src="../../../static/img/no.jpg" alt="#">
+</div>
+
+</body>
+</html>
