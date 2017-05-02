@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>紧贴底部的页脚</title>
+    <style>
+        /*
+        固定高度的解决方案
+        缺点：要求页脚内部文本不会折行，额外套div，如果页脚尺寸改变，min-height也要改变
+         */
+        body{
+            margin: 0;
+            font-size: 16px;
+        }
+        h1{
+            margin: 0;
+        }
+        p{
+            line-height: 1.5rem;
+        }
+        #love{
+            min-height: calc(100vh - 6rem);
+        }
+
+    </style>
+</head>
+<body>
+<div id="love">
+    <header>
+        <h1>
+            Site name
+        </h1>
+    </header>
+    <main>
+        <p>
+            love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+            love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+            love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+            love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+            love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+            love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+        </p>
+    </main>
+</div>
+<footer>
+    <p>@ 2017 love qinqin</p>
+    <p>1129638103@qq.com</p>
+</footer>
+
+</body>
+</html>

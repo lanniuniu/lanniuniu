@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>紧贴底部的页脚(2)</title>
+    <style>
+        /*
+        基于flexbox伸缩盒 的解决方案
+        flex属性实际是 flex-grow flex-shrink flex-basis 的简写语法
+         */
+        body{
+            display: flex;
+            flex-flow: column;
+            min-height: 100vh;
+        }
+        main{
+            flex: 1;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+<h1>
+    Site name
+</h1>
+</header>
+<main>
+    <p>
+        love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+        love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+        love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+        love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+        love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+        love qinqin love qinqin love qinqin love qinqin love qinqin love qinqin
+    </p>
+</main>
+<footer>
+    <p>@ 2017 love qinqin</p>
+    <p>1129638103@qq.com</p>
+</footer>
+</body>
+</html>
