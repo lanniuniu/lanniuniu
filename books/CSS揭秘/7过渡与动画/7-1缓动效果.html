@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>缓动效果</title>
+    <style>
+        /*
+        弹跳动画
+        背景知识：animation cubic-bezier(x1,y1,x2,y2)三次赛贝尔函数曲线 来调整默认调速函数ease
+         */
+        #love{
+            border: 1px solid rgba(0,0,0,.2);
+            padding: 5px;
+            width: 420px;
+        }
+        #love > span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background: radial-gradient(white, blueviolet);
+            animation: bounce 3s cubic-bezier(0.215,0.61,0.355,1) infinite;
+        }
+        @keyframes bounce {
+            60%,80%,to{
+                transform: translateX(400px);
+                animation-timing-function: ease;
+            }
+            70%{
+                transform: translateX(300px);
+            }
+            90%{
+                transform: translate(360px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="love">
+    <span></span>
+</div>
+</body>
+</html>
