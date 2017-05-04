@@ -21,6 +21,7 @@
             height: 20px;
             border-radius: 10px;
             background: radial-gradient(white, blueviolet);
+            /* 关于三次贝塞尔函数的图形化调试，可以访问网站cubic-bezier.com */
             animation: bounce 3s cubic-bezier(0.215,0.61,0.355,1) infinite;
         }
         @keyframes bounce {
@@ -35,11 +36,68 @@
                 transform: translate(360px);
             }
         }
+
+        /*
+        弹性过渡
+         */
+        #qinqin{
+            margin-top: 50px;
+            position: relative;
+        }
+
+        #qinqin > span{
+            display: block;
+            width: 144px;
+            text-align: center;
+            line-height: 25px;
+            border-radius: 10px;
+
+            background: deeppink;
+            height: 50px;
+            padding: 10px;
+            margin-top: 10px;
+            margin-left: 28px;
+
+            filter: opacity(0.8);
+        }
+        /*
+        小角伪元素
+         */
+        #qinqin > span:before {
+            content: '';
+            width: 20px;
+            height: 10px;
+            display: block;
+            position: absolute;
+            background: deeppink;
+            bottom: 70px;
+            left: 45px;
+            background: linear-gradient(135deg,white 50%,deeppink 0) left,
+            linear-gradient(-135deg,white 50%,deeppink 0) right;
+            background-size: 51% 100%;
+            background-repeat: no-repeat;
+        }
+
+        #qinqin > input:not(:focus) + span{
+            transform: scale(0);
+            transition: 0.25s transform;
+            transform-origin: 72px 0;
+
+        }
+        #qinqin > input:focus + span{
+            transition: 0.5s cubic-bezier(0.25,0.1,0.3,1.5);
+            transform-origin: 72px 0;
+        }
     </style>
 </head>
 <body>
 <div id="love">
     <span></span>
+</div>
+<div id="qinqin">
+    <label for="forever">say</label>
+    <input type="text" id="forever">
+    <span>say something to qinqin</span>
 </div>
 </body>
 </html>
