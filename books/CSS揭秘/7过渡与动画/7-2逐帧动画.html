@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <style>
+        /*
+        原理：
+        将每一帧图片储存到一张静态图片，然后使用background-position定位和不同于三次贝塞尔函数的
+        调速函数steps()来实现逐帧动画
+        背景知识：
+        steps() 根据你指定的步数，将动画化为指定的帧数
+         */
+        @keyframes loading{
+            to {
+                background-position: -800px 0;
+            }
+        }
+        #love{
+            background-image: url(../../../static/img/loader.png);
+            width: 100px;
+            height: 100px;
+            animation: 1s loading infinite steps(8);
+
+            text-indent: 200%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    </style>
+    <title>逐帧动画</title>
+</head>
+<body>
+<div id="love">loading...</div>
+</body>
+</html>
