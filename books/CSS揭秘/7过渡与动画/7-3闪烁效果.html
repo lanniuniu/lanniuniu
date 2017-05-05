@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>闪烁效果</title>
+    <style>
+        /*
+        用css动画可以实现多种类型的闪烁效果。
+        1.对整个元素进行闪烁（opacity）
+        2.对文字的颜色进行闪烁（color）
+        3.对边框进行闪烁（border-color）
+         */
+
+        /*
+        文字闪烁
+        方案一：平滑闪烁
+        animation-direction
+            reverse 反转每一个循环周期
+            alternate 反转第偶数个循环周期
+            alternate-reverse 反转第奇数个循环周期
+         */
+        div{
+            font-size: 25px;
+        }
+        @keyframes love {
+            to{
+                color: transparent;
+            }
+        }
+        #love{
+            animation: 0.5s love infinite alternate;
+        }
+        /*
+        方案二：普通闪烁
+
+         */
+        @keyframes qinqin {
+            50%{
+                color: transparent;
+            }
+        }
+        #qinqin{
+            animation: 1s qinqin infinite steps(1);
+        }
+    </style>
+</head>
+<body>
+<label for="love">平滑闪烁：</label><div id="love">love qinqin</div>
+<hr>
+<label for="qinqin">普通闪烁：</label><div id="qinqin">love qinqin</div>
+</body>
+</html>
