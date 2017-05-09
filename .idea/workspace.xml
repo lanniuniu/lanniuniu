@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1705e83-23fc-4fa7-8b4d-f77c6213e748" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-2逐帧动画.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-4打字动画.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/document/gulp/scale" afterPath="$PROJECT_DIR$/document/gulp/scale" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ifYou.iml" afterPath="$PROJECT_DIR$/.idea/ifYou.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="if you.iws" />
@@ -37,18 +36,38 @@
       <file leaf-file-name="7-1缓动效果.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-1缓动效果.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2016">
+            <state relative-caret-position="2272">
               <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="7-2逐帧动画.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="7-2逐帧动画.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-2逐帧动画.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state relative-caret-position="672">
+              <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="7-3闪烁效果.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-3闪烁效果.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="992">
+              <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="7-4打字动画.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-4打字动画.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -57,8 +76,8 @@
       <file leaf-file-name="4-1连字符断行.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/books/CSS揭秘/4字体排印/4-1连字符断行.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="800">
+              <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -149,8 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/books/CSS揭秘/1背景与边框/1-7伪随机背景.html" />
-        <option value="$PROJECT_DIR$/document/webpack/practice/webpack.config.js" />
         <option value="$PROJECT_DIR$/document/webpack/practice-v2.0/src/home.vue" />
         <option value="$PROJECT_DIR$/document/webpack/practice-v2.0/src/components/home.vue" />
         <option value="$PROJECT_DIR$/document/webpack/practice-v2.0/src/view/home.vue" />
@@ -200,6 +217,8 @@
         <option value="$PROJECT_DIR$/books/CSS揭秘/6结构与布局/6-6紧贴底部的页脚(2).html" />
         <option value="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-1缓动效果.html" />
         <option value="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-2逐帧动画.html" />
+        <option value="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-3闪烁效果.html" />
+        <option value="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-4打字动画.html" />
       </list>
     </option>
   </component>
@@ -268,7 +287,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -335,31 +353,10 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ifYou" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ifYou" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="books" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CSS揭秘" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="4字体排印" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -710,12 +707,16 @@
       <workItem from="1493777212175" duration="73000" />
       <workItem from="1493858541147" duration="315000" />
       <workItem from="1493861010575" duration="4841000" />
-      <workItem from="1493952002117" duration="3091000" />
+      <workItem from="1493952002117" duration="3152000" />
+      <workItem from="1493970601447" duration="4176000" />
+      <workItem from="1494204253418" duration="709000" />
+      <workItem from="1494290143993" duration="1217000" />
+      <workItem from="1494293412332" duration="402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1534956000" />
+    <option name="totallyTimeSpent" value="1541521000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -730,16 +731,16 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2262419" sideWeight="0.49532712" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.237581" sideWeight="0.49532712" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26285046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="28" y="369" width="1864" height="291" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27159828" sideWeight="0.5046729" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27159828" sideWeight="0.5046729" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -771,20 +772,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/document/webpack/practice-v2.0/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/document/webpack/practice-v2.0/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/document/webpack/practice-v2.0/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1092,24 +1079,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-1缓动效果.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2016">
+        <state relative-caret-position="2272">
           <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/4字体排印/4-1连字符断行.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-2逐帧动画.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        <state relative-caret-position="672">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/4字体排印/4-1连字符断行.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-3闪烁效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="992">
+          <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-4打字动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
           <folding />
         </state>
       </provider>

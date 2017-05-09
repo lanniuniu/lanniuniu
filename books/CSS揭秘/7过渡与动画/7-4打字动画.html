@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>打字动画</title>
+    <style>
+        /*
+        背景知识："等宽字体" 如 Consolas, Monaco, monospace; ch 表示这个标题的宽度，取值就是字符的数量
+        不适用于多行文本
+         */
+        @keyframes pointer {
+            50% {
+                border-color: transparent;
+            }
+        }
+        @keyframes typing {
+            0% {
+                width: 0;
+            }
+        }
+
+        h1{
+            width: 11ch;
+            font-family: Consolas, Monaco, monospace;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 1px solid black;
+            animation: pointer 1s infinite steps(1),
+                        typing 3s steps(11);
+        }
+    </style>
+</head>
+<body>
+<h1>LOVE QINQIN</h1>
+<script>
+
+</script>
+</body>
+</html>
