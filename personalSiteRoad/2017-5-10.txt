@@ -1,16 +1,12 @@
-/**
- * Created by 懒牛牛 on 2017/5/10.
- */
+1.2017.5.10 在kiwiVM重装系统centos
 
-/*
-1.搬瓦工购买VPS
-2.进入搬瓦工控制页面 kiwiVM
-3.重装系统，并记录好 root密码(使用xshell进入的密码) ip 端口号
-4.开始玩
- */
+2.使用xshell登录VPS
 
-/*
- shadowsocks
+ xshell公钥登录
+ 使用xshell在线传输工具（窗口>新建传输文件>命令 put），下载到/root/.ssh/ ，更改文件名为authorized_keys
+ 使用rz
+
+3.用shadowsocks实现科学上网
  使用shadowsocks-libev 一键安装脚本
 
  部署方法（新手请保证是 root 权限）：
@@ -34,11 +30,10 @@
  OS X 客户端：https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-Help
  Android 客户端：https://github.com/shadowsocks/shadowsocks-android/releases
  别人整理的客户端列表：https://shadowsocks.com/client.html
- 
- 使用netspeeder加速 
+
+4.并用net-speeder进行加速
+ 使用netspeeder加速
  1.wget --no-check-certificate https://gist.github.com/LazyZhu/dc3f2f84c336a08fd6a5/raw/d8aa4bcf955409e28a262ccf52921a65fe49da99/net_speeder_lazyinstall.sh
  2.sh net_speeder_lazyinstall.sh
  3.加速nohup /usr/local/net_speeder/net_speeder venet0 "ip" >/dev/null 2>&1 &
  4.关闭net_speeder：killall net_speeder
-
- */

@@ -1,0 +1,87 @@
+1.使用yum下载多款软件
+ git node lrzsz(在线上传下载)
+
+2.配置网页服务器apache
+ 使用内置apache
+ 多端口配置
+    /etc/httpd/conf/httpd.conf文件配置如下：
+<Directory "/lanniuniu">
+    DocumentRoot "/lanniuniu"
+    <Directory />
+    Options FollowSymLinks
+    AllowOverride All
+</Directory>
+
+<Directory "/lanniuniu">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+</Directory>
+
+Listen 80
+Listen 8888
+<VirtualHost ip:8888>
+    DocumentRoot /lanniuniu/blog
+    ServerName blog
+</VirtualHost>
+<Directory "/lanniuniu/blog">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+</Directory>
+
+3.使用IP+PORT访问成功
+在blog目录下创建index.html,使用ip:8888访问，成功登录
+
+4.命令
+  1.wget [参数] [地址] 支持ftp http https 下载
+
+  2.tar 解压
+   语法：tar [主选项+辅选项] 文件或者目录
+   使用该命令时，主选项是必须要有的，它告诉tar要做什么事情，辅选项是辅助使用的，可以选用。
+   主选项：
+   c 创建新的档案文件。如果用户想备份一个目录或是一些文件，就要选择这个选项。相当于打包。
+   x 从档案文件中释放文件。相当于拆包。
+   t 列出档案文件的内容，查看已经备份了哪些文件。
+   特别注意，在参数的下达中， c/x/t 仅能存在一个！不可同时存在！因为不可能同时压缩与解压缩。
+   辅助选项：
+   -z ：是否同时具有 gzip 的属性？亦即是否需要用 gzip 压缩或解压？ 一般格式为xx.tar.gz或xx. tgz
+   -j ：是否同时具有 bzip2 的属性？亦即是否需要用 bzip2 压缩或解压？一般格式为xx.tar.bz2
+   -v ：压缩的过程中显示文件！这个常用
+   -f ：使用档名，请留意，在 f 之后要立即接档名喔！不要再加其他参数！
+   -p ：使用原文件的原来属性（属性不会依据使用者而变）
+
+  3.源码的安装一般由3个步骤组成：配置（configure）、编译（make）、安装（make install）
+
+  4.rm               删除文件
+       -r            递归删除，可删除子目录及文件
+       -f            强制删除
+
+  5.Yum命令常用命令详解
+       1.使用YUM查找软件包
+       命令：yum search~
+       2.列出所有可安装的软件包
+       命令：yum list
+       3.列出所有可更新的软件包
+       命令：yum list updates
+       4.列出所有已安装的软件包
+       命令：yum list installed
+       5.列出所有已安装但不在Yum Repository 內的软件包
+       命令：yum list extras
+       6.列出所指定软件包
+       命令：yum list ～
+       7.使用YUM获取软件包信息
+       命令：yum info ～
+       8.列出所有软件包的信息
+       命令：yum info
+       9.列出所有可更新的软件包信息
+       命令：yum info updates
+       10.列出所有已安裝的软件包信息
+       命令：yum info installed
+       11.列出所有已安裝但不在Yum Repository 內的软件包信息
+       命令：yum info extras
+       12.列出软件包提供哪些文件
+       命令：yum provides~
+
