@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1705e83-23fc-4fa7-8b4d-f77c6213e748" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/personalSiteRoad/2017-5-10.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/personalSiteRoad/2017-5-11.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/document/gulp/scale" afterPath="$PROJECT_DIR$/document/gulp/scale" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-6沿环形路径平移的动画.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/noob-study/nodejs/firstNodeJs.js" afterPath="$PROJECT_DIR$/noob-study/nodejs/firstNodeJs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qinQin/关于VPS.js" afterPath="$PROJECT_DIR$/qinQin/关于VPS.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qinQin/关于linux.js" afterPath="$PROJECT_DIR$/qinQin/关于linux.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-5状态平滑的动画.html" afterPath="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-5状态平滑的动画.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/personalSiteRoad/2017-5-11.txt" afterPath="$PROJECT_DIR$/personalSiteRoad/2017-5-11.txt" />
     </list>
     <ignored path="if you.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,41 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="7-1缓动效果.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-1缓动效果.html">
+      <file leaf-file-name="2017-5-11.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/personalSiteRoad/2017-5-11.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2272">
-              <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="7-2逐帧动画.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-2逐帧动画.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="7-3闪烁效果.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-3闪烁效果.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="992">
-              <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="7-4打字动画.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-4打字动画.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+            <state relative-caret-position="448">
+              <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -80,68 +47,18 @@
       <file leaf-file-name="7-5状态平滑的动画.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-5状态平滑的动画.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="74">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="关于VPS.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qinQin/关于VPS.js">
+      <file leaf-file-name="7-6沿环形路径平移的动画.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-6沿环形路径平移的动画.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1248">
-              <caret line="41" column="36" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="41" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="关于linux.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/qinQin/关于linux.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2144">
-              <caret line="69" column="21" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="69" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2017-5-10.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/personalSiteRoad/2017-5-10.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2017-5-11.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/personalSiteRoad/2017-5-11.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2038">
-              <caret line="85" column="23" lean-forward="false" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="firstNodeJs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/noob-study/nodejs/firstNodeJs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="4-1连字符断行.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/books/CSS揭秘/4字体排印/4-1连字符断行.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="19" />
+            <state relative-caret-position="266">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -154,8 +71,8 @@
       <list>
         <option value="package_json" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -212,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/books/CSS揭秘/2形状/2-2平行四边形.html" />
         <option value="$PROJECT_DIR$/books/CSS揭秘/2形状/2-3菱形图片.html" />
         <option value="$PROJECT_DIR$/books/CSS揭秘/2形状/2-4切角效果.html" />
@@ -256,13 +172,14 @@
         <option value="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-2逐帧动画.html" />
         <option value="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-3闪烁效果.html" />
         <option value="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-4打字动画.html" />
-        <option value="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-5状态平滑的动画.html" />
         <option value="$PROJECT_DIR$/qinQin/关于VPS.js" />
         <option value="$PROJECT_DIR$/qinQin/关于linux.js" />
         <option value="$PROJECT_DIR$/noob-study/nodejs/firstNodeJs.js" />
         <option value="$PROJECT_DIR$/personalSiteRoad/2017-5-9.txt" />
         <option value="$PROJECT_DIR$/personalSiteRoad/2017-5-10.txt" />
         <option value="$PROJECT_DIR$/personalSiteRoad/2017-5-11.txt" />
+        <option value="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-5状态平滑的动画.html" />
+        <option value="$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-6沿环形路径平移的动画.html" />
       </list>
     </option>
   </component>
@@ -331,6 +248,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -353,7 +271,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="qinQin" />
+              <option name="myItemId" value="books" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -367,19 +285,66 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="personalSiteRoad" />
+              <option name="myItemId" value="books" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSS揭秘" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ifYou" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ifYou" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="books" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSS揭秘" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2形状" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ifYou" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ifYou" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="books" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSS揭秘" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1背景与边框" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new_bid_front" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -394,18 +359,18 @@
     <property name="node.js.selected.package.stylelint" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ifYou\static\img" />
+      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架\images" />
+      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架" />
+      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架\image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ifYou\document\webpack\practice-v2.0\src\view" />
       <recent name="C:\xampp\htdocs\ifYou\document\webpack\practice" />
       <recent name="C:\xampp\htdocs\ifYou\document\webpack\practice\dist" />
       <recent name="C:\xampp\htdocs\ifYou\document\webpack\practice\app" />
       <recent name="C:\xampp\htdocs\ifYou\document\webpack\practice\app\webpage" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ifYou\static\img" />
-      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架\images" />
-      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架" />
-      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架\image" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -734,12 +699,13 @@
       <workItem from="1494396427289" duration="1021000" />
       <workItem from="1494399736769" duration="2893000" />
       <workItem from="1494467253874" duration="6591000" />
-      <workItem from="1494498993986" duration="1489000" />
+      <workItem from="1494498993986" duration="4249000" />
+      <workItem from="1494550099818" duration="15746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1555740000" />
+    <option name="totallyTimeSpent" value="1574246000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -754,16 +720,16 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2548596" sideWeight="0.49532712" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20572354" sideWeight="0.49532712" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26285046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="28" y="369" width="1864" height="291" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27159828" sideWeight="0.5046729" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27159828" sideWeight="0.5046729" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -795,27 +761,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/2形状/2-6简单的饼图.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/3视觉效果/3-1单侧投影.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="36" column="9" lean-forward="false" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/2形状/2-4切角效果.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1174">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/books/CSS揭秘/1背景与边框/1-8连续的图像边框.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1042,22 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-1缓动效果.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2272">
-          <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-2逐帧动画.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-3闪烁效果.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="992">
@@ -1073,35 +1002,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/4字体排印/4-1连字符断行.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-4打字动画.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-5状态平滑的动画.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/noob-study/nodejs/firstNodeJs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,23 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/personalSiteRoad/2017-5-11.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2038">
-          <caret line="85" column="23" lean-forward="false" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/personalSiteRoad/2017-5-10.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1133,14 +1020,83 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1248">
           <caret line="41" column="36" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="41" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qinQin/关于linux.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2144">
-          <caret line="69" column="21" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="69" selection-end-column="21" />
+          <caret line="69" column="21" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="69" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-1缓动效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-2逐帧动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personalSiteRoad/2017-5-10.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/4字体排印/4-1连字符断行.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/noob-study/nodejs/firstNodeJs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/personalSiteRoad/2017-5-11.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/img/loader.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-5状态平滑的动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/CSS揭秘/7过渡与动画/7-6沿环形路径平移的动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>

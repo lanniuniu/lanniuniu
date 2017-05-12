@@ -37,6 +37,8 @@ Listen 8888
 
 4.命令
   1.wget [参数] [地址] 支持ftp http https 下载
+  wget在下载的时候就重命名的:
+  wget -c www.baidu.com -O baidu.index.html
 
   2.tar 解压
    语法：tar [主选项+辅选项] 文件或者目录
@@ -84,4 +86,6 @@ Listen 8888
        命令：yum info extras
        12.列出软件包提供哪些文件
        命令：yum provides~
+
+5.
 

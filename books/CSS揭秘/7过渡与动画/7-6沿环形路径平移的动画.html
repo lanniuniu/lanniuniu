@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>沿环形路径平移的动画</title>
+    <style>
+        /*
+        两元素方案
+        思路：一个动画正向另一个动画反向或者
+            一个动画正向，继承元素动画反向
+         */
+        div{
+            float: left;
+            margin-left: 10px;
+        }
+
+        @keyframes love {
+            to{
+                transform: rotate(1turn);
+            }
+        }
+        #love > div{
+            width: 400px;
+            height: 400px;
+            background-color: yellowgreen;
+            border-radius: 200px;
+            position: relative;
+            animation: love 8s linear infinite;
+        }
+        #love img{
+            width: 80px;
+            clip-path: circle(40px at 40px);
+            position: relative;
+            top: -5px;
+            left: 160px;
+            animation: inherit;
+            animation-direction: reverse;/* 设置反向 */
+        }
+
+        /*
+        单元素方案
+         */
+        @keyframes qinqin {
+            from{
+                transform: rotate(0) translateY(-150px) rotate(1turn);
+
+            }
+            to{
+                transform: rotate(1turn) translateY(-150px) rotate(0turn);
+            }
+        }
+        #qinqin{
+            width: 400px;
+            height: 400px;
+            background-color: yellowgreen;
+            border-radius: 200px;
+            position: relative;
+            margin-left: 30px;
+        }
+
+        #qinqin img{
+            width: 80px;
+            clip-path: circle(40px at 40px);
+            position: relative;
+            top: 145px;
+            left: 160px;
+            animation: qinqin 8s infinite linear;
+        }
+    </style>
+</head>
+<body>
+<div id="love">
+    <div>
+        <img src="../../../static/img/me.jpg" alt="#">
+    </div>
+</div>
+<div id="qinqin">
+    <img src="../../../static/img/me.jpg" alt="#">
+</div>
+</body>
+</html>

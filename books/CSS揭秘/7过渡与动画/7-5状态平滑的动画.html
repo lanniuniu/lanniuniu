@@ -5,8 +5,33 @@
     <meta name="author" content="lanniuniu">
     <meta name="generator" content="phpstorm">
     <title>状态平滑的动画</title>
+    <style>
+        /*
+        背景知识：暂停动画animation-play-state: [paused,running]
+         */
+        @keyframes qinqin {
+            to{
+                background-position: 100% 0;
+            }
+        }
+        div{
+            height: 100px;
+            width: 100px;
+            overflow: hidden;
+            cursor: pointer;
+            background-image: url("../../../static/img/loader.png");
+            background-position: 0 0;
+            animation: qinqin 8s linear infinite alternate;
+            animation-play-state: paused;
+        }
+        div:hover,div:focus{
+            animation-play-state: running;
+        }
+    </style>
 </head>
 <body>
-
+<div>
+    
+</div>
 </body>
 </html>
