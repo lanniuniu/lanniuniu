@@ -1,0 +1,2 @@
+1.netspeeder加速效果差，使用kcptun
+2.创建空文件 touch
