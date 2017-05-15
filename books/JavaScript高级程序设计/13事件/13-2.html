@@ -5,22 +5,23 @@
     <title>Title</title>
 </head>
 <body>
+<input type="text" id="love">
 <button id="qin">love qinqin</button>
 <script>
     /*
     事件对象
     在触发DOM上某个事件，会产生事件对象event，包含所有与事件有关的信息。
-    bubbles
-    cancelable
+    bubbles 是否冒泡
+    cancelable 是否可以取消时间的默认行为
     currentTarget
-    defaultPrevented
+    defaultPrevented 是否已经调用preventDefault()
     detail
-    eventPhase
+    eventPhase 阶段
     preventDefault()
-    stopImmediatePropagation()
-    stopPropagation()
+    stopImmediatePropagation() 取消捕获和冒泡，并阻止所有时间处理程序被调用
+    stopPropagation()  取消捕获和冒泡 当cancelable为true时可以使用
     target
-    trusted
+    trusted 是否开发自定义
     type
     views
     只有再事件处理程序执行期间，event对象才会存在。完毕立即销毁
@@ -43,20 +44,23 @@
         load：当页面完全加载后（包括所有图像、JavaScript、css文件外部资源），就会触发。
             在js（加监听器）或在html（body添加onload属性）
 
-        unload：清楚引用，避免内存泄漏
+        unload：清除引用，避免内存泄漏
         resize
         scroll:
+        abort: 放弃下载
+        select：用户选择文本框的一或多时触发
+        error
 
      */
     (function scriptLoad() {
-        window.addEventListener('load',function () {
-            console.log('script loaded');
+        window.addEventListener('unload',function () {
+            console.log('unloaded');
         },false);
     })();
 
 
     /*
-    焦点
+    焦点时间
     blur：失去焦点，不会冒泡
     focus:获得焦点 不冒泡
     伙伴：document.hasFocus() document.activeElement
@@ -69,29 +73,73 @@
      dblclick
      mousedown
      mouseenter
-     mouseleter
+     mouseleave
      mousemove
      mouseout
      mouseover
      mouseup
+     mousewheel 跟踪鼠标滚轮 触摸板
     */
 
     /*
     客户区坐标位置 事件对象的clientX和clientY
-    页面坐标  事件对象的pageX和pageY
+    页面坐标  事件对象的pageX和pageY 在没有滚动时，和clientX相等
     屏幕坐标位置  事件对象的screenX和screenY
 
     */
     (function locationXY() {
         window.addEventListener('mousemove',function (event) {
-            console.log('页面坐标:'+event.pageX+','+event.pageY+'\/n客户区坐标:'+
-                event.clientX+','+event.clientY)
+//            console.log('页面坐标:'+event.pageX+','+event.pageY+'\/n客户区坐标:'+
+//                event.clientX+','+event.clientY)
         });
     })();
 
+    /*
+    修改键 按下鼠标时，某些键的状态也可以影响到所要采取的操作
 
-//    文本
-//    键盘
+    shift alt ctrl meta（windows中的win mac中的cmd）
+    4个属性 shiftKey altKey ctrlKey metaKey 布尔值 按下了为true
+
+    */
+    let btn = document.querySelector('#qin');
+    btn.addEventListener('click',function (e) {
+        console.log(e.ctrlKey)
+    });
+
+    /*
+    相关元素 在mouseover和mouseout事件时有效
+    */
+
+    /*
+    鼠标按钮 button属性，0主鼠标 1滚轮 2次 3 同时主次。。。
+    不同浏览器 支持和属性代表的意义不同
+    */
+
+
+    /*
+    键盘
+     也同样支持修改键
+    keydown 按下任意键
+     keypress 键盘下的字符键
+      keyup 释放
+    1.键码 和键盘上的键意义对应 keycode
+    2.字符编码 charcode
+    3.dom3的变化 用key和char代替键码和字符编码 新增location 是一个数值，表示按下了什么位置上的键
+    4.textInput dom3新增事件 键入可编辑区域 该事件有data属性，表示键入值 还有inputMethod属性，
+    表示文本输入到文本框中的方式 0未知 1键盘 2粘贴 3拖放 4IME 5表单选择 6手写 7语音 8组合输入 9脚本
+    */
+    (function () {
+        let input = document.querySelector('#love');
+        input.addEventListener('keypress',function (e) {
+//            console.log(e.charCode)
+        });
+        input.addEventListener('textInput',function (e) {
+            console.log(e.data);
+//            console.log(e.inputMethod)//浏览器支持极为糟糕,仅仅为ie和edge
+        });
+    })()
+
+
 //    合成 处理IME的输入序列 可以让用户输入在屋里键盘上找不到的字符
 //    变动 在底层dom结构发生变化时触发
 
@@ -125,20 +173,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 </body>
 </html>
+
+
+
+
+
+
+

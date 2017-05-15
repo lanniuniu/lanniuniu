@@ -31,6 +31,15 @@
     removeEventListener() 要删除必须监听器函数一样
     好处：添加多个事件处理程序
      */
+    window.onload = function () {
+        let btn = document.querySelector('button');
+        btn.addEventListener('click',function () {
+            alert('事件冒泡阶段');
+        },false);
+        btn.addEventListener('click',function () {
+            alert('事件捕获阶段');
+        },true);
+    }
 
     /*
     ie事件处理程序 attachEvent() detachEvent()
@@ -60,5 +69,6 @@
 
 
 </script>
+<button>click me</button>
 </body>
 </html>
