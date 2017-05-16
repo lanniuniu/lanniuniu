@@ -1,2 +1,156 @@
 1.netspeeder加速效果差，使用kcptun
-2.创建空文件 touch
+2.服务器端kcpfun配置（touch+文件名创建空文件）
+下载linux 服务端 https://github.com/xtaci/kcptun
+创建配置文件server-config.json
+{
+    "listen": ":29900",//kcpfun服务器端口
+    "target": "127.0.0.1:XXXXX",//本机的shadowsocks的端口
+    "key": "XXXXXX",//密码
+    "crypt": "ase-256",//加密方式
+    "mode": "fast2",//加速模式
+    "mtu": 1350,
+    "sndwnd": 1024,
+    "rcvwnd": 1024,
+    "datashard": 70,
+    "parityshard": 30,
+    "dscp": 46,
+    "nocomp": false,
+    "acknodelay": false,
+    "nodelay": 0,
+    "interval": 40,
+    "resend": 0,
+    "nc": 0,
+    "sockbuf": 4194304,
+    "keepalive": 10
+}
+
+创建 start.sh
+#!/bin/bash
+cd /usr/local/kcptun/
+./server_linux_amd64 -c /usr/local/kcptun/server-config.json > kcptun.log 2>&1 &
+echo "Kcptun started."
+
+创建 stop.sh
+#!/bin/bash
+echo "Stopping Kcptun..."
+PID=`ps -ef | grep server_linux_amd64 | grep -v grep | awk '{print $2}'`
+if [ "" !=  "$PID" ]; then
+  echo "killing $PID"
+  kill -9 $PID
+fi
+echo "Kcptun stoped."i
+
+创建 restart.sh
+cd /usr/local/kcptun/
+sh stop.sh
+echo "Restarting Kcptun..."
+sh start.sh
+
+然后可以启动服务端：
+sh /usr/local/kcptun/start.sh
+/usr/local/kcptun/kcptun.log 为日志信息。
+停止服务端请使用：
+sh /usr/local/kcptun/stop.sh
+重启服务端：
+sh /usr/local/kcptun/restart.sh
+添加开机启动：
+Centos：
+chmod +x /etc/rc.d/rc.local;echo "sh /usr/local/kcptun/start.sh" >> /etc/rc.d/rc.local
+
+3.PC客户端配置之图形化界面
+https://git.oschina.net/ragnaroks/KcptunGUI/releases
+其它带宽请按比例调整，比如 50M ADSL，把 CLIENT 的 -sndwnd -rcvwnd 减掉一半，SERVER 不变。
+参数如下
+client_windows_amd64.exe -r vpsip地址:kcp端口 -l :ss端口 -mode fast2
+-conn 1 -dscp 46 -key 密码 -crypt aes-256 -mtu 1350 -parityshard 30 -datashard 70
+
+4.PC客户端配置之手动
+下载windows版的客户端
+https://github.com/xtaci/kcptun
+
+新建 run.vbs
+Dim RunKcptun
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set WshShell = WScript.CreateObject("WScript.Shell")
+'获取文件路径
+currentPath = fso.GetFile(Wscript.ScriptFullName).ParentFolder.Path & "\"
+'配置文件路径
+configFile = currentPath & "client-config.json"
+'日志文件
+logFile = currentPath & "kcptun.log"
+'软件运行参数
+exeConfig = currentPath & "client_windows_amd64.exe -c " & configFile
+'拼接命令行
+cmdLine = "cmd /c " & exeConfig & " > " & logFile & " 2>&1"
+'启动软件
+WshShell.Run cmdLine, 0, False
+'等待1秒
+'WScript.Sleep 1000
+'打印运行命令
+'Wscript.echo cmdLine
+Set WshShell = Nothing
+Set fso = Nothing
+'退出脚本
+WScript.quit
+
+新建client-config.json
+{
+    "localaddr": ":xxxxx",//ss端口
+    "remoteaddr": "vpsip:kcp端口",
+    "key": "密码",
+    "crypt": "ase-256",
+    "mode": "fast2",
+    "conn": 1,
+    "mtu": 1350,
+    "sndwnd": 16,
+    "rcvwnd": 128,
+    "datashard": 70,
+    "parityshard": 30,
+    "dscp": 46,
+    "nocomp": false,
+    "acknodelay": false,
+    "nodelay": 0,
+    "interval": 40,
+    "resend": 0,
+    "nc": 0,
+    "sockbuf": 4194304,
+    "keepalive": 10
+}
+
+新建 stop.bat
+taskkill /f /im client_windows_amd64.exe
+
+新建 startUp.bat：
+@echo off
+title Kcptun 开机启动设置
+mode con cols=50 lines=20
+color A
+echo.
+echo.                Kcptun 启动项设置
+echo.
+echo.     此批处理可以将 Kcptun 客户端添加到开机启动
+echo.
+echo.       请将该文件放到 run.vbs 相同目录后运行
+echo.
+echo.   查看说明：https://blog.kuoruan.com/102.html
+echo.
+set /p ST=输入 y 添加开机启动，输入 n 取消开机启动：
+if /I "%ST%"=="y" goto addStartup
+if /I "%ST%"=="n" goto delStartup
+:addStartup
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "Kcptun Client" /t REG_SZ /d "\"%~dp0run.vbs\"" /F>NUL
+exit
+:delStartup
+reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "kcptun Client" /F>NUL 2>NUL
+exit
+
+5.客户端之安卓配置
+下载kcptun插件
+https://github.com/shadowsocks/kcptun-android/releases
+
+配置
+dscp=46;nodelay=0;parityshard=30;interval=40;rcvwnd=128;crypt=ase-256;nc=0;
+acknodelay=false;resend=0;mode=fast2;key=密码;conn=1;mtu=1350;datashard=70;
+sndwnd=16;keepalive=10;sockbuf=4194304
+
+注意：此时ss的端口要改成kcptun的端口，与直连不同
