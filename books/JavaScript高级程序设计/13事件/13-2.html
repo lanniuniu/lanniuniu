@@ -6,6 +6,10 @@
 </head>
 <body>
 <input type="text" id="love">
+<ul style="display: none;list-style: none;">
+    <li>hi</li>
+    <li>qinqin</li>
+</ul>
 <button id="qin">love qinqin</button>
 <script>
     /*
@@ -137,33 +141,99 @@
             console.log(e.data);
 //            console.log(e.inputMethod)//浏览器支持极为糟糕,仅仅为ie和edge
         });
-    })()
-
-
-//    合成 处理IME的输入序列 可以让用户输入在屋里键盘上找不到的字符
-//    变动 在底层dom结构发生变化时触发
+    })();
 
 
     /*
-    HTML5事件
-    contextmenu
-    beforeunload
-    DOMContentLoaded
-    readystatechange
-    pageshow pagehide 往返缓存
-    hashchange
+    复合事件：处理IME（input method editor）的输入序列 可以让用户输入在物理键盘上找不到的字符
+    compositionstart compositionend compositionupdate
      */
 
     /*
+    变动事件mutationEvents
+    在底层dom结构发生变化时触发 为xml和html设计，不特定某种语言
+
+    1.删除节点 removeChild() replaceChild() 会触发DOMNodeRemoved 从其父节点中被移除 冒泡，
+    然后此节点和其子节点触发DOMNodeRemovedFromDocument 当被移除时触发 不冒泡，
+    最后触发DOMSubtreeModified事件(DOM变化都会触发)
+    2.插入节点 appendChild() replaceChild() insertBefore() 会触发DOMNodeInserted
+    然后触发DOMNodeInsertedIntoDocument
+    最后触发最后触发DOMSubtreeModified事件
+    */
+    (function () {
+        let input = document.querySelector('#love');
+        input.addEventListener('DOMNodeRemoved',function () {
+            console.log('已经删除');
+        });
+    })();//立即执行函数 分号不能少
+
+    /*
+    HTML5事件
+    1.contextmenu 实现右键自定义上下文菜单
+
+     */
+    (function () {
+        let input = document.querySelector('#love');
+        let ul = document.querySelector('ul');
+        input.addEventListener('contextmenu',function (e) {
+            e.preventDefault();
+            ul.style.display = 'block';
+        });
+        document.addEventListener('click',function () {
+            ul.style.display = 'none';
+        })
+    })();
+
+    /*
+    2.beforeunload 在关掉网页之前触发 触发对话框要设置event.returnValue
+     */
+    (function () {
+        window.addEventListener('beforeunload',function (event) {
+//            let message = "Are you ok?";
+//            event.returnValue = message;
+//            console.log(event);
+//            return message;
+        })
+    })();
+
+    /*
+    3.DOMContentLoaded DOM加载完毕触发，不理会js img css 其它
+    4.readystatechange 当document.readyState发生变化时触发
+        启发：通过document加载的状态来实现网页进度条长度的变化
+    5.pageshow pagehide 往返缓存
+    6.hashchange
+    */
+
+    /*
     设备事件
-    orientationchage
-    MozOrientation
-    deviceorientation
-    devicemotion
+    orientationchage safari 手机朝向改变
+    MozOrientation 火狐 加速计检测到设备方向改变时触发
+     */
+
+    /*
+    deviceorientation 加速计检测到设备方向改变时触发
+     */
+    (function () {
+        window.addEventListener('deviceorientation',function (e) {
+            console.log(e);
+        });
+    })();
+
+    /*
+    devicemotion 加速计检测到设备移动时触发
      */
 
     /*
     触摸和手势事件
+    1.触摸事件 touchstart touchmove touchend touchcancel
+    每一个事件提供了常见的属性 bubbles cancelable等等
+    2.手势事件
+    gesturestart 当一个手指已经按在屏幕上而另一个手指又触摸时触发
+    gesturechange 任何一根手指位置发生变化触发
+    gestureend 任何一根离开
+    事件中有两个额外的属性 rotation scale
+    rotation 旋转 正为顺时针 负为逆时针
+    scale 拉伸 初始值为1
      */
 
 
