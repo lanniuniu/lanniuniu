@@ -5,15 +5,30 @@
     <title>Title</title>
 </head>
 <body>
+<button id="love">click me</button>
 <script>
     /*
     模拟事件
 
     使用javascript在任意时刻来触发特定的事件，而此时的事件就如同浏览器创建的事件一样
+    要先执行监听器再触发事件
 
     document.createEvent()接收参数 UIEvents MouseEvents MutationEvents HTMLEvents
-        KeyboardEvent
+    KeyboardEvent CustomEvent(自定义事件) DOM3都是单数
      */
+    let btn = document.querySelector("#love");
+    (function () {
+        btn.addEventListener('click',function () {
+            alert(`自动模拟点击事件成功`)
+        })
+    })();
+    (function () {
+        let event = document.createEvent("MouseEvent");//创建事件
+        //初始化事件
+        event.initEvent("click",true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null);
+        //触发事件
+        btn.dispatchEvent(event);
+    })();
 
 
 
