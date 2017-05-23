@@ -32,7 +32,7 @@
     target 用于发送请求和接收响应的窗口名称
 
     提交表单submit（preventDefault）
-    1.input 通勇 提交
+    1.input 通用 提交
     2.button 提交
     3.input 图像提交 <input type="image" src=""></input>
     4.使用submit()
@@ -57,6 +57,37 @@
         change
         focus
      */
+
+    /*
+    选择文本
+    input 和textarea 都支持select()方法 用于选择文本框中的所有文本
+    select事件
+     */
+    (function () {
+        let input = document.querySelector('#name');
+//        input.select();//选择
+    })();
+
+    /*
+    输入框的新属性selectionStart selectionEnd 表示文本选区的开头和结尾
+     */
+    (function () {
+        let input = document.querySelector('#name');
+        input.value = 'love';
+//        input.select();
+        let selected = input.value.substring(input.selectionStart,input.selectionEnd);
+    })();
+
+    /*
+    选择部分的文本
+    setSelectionRange(开始，结尾)
+     */
+    (function () {
+        let input = document.querySelector('#name');
+        input.select();
+        input.setSelectionRange(0,2);
+    })();
+
 </script>
 </body>
 </html>
