@@ -5,30 +5,63 @@
     <title>Title</title>
 </head>
 <body>
+<select name="words" id="words">
+    <option value="0" id="love">love</option>
+    <option value="1">qinqin</option>
+    <option value="2">!</option>
+</select>
+<label for="name">姓名</label>
+<input type="text" id="name">
 <script>
     /*
     选择框脚本
-    select 和option
+    select 和option共同创建选择框
 
-    add()
-    multiple
-    options
+    add(newOption,relOption) 向控件中插入新option元素
+    multiple 布尔值 表示是否允许多项选择
+    options 所有option的集合
     remove
     selectedIndex
-    size
+    size 选择框中可见的行数
 
     option元素对象的方法和属性
-    index
-    label
-    selected
-    text
-    value
-     */
+    index 索引
+    label 标签(就是option的)
+    selected 是否被选中
+    text 选项的文本
+    value 选项的值
+
+    */
+    (function () {
+        let words = document.querySelector("#words");
+//        console.log(words.options[0].label);
+//        console.log(words.options[0].selected);
+//        console.log(words.options[0].text);
+    })();
+
+    /*
+    提示：选择框的change事件与其他表单字段的change事件触发的条件不一样
+    其他表单字段的change事件是再值被修改且焦点离开当前字段时触发，而选择框的change事件只要选中了选项就会触发
+    */
+    (function () {
+        let words = document.querySelector("#words");
+        let name = document.querySelector("#name");
+        words.addEventListener("change",function () {
+            console.log(`选择框的值已经改变`);
+        });
+        name.addEventListener("change",function () {
+            console.log(`输入框的值已经改变`);
+        });
+    })();
 
     /*
     选择选项
     设置selected为true
      */
+    (function () {
+        let words = document.querySelector("#words");
+        words.options[1].selected = true;
+    })();
 
     /*
     删除选项
@@ -44,17 +77,6 @@
     移动和重排选项
     insertBefore()
      */
-
-
-
-
-
-
-
-
-
-
-
 
 
 
