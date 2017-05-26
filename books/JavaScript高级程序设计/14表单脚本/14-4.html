@@ -6,12 +6,65 @@
 </head>
 <body>
 <div contenteditable="true" style="border: 1px solid black"></div>
+<form>
+    <label for="name">姓名</label>
+    <input type="text" name="name" id="name">
+
+    <label for="hobby">爱好</label>
+    <select name="hobby" id="hobby" multiple="multiple" size="2">
+        <option value="0">love</option>
+        <option value="1">qinqin</option>
+        <option value="2">!</option>
+    </select>
+
+    <label for="bestHobby">best爱好</label>
+    <select name="bestHobby" id="bestHobby">
+        <option value="0">love</option>
+        <option value="1">qinqin</option>
+        <option value="2">!</option>
+    </select>
+
+    <input type="submit" value="提交" id="btn">
+</form>
 <script>
     /*
     表单序列化
     将表单中的值拼装成字符串形式的key-value键值对提交给后台服务器程序解析，来获取用户的输入值
      */
+    function serialize() {
+        let form = document.forms[0];
+        let data = [];
+        for(let i=0;i<form.elements.length;i++){
+            switch (form.elements[i].type){
+                case "select-one":
+                case "select-multiple":
+                    if(form.elements[i].name){
+                        for(let j = 0, optLen = form.elements[i].options.length;j<optLen;j++){
+                            let optVal = '';
+                            if(form.elements[i].options[j].selected){
+                                optVal = form.elements[i].options[j].value;
+                                data.push(`${encodeURIComponent(form.elements[i].name)}=${encodeURIComponent(optVal)}`)
+                            }
+                        }
+                    }
+                    break;
+                case "text":
+                    data.push(`${encodeURIComponent(form.elements[i].name)}=${form.elements[i].value}`);
+            }
+//            console.log(form.elements[0].type)
+        }
+        console.log(data.join("&"))
+//        console.log(form)
+    }
 
+    (function () {
+        let btn = document.querySelector("#btn");
+        btn.addEventListener("click",function (e) {
+            e.preventDefault();
+            serialize()
+        })
+
+    })();
     /*
     富文本编辑 WYSIWYG 所见即所得
     iframe designMode=on实现最简单的富文本

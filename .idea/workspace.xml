@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b1705e83-23fc-4fa7-8b4d-f77c6213e748" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-3.html" afterPath="$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-4.html" afterPath="$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-4.html" />
     </list>
     <ignored path="if you.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,22 +32,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="14-3.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="14-3.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
+            <state relative-caret-position="74">
               <caret line="62" column="41" lean-forward="false" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="14-4.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="14-4.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-4.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="361">
+              <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#883#1948#0" expanded="false" />
+                <element signature="e#1967#2144#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/books/CSS揭秘/3视觉效果/3-2不规则投影.html" />
         <option value="$PROJECT_DIR$/books/CSS揭秘/3视觉效果/3-3染色效果.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/books/CSS揭秘/3视觉效果/3-4毛玻璃效果.html" />
@@ -168,6 +172,7 @@
         <option value="$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-1.html" />
         <option value="$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-2.html" />
         <option value="$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-3.html" />
+        <option value="$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-4.html" />
       </list>
     </option>
   </component>
@@ -676,12 +681,13 @@
       <workItem from="1495431849431" duration="6864000" />
       <workItem from="1495500592371" duration="3309000" />
       <workItem from="1495673341814" duration="4994000" />
-      <workItem from="1495699571642" duration="3036000" />
+      <workItem from="1495699571642" duration="3187000" />
+      <workItem from="1495758787555" duration="8600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1639984000" />
+    <option name="totallyTimeSpent" value="1648735000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1046,7 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
           <caret line="78" column="6" lean-forward="true" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,23 +1059,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="87" column="36" lean-forward="false" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="62" column="41" lean-forward="false" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-4.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/books/JavaScript高级程序设计/14表单脚本/14-3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="62" column="41" lean-forward="false" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="361">
+          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#883#1948#0" expanded="false" />
+            <element signature="e#1967#2144#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
