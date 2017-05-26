@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="love" width="200px" height="160px">your browser don't support canvas</canvas>
+<div>
+
+</div>
+<script>
+    /*
+    设置width height属性，就可以使用canvas元素
+    绘图之前取得引用，需要调用getContext()方法，
+
+    toDataURL() 导出再canvas元素上绘制的图像 接收参数（图像的MIME类型格式）
+
+     */
+    (function () {
+        let love = document.querySelector("#love");
+        let qinqin = love.getContext("2d");//对返回值进行操作
+        qinqin.fillStyle = "rgba(0,0,255,0.5)";
+        qinqin.fillRect(30,30,50,50);
+
+        let div = document.querySelector("div");
+
+
+        //导出指定格式图片
+        let image = document.createElement("img");
+        let imgURI = love.toDataURL("image/png");//将canvas转换为dataurl
+        image.src = imgURI;
+
+        div.appendChild(image);
+    })();
+</script>
+
+</body>
+</html>
