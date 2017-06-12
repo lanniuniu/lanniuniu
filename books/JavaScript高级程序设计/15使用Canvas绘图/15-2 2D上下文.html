@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>2D上下文</title>
+    <style>
+        canvas{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+<canvas></canvas>
+<script>
+    /*
+    2D上下文的两种基本操作 填充(stroke)和描边(fill)
+     */
+
+    /*
+    绘制矩形
+    属性：fillStyle strokeStyle 描边的线条的宽度lineWidth  线条末端的形状lineCap(butt平头 round圆头 square正方形)
+    线条相交的方式lineJoin(圆交、斜交、斜接)
+
+    方法：
+    fillRect()填充一块矩形 strokeRect()描边一块矩形 clearRect()清除一块矩形
+     */
+    (function () {
+        let canvas = document.querySelector("canvas");
+        let context = canvas.getContext("2d");
+
+        context.fillStyle = "rgba(0,0,255,0.5)";
+        context.fillRect(0,0,500,500);
+    })();
+
+    /*
+    绘制路径
+    通过路径可以创造出复杂的形状和线条
+    beginPath()表示开始绘制路径
+
+    方法：
+    arc(x,y,radius,startAngle,endAngle,counterClockwise):以(x,y)为圆心绘制一条弧线，半径为radius
+    有起始弧度，最后一个参数为是否顺时针
+
+    arcTo(x1,y1,x2,y2,radius) 绘制曲线
+
+    bezierCurveTo()
+    lineTo(x,y) 从上一点开始绘制一条直线，到x,y为止
+    moveTo(x,y) 将绘图图标移动到(x,y) 不画线
+    quadraticCurveTo (cx,cy,x,y) 从上一点绘制2次曲线，到x,y为止
+    rect(x,y,width,height) 绘制矩形
+     */
+    (function () {
+        let canvas = document.querySelector("canvas");
+        let context = canvas.getContext("2d");
+        context.beginPath();
+        context.rect(0,0,200,200);
+        context.closePath();
+    })();
+
+
+</script>
+</body>
+</html>
