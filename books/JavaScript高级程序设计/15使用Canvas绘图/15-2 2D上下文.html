@@ -5,15 +5,9 @@
     <meta name="author" content="lanniuniu">
     <meta name="generator" content="phpstorm">
     <title>2D上下文</title>
-    <style>
-        canvas{
-            width: 500px;
-            height: 500px;
-        }
-    </style>
 </head>
 <body>
-<canvas></canvas>
+<canvas width="500" height="500"></canvas>
 <script>
     /*
     2D上下文的两种基本操作 填充(stroke)和描边(fill)
@@ -39,6 +33,7 @@
     绘制路径
     通过路径可以创造出复杂的形状和线条
     beginPath()表示开始绘制路径
+    closePath()表示结束路径
 
     方法：
     arc(x,y,radius,startAngle,endAngle,counterClockwise):以(x,y)为圆心绘制一条弧线，半径为radius
@@ -51,6 +46,8 @@
     moveTo(x,y) 将绘图图标移动到(x,y) 不画线
     quadraticCurveTo (cx,cy,x,y) 从上一点绘制2次曲线，到x,y为止
     rect(x,y,width,height) 绘制矩形
+
+    绘制之后可以使用fill 可以stroke 也可以clip()创建一个剪贴区域
      */
     (function () {
         let canvas = document.querySelector("canvas");
@@ -58,7 +55,57 @@
         context.beginPath();
         context.rect(0,0,200,200);
         context.closePath();
+
+        //下面绘制一个时钟
+
+        //绘制外圆
+        context.beginPath();
+        context.arc(250,250,200,0,2*Math.PI,false);//最后一个参数为是否逆时针
+        context.strokeStyle = "#ffffff";
+        context.stroke();
+        context.closePath();
+
+        //绘制内圆
+        context.beginPath();
+        context.arc(250,250,190,0,2*Math.PI,false);//最后一个参数为是否逆时针
+        context.strokeStyle = "#ffffff";
+        context.stroke();
+        context.closePath();
+
+        //绘制时针
+        context.beginPath();
+        context.moveTo(250,250);
+        context.lineTo(130,250);
+        context.lineCap = "round";
+        context.lineWidth = "3";
+        context.strokeStyle = "#ffffff";
+        context.stroke();
+        context.closePath();
+
+        //绘制分针
+        context.beginPath();
+        context.moveTo(250,250);
+        context.lineTo(250,100);
+        context.lineCap = "round";
+        context.lineWidth = "3";
+        context.strokeStyle = "#ffffff";
+        context.stroke();
+        context.closePath();
     })();
+
+    /*
+    绘制文本
+     方法：
+    fillText()
+    strokeText()
+     属性：
+     font 文本样式 大小 字体 用css中指定的格式来指定
+     textAlign 文本对齐方式 start end left right center 建议使用start end
+     textBaseline 表示文本的基线 top hanging middle alphabetic ideographic bottom
+    都有默认值，不用每次设置
+     */
+    
+
 
 
 </script>
