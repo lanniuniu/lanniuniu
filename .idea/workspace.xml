@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1705e83-23fc-4fa7-8b4d-f77c6213e748" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/qinQin/关于js的tips.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/books/JavaScript高级程序设计/15使用Canvas绘图/15-2 2D上下文.html" afterPath="$PROJECT_DIR$/books/JavaScript高级程序设计/15使用Canvas绘图/15-2 2D上下文.html" />
     </list>
@@ -46,9 +45,13 @@
       <file leaf-file-name="15-2 2D上下文.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/books/JavaScript高级程序设计/15使用Canvas绘图/15-2 2D上下文.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="106" column="4" lean-forward="false" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="458">
+              <caret line="123" column="4" lean-forward="false" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+              <folding>
+                <element signature="e#625#720#0" expanded="false" />
+                <element signature="e#1205#2289#0" expanded="false" />
+                <element signature="e#2578#3048#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -238,6 +241,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -320,7 +324,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,18 +343,18 @@
     <property name="node.js.selected.package.stylelint" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ifYou\static\img" />
-      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架\images" />
-      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架" />
-      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架\image" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ifYou\document\webpack\practice-v2.0\src\view" />
       <recent name="C:\xampp\htdocs\ifYou\document\webpack\practice" />
       <recent name="C:\xampp\htdocs\ifYou\document\webpack\practice\dist" />
       <recent name="C:\xampp\htdocs\ifYou\document\webpack\practice\app" />
       <recent name="C:\xampp\htdocs\ifYou\document\webpack\practice\app\webpage" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ifYou\static\img" />
+      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架\images" />
+      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架" />
+      <recent name="C:\xampp\htdocs\if_you\noob-study\nodejs\16express框架\image" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -701,12 +704,13 @@
       <workItem from="1496906368353" duration="5841000" />
       <workItem from="1497228662358" duration="7059000" />
       <workItem from="1498025016578" duration="220000" />
-      <workItem from="1498550273193" duration="3589000" />
+      <workItem from="1498550273193" duration="3662000" />
+      <workItem from="1498638131137" duration="2223000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1673962000" />
+    <option name="totallyTimeSpent" value="1676258000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -721,7 +725,7 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18790497" sideWeight="0.49532712" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1911447" sideWeight="0.49532712" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1102,15 +1106,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/books/JavaScript高级程序设计/15使用Canvas绘图/15-2 2D上下文.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="106" column="4" lean-forward="false" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="458">
+          <caret line="123" column="4" lean-forward="false" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+          <folding>
+            <element signature="e#625#720#0" expanded="false" />
+            <element signature="e#1205#2289#0" expanded="false" />
+            <element signature="e#2578#3048#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

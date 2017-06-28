@@ -21,10 +21,9 @@
     方法：
     fillRect()填充一块矩形 strokeRect()描边一块矩形 clearRect()清除一块矩形
      */
+    let canvas = document.querySelector("canvas");
+    let context = canvas.getContext("2d");
     (function () {
-        let canvas = document.querySelector("canvas");
-        let context = canvas.getContext("2d");
-
         context.fillStyle = "rgba(0,0,255,0.5)";
         context.fillRect(0,0,500,500);
     })();
@@ -50,8 +49,6 @@
     绘制之后可以使用fill 可以stroke 也可以clip()创建一个剪贴区域
      */
     (function () {
-        let canvas = document.querySelector("canvas");
-        let context = canvas.getContext("2d");
         context.beginPath();
         context.rect(0,0,200,200);
         context.closePath();
@@ -104,7 +101,31 @@
      textBaseline 表示文本的基线 top hanging middle alphabetic ideographic bottom
     都有默认值，不用每次设置
      */
+
+    (function () {
+        context.beginPath();
+        context.font = "20px Arial";
+        context.textAlign = "center";
+        context.fillStyle = "#ffffff";
+        context.fillText("12",250,85);
+        context.closePath();
+
+        context.beginPath();
+        context.font = "20px Arial";
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.fillStyle = "#ffffff";
+        context.fillText("9",75,250);
+        context.closePath();
+    })();
+
+    /*
+    变换
     
+     */
+    (function () {
+
+    })();
 
 
 
