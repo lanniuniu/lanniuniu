@@ -7,6 +7,7 @@
     <title>2D上下文</title>
 </head>
 <body>
+<img src="../../../static/img/me.jpg" alt="###" style="display: none">
 <canvas width="500" height="500"></canvas>
 <script>
     /*
@@ -115,15 +116,48 @@
         context.textAlign = "center";
         context.textBaseline = "middle";
         context.fillStyle = "#ffffff";
-        context.fillText("9",75,250);
+        context.fillText("9",85,250);
         context.closePath();
     })();
 
     /*
-    变换
-    
+    变换（基于当前）
+    rotate(angle) 围绕原点旋转图像angle弧度
+    scale(x,y) 缩放 x,y系数值
+    translate(x,y) 将坐标原点移动到(x,y)
+    transform(m1_1,m1_2,m2_1,m2_2,dx,dy) 直接修改变化矩阵
+        方式是乘以如下矩阵
+        m1_1 m1_2 dx
+        m2_1 m2_2 dy
+        0    0    1
+
+    setTransform(m1_1,m1_2,m2_1,m2_2,dx,dy) 将变换矩阵重置为默认状态 然后在矩阵变化
+
+    save() 保存设置
+    restore() 恢复上一次设置
+
+    这两种方法将存入栈结构
      */
     (function () {
+        context.beginPath();
+        context.font = "20px Arial";
+        context.textAlign = "center";
+        context.fillStyle = "#ffffff";
+        context.translate(250,250);
+        context.rotate(Math.PI/2);
+        context.fillText("3",165,0);
+        context.closePath();
+    })();
+
+    /*
+    绘制图像
+    original(O)
+    target(T)
+    drawImage(img,Ox,Oy,Owidth,Oheight,Tx,Ty,Twidth,Theight);
+    这里img不能来自于其他域
+     */
+    (function () {
+        let img = document.querySelector('img');
 
     })();
 
