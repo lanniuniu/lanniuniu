@@ -9,6 +9,7 @@
 <body>
 <img src="../../../static/img/me.jpg" alt="###" style="display: none">
 <canvas width="500" height="500"></canvas>
+<canvas width="500" height="500"></canvas>
 <script>
     /*
     2D上下文的两种基本操作 填充(stroke)和描边(fill)
@@ -121,7 +122,7 @@
     })();
 
     /*
-    变换（基于当前）
+    变换（基于当前绘图）
     rotate(angle) 围绕原点旋转图像angle弧度
     scale(x,y) 缩放 x,y系数值
     translate(x,y) 将坐标原点移动到(x,y)
@@ -150,16 +151,26 @@
     })();
 
     /*
-    绘制图像
+    绘制图像  (无法实现？？？)
     original(O)
     target(T)
     drawImage(img,Ox,Oy,Owidth,Oheight,Tx,Ty,Twidth,Theight);
+        img可以填入另一个画布 实现
     这里img不能来自于其他域
      */
+    let canvas2 = document.querySelectorAll('canvas')[1];
+    let context2 = canvas2.getContext("2d");
     (function () {
-        let img = document.querySelector('img');
+        let img = new Image();
+        img.src = '../../../static/img/me.jpg';
+        context2.drawImage(img,400,400);
+        let url = canvas2.toDataURL();
 
+        let newImg = document.createElement("img");
+        newImg.src = url;
+        document.body.appendChild(newImg)
     })();
+
 
 
 

@@ -1,17 +1,17 @@
-#ºöÂÔ.idea
-#.idea/
+#ï¿½ï¿½ï¿½ï¿½.idea
+.idea/
 
-#ºöÂÔgulpµÄnode¿é
+#ï¿½ï¿½ï¿½ï¿½gulpï¿½ï¿½nodeï¿½ï¿½
 document/gulp/practice/node_modules/
 
-#ºöÂÔgulpµÄscaleÏîÄ¿
+#ï¿½ï¿½ï¿½ï¿½gulpï¿½ï¿½scaleï¿½ï¿½Ä¿
 document/gulp/scale/
 
-#ºöÂÔwebpackµÄnode¿é
+#ï¿½ï¿½ï¿½ï¿½webpackï¿½ï¿½nodeï¿½ï¿½
 document/webpack/practice/node_modules/
 document/webpack/practice-v2.0/node_modules/
 
-#ºöÂÔwebpackµÄÊµÀı
+#ï¿½ï¿½ï¿½ï¿½webpackï¿½ï¿½Êµï¿½ï¿½
 document/webpack/new_bid_front/
 
 
