@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>跨文档消息传递</title>
+</head>
+<body>
+<iframe src="https://www.baidu.com" frameborder="1" width="400px" height="300px"></iframe>
+<script>
+    /*
+    XDM（跨文档消息传递）的核心是postMessage(message,domain) message代表所传递的信息 domain代表消息接收方来自哪个域的字符串
+
+    接收XDM消息时，会触发window对象的message事件
+    触发事件后 传递给onmessage处理程序的事件对象包含 data数据 origin发送消息的文档所在域 source发消息的文档的window对象代理
+
+    最好使用JSON.stringify()进行转换
+
+     */
+</script>
+</body>
+</html>

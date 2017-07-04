@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>原生拖放</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-top: 10px;
+            text-align: center;
+            line-height: 100px;
+        }
+        span{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<input type="text">
+<div>
+    <span id="love" draggable="true">love qinqin</span>
+</div>
+<div id="place"></div>
+<script>
+    /*
+    拖放事件
+
+    拖动目标的元素的事件 dragstart drag dragend
+    放置目标的元素的事件 dragenter dragover dragleave（已经离开）或drop（已经放下）
+
+     */
+
+    /*
+    自定义放置目标
+    重写dragenter和dranover事件的默认行为 阻止默认
+     */
+
+    /*
+    dataTransfer 对象 事件拖放的一个属性 浏览器会自动条用setData()方法
+    在拖放操作时实现数据交换
+    getData(type) type表示保存的数据类型 URL text
+    setData(type,value)
+     */
+
+    /*
+    dataTransfer对象中还有两个属性 dropEffect effectAllowed：
+    用于确定被拖动的元素以及作为防止目标的元素能够接收什么操作
+    dropEffect 可以知道被拖动的元素能够执行哪种放置行为
+        "none":不能把拖动的元素放在这里 这是除文本框之外所有元素的默认值
+        "move":应该把拖动的元素移动到放置目标
+        "copy":应该把拖动的元素复制到放置目标
+        "link":表示放置目标会打开拖动的元素
+    在ondragenter事件处理程序中针对放置目标来设置dropEffect
+
+     effectAllowed 表示允许拖动元素的哪种dropEffect
+        uninitialized 被拖动元素不能有任何放置行为
+        none 被拖动元素不能有任何行为
+        copy
+        link
+        move
+        copyLink
+        copyMove
+        linkMove
+        all 允许任意dropEffect
+     */
+
+    /*
+    可拖动
+    html5 draggable属性 表示元素是否可以拖动
+     */
+    (function () {
+        let love = document.querySelector("#love");
+        let drag ;
+        love.addEventListener('dragstart',function (e) {
+            drag = e.target;
+        });
+
+        place.addEventListener('dragover',function (e) {
+            e.preventDefault();
+        });
+
+        place.addEventListener('drop',function (e) {
+            e.preventDefault();
+            place.appendChild(drag);
+            console.log(e)
+        },false)
+    })();
+
+
+</script>
+</body>
+</html>
