@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta name="author" content="lanniuniu">
     <meta name="generator" content="phpstorm">
-    <title>Title</title>
+    <title>错误处理</title>
 </head>
 <body>
+<script>
+    /*
+    try-catch语句
+    try{}遇到错误立即执行catch
+
+    finally子句无论如何都要执行
+     */
+    function errorProcess() {
+        try{
+            return 2;
+        }catch(error){
+            return 1;
+        }finally {
+            return 0;
+        }
+    }
+    let result = errorProcess();
+    console.log(result);
+
+    /*
+    错误类型
+     */
+
+    /*
+    抛出错误
+
+    throw
+
+    对函数的入参和出参 进行类型错误判断
+     */
+
+
+
+</script>
 
 </body>
 </html>
