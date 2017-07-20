@@ -35,8 +35,36 @@
 
     throw
 
-    对函数的入参和出参 进行类型错误判断
+    对函数的入参和出参 进行类型错误判断 增强代码的可维护性
      */
+
+    /*
+    错误事件
+    任何没有通过try-catch处理的错误都会触发window对象的error事件
+     */
+    window.addEventListener('error',function (message) {
+        console.info(message);
+    });
+    throw new Error();
+
+    /*
+    常见的错误类型
+
+    类型转换错误 流控制语句(如条件判断) 必须为布尔值
+    数据类型错误 使用instanceof 来判断类型 进而进行正确地操作
+    通信错误 ajax的通信失败
+     */
+
+    /*
+    把错误记录到服务器
+
+     */
+
+
+    function logEror(sev, msg) {
+        let img = new Image();
+        img.src = "log.php?sev="+encodeURIComponent(sev)+"&msg="+encodeURIComponent(msg);
+    }//然后再try catch里面将错误信息传入函数
 
 
 
