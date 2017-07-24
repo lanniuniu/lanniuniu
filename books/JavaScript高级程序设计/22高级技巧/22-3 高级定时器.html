@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>高级定时器</title>
+</head>
+<body>
+<script>
+    /*
+    setTimeout 设置的延时是大于设定的时间 setTimeout所设置的时间代表设定时间后加入队列 而不是执行
+
+    setInterval 重复定时器 有缺陷 1.某些间隔会被跳过 2.多个定时器的代码执行之间的间隔可能会比预期的小
+
+     */
+    //代替重复定时器
+    setTimeout(function () {
+        //do something
+        setTimeout(arguments.callee,500);
+    },500);
+
+    /*
+    数组分块处理避免长时间运行脚本发生错误
+     */
+
+    /*
+    函数节流
+
+     */
+</script>
+
+</body>
+</html>

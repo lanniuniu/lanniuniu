@@ -6,11 +6,22 @@
 高级函数
 
 高级的类型检测：判断函数是否原生
+使用Object.prototype.toString() 来检测 看是否返回"[object 类型]"
  */
 
 /*
 作用域安全的构造函数
+使用类型检测 判断作用域是否为window等全局变量
  */
+function Person(name, age, job) {
+    if(this instanceof Person){
+        this.name = name;
+        this.age = age;
+        this.job = job;
+    }else {
+        return new Person(name, age, job);
+    }
+}
 
 /*
 惰性载入函数
