@@ -10,7 +10,44 @@
 <script>
     /*
     事件是一种叫做观察者的设计模式 这是一种创建松散偶和代码的技术
+    观察者模式由两类对象组成：主体和观察者
+    主体负责发布事件 观察者通过订阅这些事件来观察该主体
+
      */
+    function EventTarget() {
+        this.handlers = {};
+    }
+    EventTarget.prototype = {
+        constructor: EventTarget,
+        addHandler: function (type, handler) {
+            if(typeof this.handlers[type] === "undefined"){
+                this.handlers[type] = [];
+            }
+            this.handlers[type].push(handler);
+        },
+        fire: function (event) {
+            if(!event.target){
+                event.target = this;
+            }
+            if(this.handlers[event.type] instanceof Array){
+                let handlers = this.handlers[event.type];
+                for(let i =0,len=handlers.length;i<len;i++){
+                    handlers[i](event);
+                }
+            }
+        },
+        removeHandler: function (type, handler) {
+            if(this.handlers[type] instanceof Array){
+                let handlers = this.handlers[type];
+                for (let i=0,len=handlers.length;i<len;i++){
+                    if(handlers[i]===handler){
+                        break;
+                    }
+                }
+                handlers.splice(i,1);
+            }
+        }
+    };
 </script>
 </body>
 </html>
