@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="author" content="lanniuniu">
     <meta name="generator" content="phpstorm">
-    <title>Title</title>
+    <title>Page Visibility API</title>
 </head>
 <body>
-
+<script>
+    /*
+    若页面最小化或者隐藏在了其他标签页后面的时候  某些功能是可以停下来的  比如轮询服务器或者某些动画效果 故而设计了三个API
+    document.(ms)(webkit)hidden 表示页面是否隐藏的布尔值 页面隐藏包括在页面在后台标签页中或者浏览器最小化
+    document.(ms)(webkit)visibilityState
+    (ms)(webkit)visibilitychange 事件  当文档从可见变为不可见或不可见变为可见时，触发该事件
+     */
+    (function () {
+        document.addEventListener('visibilitychange',function () {
+            console.log('页面可见性发生变化');
+        })
+    })();
+</script>
 </body>
 </html>

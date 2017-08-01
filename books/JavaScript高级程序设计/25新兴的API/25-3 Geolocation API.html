@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="author" content="lanniuniu">
     <meta name="generator" content="phpstorm">
-    <title>Title</title>
+    <title>Geolocation API</title>
 </head>
 <body>
+<script>
+    /*
+    地理定位
 
+    navigator.geolocation 对象
+    拥有三个方法 getCurrentPosition() 请求用户地理位置定位 接受3个参数 成功回调函数 可选的失败回掉函数 可选的选项对象
+    成功回调函数会收到一个Position参数  有两个属性 coords timestamp
+    coords
+        latitude 以十进制度数表示的纬度
+        longitude 以十进制度数表示的经度
+        accuracy 经纬度坐标的精度 以米为单位
+        一些浏览器还可能会在coords对象中提供另外的属性
+        altitude 以米为单位的海拔高度 可能为null
+        altitudeAccuracy 海拔高度的精度 米为单位 数值越大越不精确
+        heading 指南针的方向 0°表示正北 NaN表示没有检测到数据
+        speed 速度 即每秒移动多少米 可能为null
+
+    可选的失败回调函数 message code
+    message中保存给人看的文本消息 解释为什么会出错
+    code属性中保存一个数字 表示错误的类型 1用户拒绝共享 2位置无效 3或者超时
+
+     */
+    navigator.geolocation.getCurrentPosition(function (position) {
+        console.log(position.coords);
+    },function (data) {
+        console.log(data)
+    });
+
+
+</script>
 </body>
 </html>
