@@ -4,9 +4,67 @@
     <meta charset="UTF-8">
     <meta name="author" content="lanniuniu">
     <meta name="generator" content="phpstorm">
-    <title>Title</title>
+    <title>file API</title>
 </head>
 <body>
+<input type="file" id="file">
+<script>
+    /*
+    File API 在表单中的文件输入字段的基础上 又添加了一些直接访问文件信息的接口
+    HTML5在DOM中为文件输入元素添加了一个files集合 可以实现多个文件读取
+    name size type lastModifiedDate
+     */
+    (function(){
+        let file = document.querySelector('#file');
+        file.addEventListener('change',function (e) {
+            console.log(e);
+        });
+    })();
 
+    /*
+    FileReader类型
+    实现的是一种异步文件读取机制
+    如下方法
+    readAsText(file,encoding) 以纯文件形式读取文件 将读取到的文本保存在result属性中； encoding 指定编码类型，可选
+    readAsDataURL(file) 读取文件并将文件以数据URI的形式保存在result属性中
+    readAsBinaryString(file) 读取文件 并将一个字符串保存在result属性中，字符串中每一个字符表示一个字节
+    readAsArrayBuffer(file) 读取文件并将一个包含文件内容的ArrayBuffer
+    如下事件
+    progress 是否读取了新数据
+    error 是否发生错误
+    load 是否已经读完了整个文件
+
+     */
+
+    /*
+    读取部分内容
+    File()对象
+    (moz)(webkit)(S)slice(begin,end)  返回一个Blob的实例 是File的父类型
+
+    Blob类型有个size属性 和一个type属性 而且也支持slice 以便进一步切割数据
+    只读取文件的一部分可以节省事件  非常适合只关注数据中某个特定部分的情况
+     */
+
+    /*
+    对象URL （blob URL）
+    指引用保存在File或Blob中数据的URL
+    使用对象URL的好处是可以不必把文件内容读取到Javascript中而直接使用文件内容
+    对象URL 可以使用window.(webkit)URL.createObjectURL() 并传入File和Blob对象
+    销毁内存 将URL对象传给 window.URL.revokeObjectURL()
+     */
+
+    /*
+    读取拖放的文件
+    从桌面上把文件拖放到浏览器上也会触发drop事件
+    在event.dataTransfer.files中可以读到被放置的文件
+     */
+
+    /*
+    使用XHR上传文件
+    创建一个FromData对象 通过它调用append()方法 并传入相应的File对象作为参数 然后再把FormData对象传递给XHR的send() 然后使用post
+    请求 从而实现上传
+    结果与通过表单上传一模一样
+     */
+</script>
 </body>
 </html>
