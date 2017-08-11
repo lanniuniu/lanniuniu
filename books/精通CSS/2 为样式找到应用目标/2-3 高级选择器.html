@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>高级选择器</title>
+    <style>
+        /*
+        子选择器和相邻同胞选择器
+
+        子选择器：选择直接后代
+        相邻同胞选择器：定位同一个父元素下某个元素之后的元素
+         */
+
+        /*
+        属性选择器
+        根据某个属性是否存在或属性的值来寻找元素
+         */
+        abbr:hover,abbr:focus{
+            cursor: help;
+        }
+        p > a[rel="nofollow"]{
+            background: url("../../../static/img/准心.png") no-repeat right center;
+            padding-right: 50px;
+        }
+
+        /*
+        层叠和特殊性
+        （重要级依次向下递减）
+        标有!important的用户样式
+        标有!important的作者样式
+        作者样式
+        用户样式
+        浏览器/用户代理应用的样式
+        如果规则的特殊性相同 后定义的优先
+
+        行内元素
+        id选择器的总数
+        类、伪类、属性选择器的数量
+        类型选择器和伪元素的数量
+         */
+
+        /*
+        在样式表中使用特殊性
+        一般性样式尽量非常一般  特殊样式尽可能特殊
+         */
+
+        /*
+        在主体标签（body）上添加类和ID
+        用于覆盖样式
+         */
+
+        /*
+        继承
+        恰当使用继承可以减少代码中选择器的数量和复杂性
+         */
+    </style>
+</head>
+<body>
+<p>
+    The term <abbr title="hi">hello</abbr> is an acronym rather than an abbreviation as it is pronounced as a word
+    <a href="http://google.com" rel="nofollow">谷歌</a>
+</p>
+</body>
+</html>

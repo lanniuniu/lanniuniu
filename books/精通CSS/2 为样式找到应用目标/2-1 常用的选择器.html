@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>常用的选择器</title>
+    <style>
+        /*
+        类型选择器和后代选择器
+
+        类选择器和ID选择器
+         */
+
+        /*
+        伪类
+        链接伪类 :link :visited  动态伪类 :hover :active :focus
+        注意：通过把伪类连接在一起 可以创建更复杂的行为
+         */
+        a:hover{/* 只悬停 */
+            color: olive;
+        }
+        a:visited:hover{/* 悬停且访问  实现了已访问链接和未访问链接 不同的悬停效果*/
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<a href="http://www.google.com">谷歌</a>
+<a href="http://www.baidu.com">谷歌</a>
+</body>
+</html>
