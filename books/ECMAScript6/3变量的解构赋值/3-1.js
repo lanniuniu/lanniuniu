@@ -21,7 +21,7 @@ x // "a"
 y // undefined
 z // []
 
-//如果解构不成功，变量的值就等于undefined。如下foo都解构不成功，值为为undefined
+//如果解构不成功，变量的值就等于undefined。如下foo都解构不成功，值为undefined
 // var [foo] = [];
 // var [bar, foo] = [1];
 

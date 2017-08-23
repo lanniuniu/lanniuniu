@@ -10,7 +10,7 @@ var a = 2;
 // let b = 2;
 
 /**
- *let和const
+ * let和const
  * ES6暂时性死区temporal dead zone,所有变量在块级作用域中未申明使用就会报错
  * 只要块级作用域存在let或const，那么就绑定这个区域，凡是未申明使用就会报错，
  * 意味着typeof不是100%安全
@@ -33,7 +33,7 @@ if (true) {
  * @param y
  * @returns {[*,*]}
  */
-function bar(x = y, y = 0) {
+function bar(x = y, y = 0) {//y还未声明，不可以使用
     return [x,y];
 }
 //bar();//报错
