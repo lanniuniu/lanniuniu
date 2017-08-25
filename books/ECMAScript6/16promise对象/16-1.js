@@ -20,7 +20,7 @@
     //then方法的第一个参数是Resolved状态的回调函数，第二个参数（可选）是Rejected状态的回调函数。
 var promise1 = new Promise(function (resolve, reject) {
     console.log('hello');
-    resolve();
+    reject();
 });
 promise1.then(
     comments=> {console.log(',lanniuniu')},

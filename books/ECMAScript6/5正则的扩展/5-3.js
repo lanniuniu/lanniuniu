@@ -16,7 +16,7 @@ let reg2 = /^.$/u;
 console.log(reg1.test(word1));
 console.log(reg2.test(word1));
 
-console.log('----------------')
+console.log('----------------');
 
 //Unicode字符表示法
 //ES6新增了使用大括号表示Unicode字符，这种表示法在正则表达式中必须加上u修饰符，才能识别。
@@ -30,7 +30,7 @@ console.log('-----------------');
 console.log(/𠮷{2}/.test('𠮷𠮷')); // false
 console.log(/𠮷{2}/u.test('𠮷𠮷')); // true
 
-//i字符
+//i字符 不区分大小写
 //有些Unicode字符的编码不同，但是字型很相近，比如，\u004B与\u212A都是大写的K。
 console.log(/[a-z]/i.test('\u212A')); // false
 console.log(/[a-z]/iu.test('\u212A')); // true

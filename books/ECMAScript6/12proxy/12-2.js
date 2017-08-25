@@ -55,6 +55,8 @@ let arr = createArray('a', 'b', 'c');
 console.log(arr[-1]);
 console.log('-------------');
 
+//以下是各种方法用于拦截或代理
+
 //set()   拦截某个属性的赋值操作。
 
 //apply() 拦截函数的调用、call和apply操作。

@@ -13,7 +13,7 @@
 
 //调用iterator接口的场合
 //1.解构赋值 对数组和Set结构进行解构赋值时，会默认调用Symbol.iterator方法。
-    //2.扩展运算符
+//2.扩展运算符
 let set1 = new Set().add('a').add('b').add('c');
 
 let [x,y] = set1;

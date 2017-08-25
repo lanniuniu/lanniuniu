@@ -2,7 +2,7 @@
  * Created by 懒牛牛 on 2017/1/13.
  */
 /**
- * Reflect对象和object类似
+ * Reflect对象和object类似  都是为了操作对象而提供的新的API
  * 方法和Proxy类似
  */
 //Reflect.get(target, name, receiver)

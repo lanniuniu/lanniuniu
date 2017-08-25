@@ -34,17 +34,17 @@ console.log('--------------');
 //next方法的参数表示上一个yield语句的返回值
 
 function* foo(x) {
-    var y = 2 * (yield (x + 1));
-    var z = yield (y / 3);
+    let y = 2 * (yield (x + 1));
+    let z = yield (y / 3);
     return (x + y + z);
 }
 
-var a = foo(5);
+let a = foo(5);
 console.log(a.next()); // Object{value:6, done:false}
 console.log(a.next()); // Object{value:NaN, done:false}
 console.log(a.next()); // Object{value:NaN, done:true}
 
-var b = foo(5);
+let b = foo(5);
 console.log(b.next()); // { value:6, done:false }
 console.log(b.next(12)); // { value:8, done:false }
 console.log(b.next(13)); // { value:42, done:true }
@@ -63,9 +63,6 @@ for(let i of foo()){
 console.log('--------------');
 
 //对于generator返回的iterator对象，可以用扩展运算符、Array.from()、解构赋值、for of
-
-
-
 
 
 
