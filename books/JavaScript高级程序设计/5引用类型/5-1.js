@@ -130,7 +130,7 @@ reduce()
 reduceRight()
  */
 let res5 = num1.reduce(function (prev, next, index, array) {//前一项当后一项的参数
-    return prev-next;
+    return prev - next;
 });
 console.log(res5);
 publicFunc.cutOff();
