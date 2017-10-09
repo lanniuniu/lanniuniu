@@ -1,6 +1,15 @@
 <!--处理用户输入-->
 <!--为了让用户和你的应用进行互动，
 我们可以用 v-on 指令绑定一个监听事件用于调用我们 Vue 实例中定义的方法：-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>Title</title>
+</head>
+<body>
 <div id="app">
     <p>{{message}}</p>
     <button v-on:click="changeColor">点我</button>
@@ -32,5 +41,11 @@
         }
     });
 </script>
+</body>
+</html>
+
+
+
+
 
 
