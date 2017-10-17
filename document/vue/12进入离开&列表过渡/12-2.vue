@@ -1,6 +1,24 @@
 <head>
     <meta charset="UTF-8">
 </head>
+<style>
+    /*app2*/
+    .love-enter-active,.love-leave-active{
+        transition: opacity .5s
+    }
+    .love-enter,.love-leave-to{
+        opacity: 0;
+    }
+
+    /*app3*/
+    .daidai-enter-active, .daidai-leave-active {
+        transition: opacity .3s ease;
+    }
+    .daidai-enter, .daidai-leave-to
+        /* .component-fade-leave-active for below version 2.1.8 */ {
+        opacity: 0;
+    }
+</style>
 <body>
 <div id="app1">
     <transition>
@@ -9,11 +27,18 @@
         </button>
     </transition>
 </div>
-<div id="app2">
-    <transition mode="out-in">
+<div id="app2" style="margin-top: 20px">
+    <transition mode="out-in" name="love">
         <button @click="changeState">
             {{buttonMessage}}
         </button>
+    </transition>
+</div>
+<div id="app3" style="margin-top: 20px">
+    <input type="radio" value="a" name="A" id="A" v-model="view"><label for="A">A</label>
+    <input type="radio" value="b" name="A" id="B" v-model="view"><label for="B">B</label>
+    <transition name="daidai" mode="out-in">
+        <component :is="views"></component>
     </transition>
 </div>
 <script src="../vue.js"></script>
@@ -85,6 +110,48 @@
                 }
             },
         },
+    });
+
+    let app3 = new Vue({
+        el: '#app3',
+        data:{
+            view: 'a',
+            views: 'v-a',
+        },
+        computed:{
+            views(){
+                let input = document.querySelectorAll('#app3')[0].querySelectorAll('input:checked');
+                switch (input[0].value){
+                    case 'A':
+                        return 'v-a';
+                        break;
+                    case 'B':
+                        return 'v-b';
+                        break;
+                }
+            },
+        },
+        components: {
+            'v-a': {
+                template: '<div>love</div>'
+            },
+            'v-b': {
+                template: '<div>daidai</div>'
+            }
+        },
+        watch:{
+            view(value){
+                switch (value){
+                    case 'a':
+                        this.views = 'v-a';
+                        break;
+                    case 'b':
+                        this.views = 'v-b';
+                        break;
+                }
+            },
+        },
+
     });
 </script>
 </body>
