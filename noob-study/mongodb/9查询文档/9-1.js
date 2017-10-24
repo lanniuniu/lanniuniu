@@ -3,6 +3,11 @@
  */
 
 /*
+查看数据库里的所有集合
+> show collections;
+ */
+
+/*
 MongoDB 查询文档使用 find() 方法。
 find() 方法以非结构化的方式来显示所有文档。
 语法
@@ -49,4 +54,6 @@ MongoDB OR 条件语句使用了关键字 $or,语法格式如下：
 
 /*
 AND 和 OR 联合使用
+
+>db.col.find({"likes": {$gt:50}, $or: [{"by": "菜鸟教程"},{"title": "MongoDB 教程"}]}).pretty()
  */
