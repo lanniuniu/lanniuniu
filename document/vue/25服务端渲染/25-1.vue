@@ -1,0 +1,5 @@
+<script>
+    /*
+    vue-SSR
+    */
+</script>
