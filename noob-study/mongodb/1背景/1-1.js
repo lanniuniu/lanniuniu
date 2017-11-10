@@ -70,7 +70,7 @@ MongoDB 将数据存储为一个文档，数据结构由键值(key=>value)对组
     name: "liupeng",
     age: 24,
     status: "working",
-    hobby: ["news","sports"]
+    hobby: ["css","sports"]
 }
  */
 

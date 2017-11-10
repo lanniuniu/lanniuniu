@@ -1,0 +1,237 @@
+{
+  "keys": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\config\\config.default.js",
+  "view": {
+    "defaultViewEngine": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\config\\config.default.js",
+    "mapping": {
+      ".tpl": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\config\\config.default.js"
+    },
+    "root": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-view\\config\\config.default.js",
+    "cache": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-view\\config\\config.default.js",
+    "defaultExtension": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-view\\config\\config.default.js"
+  },
+  "news": {
+    "pageSize": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\config\\config.default.js",
+    "serverUrl": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\config\\config.default.js"
+  },
+  "middleware": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\config\\config.default.js",
+  "robot": {
+    "ua": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\config\\config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-onerror\\config\\config.default.js",
+    "appErrorFilter": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-onerror\\config\\config.default.js"
+  },
+  "session": {
+    "maxAge": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-session\\config\\config.default.js",
+    "key": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-session\\config\\config.default.js",
+    "httpOnly": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-session\\config\\config.default.js",
+    "encrypt": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-session\\config\\config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-i18n\\config\\config.default.js",
+    "dirs": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-i18n\\config\\config.default.js",
+    "queryField": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieField": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-i18n\\config\\config.default.js",
+    "cookieMaxAge": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-i18n\\config\\config.default.js"
+  },
+  "watcher": {
+    "type": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-watcher\\config\\config.unittest.js",
+    "eventSources": {
+      "default": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-watcher\\config\\config.default.js",
+      "development": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-watcher\\config\\config.default.js"
+    }
+  },
+  "multipart": {
+    "autoFields": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-multipart\\config\\config.default.js",
+    "defaultCharset": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldNameSize": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fieldSize": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fields": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fileSize": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-multipart\\config\\config.default.js",
+    "files": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-multipart\\config\\config.default.js",
+    "fileExtensions": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-multipart\\config\\config.default.js",
+    "whitelist": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-multipart\\config\\config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+    "protocolWhiteList": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+    "defaultMiddleware": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+    "csrf": {
+      "enable": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "useSession": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "ignoreJSON": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "cookieName": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "sessionName": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "headerName": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "bodyName": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "queryName": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xframe": {
+      "enable": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "hsts": {
+      "enable": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "maxAge": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "includeSubdomains": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "dta": {
+      "enable": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "noopen": {
+      "enable": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "nosniff": {
+      "enable": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "xssProtection": {
+      "enable": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "value": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js"
+    },
+    "csp": {
+      "enable": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js",
+      "policy": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-security\\config\\config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "hourDelimiter": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "filesRotateBySize": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFileSize": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxFiles": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "rotateDuration": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-logrotator\\config\\config.default.js",
+    "maxDays": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-logrotator\\config\\config.default.js"
+  },
+  "static": {
+    "prefix": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-static\\config\\config.default.js",
+    "dir": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-static\\config\\config.default.js",
+    "dynamic": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-static\\config\\config.default.js",
+    "preload": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-static\\config\\config.default.js",
+    "buffer": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-static\\config\\config.default.js",
+    "maxFiles": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-static\\config\\config.default.js"
+  },
+  "jsonp": {
+    "limit": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "callback": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-jsonp\\config\\config.default.js",
+    "csrf": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-jsonp\\config\\config.default.js"
+  },
+  "nunjucks": {
+    "autoescape": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
+    "throwOnUndefined": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
+    "trimBlocks": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
+    "lstripBlocks": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-view-nunjucks\\config\\config.default.js",
+    "cache": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg-view-nunjucks\\config\\config.default.js"
+  },
+  "env": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "name": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "proxy": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "protocolHeaders": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "ipHeaders": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "hostHeaders": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "pkg": {
+    "name": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "version": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "description": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "main": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "scripts": {
+      "test": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "dev": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+    },
+    "keywords": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "author": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "license": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "dependencies": {
+      "egg": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "egg-view-nunjucks": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+    },
+    "devDependencies": {
+      "egg-bin": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "egg-mock": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "baseDir": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "HOME": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "rundir": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "dump": {
+    "ignore": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "notFound": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "sitefile": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "middlewares": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "httpClient": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+  },
+  "bodyParser": {
+    "enable": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "formLimit": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "jsonLimit": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "strict": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "queryString": {
+      "arrayLimit": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "depth": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "parameterLimit": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "logger": {
+    "dir": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "encoding": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "env": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "level": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "consoleLevel": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.unittest.js",
+    "disableConsoleAfterReady": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "outputJSON": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "buffer": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.unittest.js",
+    "appLogName": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "coreLogName": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "agentLogName": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "errorLogName": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "coreLogger": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "allowDebugAtProd": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "dnsCacheMaxAge": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+    "request": {
+      "timeout": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketKeepAliveTimeout": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "freeSocketKeepAliveTimeout": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "maxSockets": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "maxFreeSockets": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "coreMiddleware": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "workerStartTimeout": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "port": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js",
+      "hostname": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+    }
+  },
+  "clusterClient": {
+    "responseTimeout": "c:\\xampp\\htdocs\\ifYou\\document\\egg\\1入门\\example\\node_modules\\egg\\config\\config.default.js"
+  }
+}
