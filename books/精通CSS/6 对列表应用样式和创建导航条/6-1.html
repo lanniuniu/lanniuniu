@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>Title</title>
+    <style>
+        /*
+        列表
+        1.list-style-image 设为none  再设置背景图像
+        2.垂直导航条 使用列表
+        3.水平导航条 使用列表
+        4.导航下拉菜单
+         */
+        li,ul{
+            margin: 0;
+            padding: 0;
+            background: #5d79e9;
+            border-radius: 5px;
+            line-height: 30px;
+        }
+        .nav li{
+            float: left;
+            width: 8rem;
+            height: 30px;
+            text-align: center;
+            background: #5d79e9;
+        }
+        .menu{
+            position: absolute;
+            left: -999rem;
+        }
+        .menu li{
+            float: none;
+        }
+        .nav>li:hover .menu{
+            left: auto;
+        }
+
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+        a:hover{
+            cursor: default;
+        }
+        li{
+            list-style-type: none;
+        }
+        li >ul{
+            /*float: left;*/
+        }
+
+
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li><a href="#">1</a>
+        <ul class="menu">
+            <li>1.1</li>
+            <li>1.2</li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">2</a>
+        <ul class="menu">
+            <li>2.1</li>
+            <li>2.2</li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">3</a>
+        <ul class="menu">
+            <li>3.1</li>
+            <li>3.2</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
