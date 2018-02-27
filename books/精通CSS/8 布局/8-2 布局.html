@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lanniuniu">
+    <meta name="generator" content="phpstorm">
+    <title>Title</title>
+    <style>
+        /*
+        流式布局
+        使用百分比和设置最大最小宽度
+
+        弹性布局
+        设置根节点字号  从而使用rem或em
+
+        流式和弹性图像
+        使用百分比宽度设置图像宽度 同时设置最大宽度避免图像失真
+
+        clientWidth clientHeight 可以看到宽度 不包括滚动条
+
+         */
+        .div{
+            width: 100rem;
+            height: 30px;
+            background-color: mediumpurple;
+        }
+        body{
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+<iframe src="8-1%20计划布局.html" frameborder="0"></iframe>
+<div class="div">
+
+</div>
+<script>
+    (function () {
+        let clientWidth = document.body.clientWidth;
+        document.querySelector("html").style.fontSize = `${clientWidth/100}px`
+    })()
+</script>
+</body>
+</html>
