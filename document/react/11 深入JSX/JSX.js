@@ -57,4 +57,11 @@ function App2() {
 
 /*
 子代
+1.字符串常量
+props.children 就是该字符串常量
+2.JSX
+通过子代嵌入更多的 JSX 元素，这对于嵌套显示组件非常有用
+3.JavaScript表达式
+以将任何 {} 包裹的 JavaScript 表达式作为子代传递。
+4.布尔值、Null 和 Undefined 被忽略
  */
