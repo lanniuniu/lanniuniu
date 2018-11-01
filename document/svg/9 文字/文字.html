@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>text</title>
+</head>
+<body>
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <text x="20" y="20" text-anchor="end">Hello World!</text>
+  <text>
+    <tspan rotate="10,20,30,40,50" x="20" y="40" font-weight="bold" fill="red">This is bold and red</tspan>
+  </text>
+</svg>
+<script>
+  /*
+  在SVG中有两种截然不同的文本模式. 一种是写在图像中的文本，另一种是SVG字体。
+   */
+
+  /*
+  基础
+  属性text-anchor，可以有这些值：start、middle、end或inherit，允许决定从这一点开始的文本流的方向。
+  和形状元素类似，属性fill可以给文本填充颜色，属性stroke可以给文本描边，形状元素和文本元素都可以引用渐变或图案
+   */
+
+  /*
+  设置字体属性
+  像css那样可以有各种属性
+   */
+
+  /*
+  和文本相关的元素  tspan tref textPath
+  tspan
+  该元素用来标记大块文本的子部分，它必须是一个text元素或别的tspan元素的子元素。
+  x
+  y
+  dx
+  dy
+  rotate 把所有的字符旋转一个角度。如果是一个数列，则使每个字符旋转分别旋转到那个值，剩下的字符根据最后一个值旋转。
+    textLength 这是一个很模糊的属性，给出字符串的计算长度。它意味着如果它自己的度量文字和长度不满足这个提供的值，则允许渲染引擎精细调整字型的位置。
+
+  tref
+    tref元素允许引用已经定义的文本，高效地把它复制到当前位置。你可以使用xlink:href属性，把它指向一个元素，取得其文本内容。你可以独立于源样式化它、修改它的外观。
+  textPath
+  该元素利用它的xlink:href属性取得一个任意路径，把字符对齐到路径，于是字体会环绕路径、顺着路径走：
+   */
+</script>
+</body>
+</html>
