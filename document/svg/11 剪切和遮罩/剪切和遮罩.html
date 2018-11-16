@@ -5,10 +5,40 @@
     <title>Title</title>
 </head>
 <body>
+
+<!--利用clip-path来剪切-->
+<svg width="300" height="300">
+    <defs>
+        <clipPath id="cut-off-bottom">
+            <rect x="0" y="0" width="200" height="100"/>
+        </clipPath>
+    </defs>
+    <circle cx="100" cy="100" r="100" clip-path="url(#cut-off-bottom)"/>
+</svg>
+
+<!--利用mask元素遮罩-->
+<svg width="300" height="300">
+    <defs>
+        <linearGradient id="Gradient">
+            <stop offset="0" stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" stop-opacity="1" />
+        </linearGradient>
+        <mask id="Mask">
+            <rect x="0" y="0" width="200" height="200" fill="url(#Gradient)"  />
+        </mask>
+    </defs>
+
+    <rect x="0" y="0" width="200" height="200" fill="green" />
+    <rect x="0" y="0" width="200" height="200" fill="red" mask="url(#Mask)" />
+</svg>
 <script>
     /*
     Clipping用来移除在别处定义的元素的部分内容。在这里，任何半透明效果都是不行的。它只能要么显示要么不显示。
-    Masking允许使用透明度和灰度值遮罩计算得的软边缘。 
+    Masking允许使用透明度和灰度值遮罩计算得的软边缘。
+
+    使用opacity来定义元素的透明度
+    fill-opacity和stroke-opacity 填充和描边的透明度
+    所有的SVG元素的初始display值都是inline。
      */
 </script>
 </body>
