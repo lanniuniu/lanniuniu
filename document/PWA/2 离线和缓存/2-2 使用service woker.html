@@ -117,7 +117,65 @@
 
     /*
     Service Worker 版本更新
+
+    默认的策略
+    如果有更新，会安装新的service worker，而旧的Service Worker 仍然在运行，新的安装完成后 进去waiting状态 知道所有打开的
+    页面都关闭 旧的自动停止 新的才会在重新打开的页面生效
+
+    自动更新所有页面
+    在install事件中执行self.skipWaiting() 方法跳过waiting，直接进入activate阶段
+    在activate事件发生时 执行self.clients.claim() 更新所有客户端上的 Service Worker
+    因为浏览器缓存问题，当文件有了变化时，浏览器里还是旧的文件。这会导致更新得不到响应。
+    如遇到该问题，可尝试这么做：在 Web Server 上添加对该文件的过滤规则，不缓存或设置较短的有效期。
+
+    手动更新Service Worker
+    在页面中 Registration.update()
+
+    debug时更新
+    Service Worker 被载入后立即激活可以保证每次 /sw.js 为最新的。
+
+    自然而然的更新
+    如果该文件已 24 小时没有更新，当 Update 触发时会强制更新。这意味着最坏情况下 Service Worker 会每天更新一次。
      */
+
+    // 安装阶段跳过等待，直接进入 active
+    self.addEventListener('install', (event)=>{
+        event.waitUntil(self.skipWaiting())
+    })
+    self.addEventListener('activate', (event)=>{
+        event.waitUntil(
+            Promise.all([
+                // 更新客户端
+                self.clients.claim(),
+                // 删除旧版本的caches
+                // caches相关的全部是Promise
+                caches.keys().then((cacheList)=>{
+                    return Promise.all(
+                        cacheList.map((cacheName)=>{
+                            if (cacheName !== 'my-test-cache-v1') {
+                                return caches.delete(cacheName)
+                            }
+                        })
+                    )
+                })
+            ])
+        )
+    })
+
+    // 手动
+    const version = '1.0.1'
+    navigator.serviceWorker.register('/sw,js').then((reg)=>{
+        if(localStorage.getItem('sw_version') !== version){
+            reg.update().then( () => {
+                localStorage.setItem('sw_version', version)
+            })
+        }
+    })
+
+    // debug时更新
+    self.addEventListener('install', () => {
+        self.skipWaiting()
+    });
 </script>
 </body>
 </html>
