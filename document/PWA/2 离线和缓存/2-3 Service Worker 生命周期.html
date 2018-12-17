@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    激活后的 Service Worker 可以监听当前域下的功能性事件，
+    比如资源请求（fetch）、推送通知（push）、后台同步（sync）
+     */
+
+    /*
+    如何工作
+    1、注册
+    2、开始运行在ServiceWorkerGlobalScope 环境中，和浏览器主线程独立，无DOM访问能力
+    3、安装 缓存静态资源 不成功就无法激活
+    4、激活 收到active事件 主要处理旧版本的Service Worker脚本
+    5、可以控制页面了～
+     */
+
+    /*
+    生命周期
+    1、安装中
+        注册完毕就之后就开始安装
+        event.waitUntil()：传入一个 Promise 为参数，等到该 Promise 为 resolve 状态为止。
+        self.skipWaiting()：self 是当前 context 的 global 变量，
+        执行该方法表示强制当前处在 waiting 状态的 Service Worker 进入 activate 状态。
+    2、安装后
+        等待其他的service Worker 被关闭
+    3、激活中
+        等待被激活
+        event.waitUntil()：传入一个 Promise 为参数，等到该 Promise 为 resolve 状态为止。
+        self.clients.claim()：在 activate 事件回调中执行该方法表示取得页面的控制权,
+        这样之后打开页面都会使用版本更新的缓存。旧的 Service Worker 脚本不再控制着页面，之后会被停止。
+    4、激活后
+        可以处理功能性的事件 fetch (请求)、sync (后台同步)、push (推送)
+    5、废弃
+        这个状态表示一个 Service Worker 的生命周期结束
+        原因：
+        安装 (install) 失败
+        激活 (activating) 失败
+        新版本的 Service Worker 替换了它并成为激活状态
+     */
+
+    /*
+    支持的事情
+    install
+    active
+    message 通过postMessage API 可以实现对页面主线程 进行通信 从而操作DOM
+    fetch  当浏览器在当前指定的 scope 下发起请求时，会触发 fetch 事件，
+        并得到传有 response 参数的回调函数，回调中就可以做各种代理缓存的事情了。
+    sync push 事件是为推送准备的。 依赖 Notification API 和 PUSH API
+        唤醒用户
+    push（实验性功能） sync 事件由 background sync (后台同步)发出。
+     */
+</script>
+</body>
+</html>

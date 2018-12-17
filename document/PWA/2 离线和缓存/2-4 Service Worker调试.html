@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    常见的关注点
+    1、代码是否报错
+    2、SW能否顺利更新
+    3、在不同机型上的兼容性问题
+    4、不同类型资源的何求的缓存策略的验证
+     */
+
+    /*
+    debug环境下的开发跳过等待状态
+    为了让浏览器检测到SW变化，在调试工具中，勾选Update on reload
+
+     */
+    self.addEventListener('install', () => {
+        if (ENV === 'develop') {
+            self.skipWaiting();
+        }
+    })
+
+    /*
+    借助Chrome 浏览器debug
+     */
+
+    /*
+    查看SW缓存内容
+    Service Worker 使用 Cache API 缓存只读资源
+    在chrome调试工具中，查看Cache
+     */
+
+    /*
+    网络跟踪
+    SW的fetch请求 都会在chrome network中标注出来
+     */
+</script>
+</body>
+</html>
