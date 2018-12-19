@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    自定义名称
+    PWA在通过应用安装横幅引导用户安装 app，以及被添加到主屏幕时，
+    需要显示应用名称以便用户将其与其他应用区分开来
+    name String 应用名称，用于安装横幅、启动画面显示
+    short_name String 应用短名称，用于主屏幕显示
+     */
+
+    /*
+    自定义图标
+    icons: Array.ImageObject应用图标列表
+    ImageObject 的属性值包括：
+        src: String 图标url
+        type: String 图标的mime类型
+        sizes: String 图标尺寸
+
+    当PWA添加到主屏幕时，浏览器会根据有效图标的 sizes 字段进行选择。
+    首先寻找与显示密度相匹配并且尺寸调整到 48dp 屏幕密度的图标；如果未找到任何图标，
+    则会查找与设备特性匹配度最高的图标；如果匹配到的图标路径错误，将会显示浏览器默认 icon。
+    所以设置的图片大小都是48的倍数
+     */
+
+    /*
+    设置启动网址
+    start_url String 应用启动地址
+    如果不填这个属性，会把当前的地址添加到桌面
+     */
+
+    /*
+    设置作用域
+    scope String 设置某些网页为PWA 其他网页仍然为普通页面
+    scope 应遵循如下规则：
+        1、如果没有在 manifest 中设置 scope，则默认的作用域为 manifest.json 所在文件夹；
+        2、scope 可以设置为 ../ 或者更高层级的路径来扩大PWA的作用域；
+        3、start_url 必须在作用域范围内；
+        4、如果 start_url 为相对地址，其根路径受 scope 所影响；
+        5、如果 start_url 为绝对地址（以 / 开头），则该地址将永远以 / 作为根地址；
+     */
+</script>
+</body>
+</html>

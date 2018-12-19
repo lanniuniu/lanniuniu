@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    @media all and (display-mode: fullscreen) {
+        body {
+            margin: 0;
+        }
+    }
+
+    @media all and (display-mode: standalone) {
+        body {
+            margin: 1px;
+        }
+    }
+
+    @media all and (display-mode: minimal-ui) {
+        body {
+            margin: 2px;
+        }
+    }
+
+    @media all and (display-mode: browser) {
+        body {
+            margin: 3px;
+        }
+    }
+</style>
+<body>
+<script>
+    /*
+    通过对 manifest.json 进行相应配置，可以提升 PWA 从主屏幕启动时的应用体验。
+     */
+
+    /*
+    添加启动画面
+    在这个过程中，由于页面未加载完毕，因此屏幕将显示空白并且看似停滞。
+    如果是从网络加载的页面资源，白屏过程将会变得更加明显。
+    因此 PWA 提供了启动画面功能，用标题、颜色和图像组成的画面来替代白屏，提升用户体验。
+    1、设置图像和标题
+        图像选取最接近128dp的图片
+        标题去name
+    2、设置启动背景颜色
+        background_color: {Color} css色值
+    3、设置启动显示类型
+        display standalone 或 fullscreen
+     */
+
+    /*
+    设置显示类型
+    display String
+        1、fullscreen 应用的显示界面将占满整个屏幕
+        2、standalone 浏览器相关UI（如导航栏、工具栏等）将会被隐藏
+        3、minimal-ui 显示形式与standalone类似，浏览器相关UI会最小化为一个按钮，不同浏览器在实现上略有不同
+        4、browser 浏览器模式，与普通网页在浏览器中打开的显示一致
+
+    CSS中可以通过 display-mode 这个媒体查询条件去指定在不同的显示类型下不同的显示样式
+     */
+
+    /*
+    指定页面显示方向
+
+    由于不同的设备的宽高比不同，因此对于“横屏”、“竖屏”不能简单地通过屏幕旋转角去定义。
+    如对于手机来说，90° 和 270° 为横屏，而在某些平板电脑中，0° 和 180° 才是横屏。
+    因此需要通过应用视窗去定义。
+    orientation
+        1、landscape-primary 横屏  1和2差180度
+        2、landscape-secondary 横屏
+        3、portrait-primary 竖屏 3和4差180度
+        4、portrait-secondary 竖屏
+        5、landscape 横屏 自动
+        6、portrait 竖屏 自动
+        7、natural 当前屏幕旋转角为 0° 时所对应的显示方向
+        8、any 根据屏幕旋转角自由切换
+     */
+
+    /*
+    设置主题颜色
+    theme_color
+    可以通过该属性来控制浏览器 UI 的颜色。
+    比如 PWA 启动画面上状态栏、内容页中状态栏、地址栏的颜色，会被 theme_color 所影响。
+     */
+</script>
+</body>
+</html>

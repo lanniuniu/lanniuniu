@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    获取授权
+    在订阅消息之前，浏览器需要得到用户授权，同意后才能使用消息推送服务。
+
+    两种方式
+    1、在订阅之前先获取用户授权，使用Notification.requestPermission
+    2、如果不选择使用方法1，在正式订阅时浏览器也会自动弹出，对于开发者而言不需要显式调用
+     */
+    function askPermission() {
+        // 值得注意的是，当用户允许或者拒绝授权后，后续都不会重复询问。 想要更改这个设置，需要手动设置
+        return new Promise((resolve, reject) => {
+            const permissionResult = Notification.requestPermission(res => {
+                // 旧版本
+                resolve(res)
+            })
+            if (permissionResult) {
+                // 新版本
+                permissionResult.then(resolve, reject);
+            }
+        }).then((permissionResult) => {
+            if (permissionResult !== 'granted') {
+                // 用户未授权
+            }
+        })
+    }
+
+    /*
+    订阅推送服务
+
+    applicationServerKey 应用的唯一标识
+
+    生成applicationServerKey的方法有两种：
+    1、在服务端使用 web-push 生成，在后续使用web-push发送消息一节中会详细介绍
+    2、访问https://web-push-codelab.appspot.com/快速生成
+
+    生成的applicationServerKey是base64编码后的字符串 需要转换为UInt8Array
+    还有私钥 不能暴露在页面上
+
+    推送订阅对象
+    拥有了服务端的唯一标识，浏览器可以开始向推送服务发起订阅请求
+    1、请求推送服务的地址对于开发者而言是无法指定的，完全由浏览器决定。
+    2、在请求发送之前，浏览器已经生成了一个推送订阅对象(PushSubscription)。
+        得到响应之后，会将推送服务生成的地址加入这个推送订阅对象中。
+
+    订阅消息的具体实现
+    1、注册SW
+    2、使用pushManager 添加订阅，浏览器向推送服务发送请求
+        参数：
+        userVisibleOnly，不允许静默的推送，所有推送都对用户可见，所以值为true
+        applicationServerKey，服务器生成的公钥
+    3、得到推送服务成功响应后，浏览器将推送服务返回的 endpoint 加入推送订阅对象，向服务器发送这个对象供其存储
+
+    非标准浏览器
+    hack
+
+    取消订阅
+     */
+
+    // 将base64的applicationServiceKey 转换为UInt8Array
+    function urlBase64ToUInt8Array(base64String) {
+        const padding = '='.replace((4 - base64String.length % 4) % 4)
+        let base64 = (base64String + padding)
+            .replace(/\-/g, '+')
+            .replace(/_/g, '/');
+        // window.atob() 对用base-64编码过的字符串进行解码
+        // window.btoa() 方法来编码一个可能在传输过程中出现问题的数据，并且在接受数据之后，使用 atob() 方法再将数据解码。
+        const rawData = window.atob(base64)
+        const outputArray = new Uint8Array(rawData.length)
+        for (let i = 0, max = rawData.length; i < max; ++i) {
+            outputArray[i] = rawData.charCodeAt(i)
+        }
+        return outputArray
+    }
+    function subscribe(serviceWorkerReg) {
+        serviceWorkerReg.pushManager.subscribe({ // 2. 订阅
+            userVisibleOnly: true,
+            applicationServerKey: urlBase64ToUInt8Array('<applicationServerKey>')
+        })
+            .then((subscription) => {
+                // 3. 发送推送订阅对象到服务器，具体实现中发送请求到后端api
+                sendEndpointInSubscription(subscription)
+            })
+            .catch(function () {
+                if (Notification.permission === 'denied') {
+                    // 用户拒绝了订阅请求
+                }
+            })
+    }
+    if ('serviceWorker' in navigator && 'PushManager' in window) {
+        navigator.serviceWorker.register('./service-worker.js')  // 1. 注册Service Worker
+            .then((reg) => {
+
+            })
+        navigator.serviceWorker.ready.then((reg) =>{
+            subscribe(reg)
+        })
+    }
+
+    /*
+    发送消息
+    所有推送服务都遵循统一的调用标准 Web Push Protocol
+
+    消息推送安全性
+        1、保证服务端可靠性
+        2、消息内容加密
+
+    推送服务的响应
+        201表示接受调用
+        429 Too many requests
+        400 Invalid request
+        404 Not Found 订阅过期，需要在服务端删除保存的推送订阅对象
+        410 Gone 订阅失效，需要在服务端删除保存的推送订阅对象，并调用推送订阅对象的unsubscribe()方法
+        413 Payload size too large
+
+    使用web-push发送消息
+    1、使用 web-push 生成一对公私钥，还记得 pushManager 订阅时需要用到的applicationServerKey吗，我们需要公钥publicKey传递到订阅脚本所在的页面中。
+    2、调用setVapidDetails为 web-push 设置生成的公私钥
+    3、之前订阅时浏览器已经将推送订阅对象发送到了服务端，此时从数据库中取出。
+    4、调用sendNotification向推送服务发起调用请求，如果返回错误状态码，从数据库中删除保存的推送订阅对象。
+     */
+    const webpush = require('web-push')
+    const vapidKeys = webpush.generateVAPIDKeys() // 1.生成公私钥
+    webpush.setVapidDetails( // 2.设置公私钥
+        'mailto:1129638103@qq.com',
+        vapidKeys.publicKey,
+        vapidKeys.privateKey
+    )
+    // 3.从数据库中拿出之前保存的pushSubscription，具体实现省略
+    const pushSubscription = ''
+    // 4.向推送服务发起调用请求
+    webpush.sendNotification(pushSubscription, '推送消息内容')
+        .catch((err) => {
+            if (err.statusCode === 410) {
+                // 从数据库中删除推送订阅对象
+            }
+        })
+
+
+    /*
+    显示通知
+     */
+    self.addEventListener('push', (event) => {
+        if (event.data) {
+            const promiseChain = Promise.resolve(event.data.json())
+                .then(data => self.registration.showNotification(data.title, {}))
+            event.waitUntil(promiseChain)
+        }
+    })
+
+</script>
+</body>
+</html>
