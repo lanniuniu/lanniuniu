@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    默认情况下，行为如下
+    1、对通知内容进行点击，通知没有变化
+    2、新通知会在老通知之上显示 不会折叠
+    3、根据设备不同，通知弹出时会有声音或者震动
+    4、在某些设备上，通知经过一段时间会自动消失；在另外一些设备上则不会消失，直到用户点击关闭为止
+
+    但我们可以修改默认行为
+     */
+
+    /*
+    点击通知
+     */
+    self.addEventListener('notificationclick', event => {
+        let clickedNotification = event.notification
+        clickedNotification.close()
+
+        // 执行某些异步操作，等待它完成
+        let promiseChain = doSomething()
+        event.waitUntil(promiseChain)
+    })
+
+    /*
+    点击按钮
+     */
+    registration.showNotification('Actions Notification', {
+        actions: [
+            {
+                action: 'coffee-action',
+                title: 'Coffee',
+                icon: 'path/to/action-1.png'
+            },
+            {
+                action: 'doughnut-action',
+                title: 'Doughnut',
+                icon: 'path/to/action-2.png'
+            },
+            {
+                action: 'gramophone-action',
+                title: 'gramophone',
+                icon: 'path/to/action-3.png'
+            },
+            {
+                action: 'atom-action',
+                title: 'Atom',
+                icon: 'path/to/action-4.png'
+            }
+        ]
+    })
+    // 根据设置的action的值 来处理不同的事儿
+    self.addEventListener('notificationclick', event => {
+        if (!event.action) {
+            // 没有点击在按钮上
+            console.log('Notification Click.')
+            return
+        }
+        switch (event.action) {
+            case 'coffee-action':
+                console.log('User \'s coffee.')
+                break
+            case 'doughnut-action':
+                console.log('User \'s doughnuts.')
+                break
+            case 'gramophone-action':
+                console.log('User \'s music.')
+                break
+            case 'atom-action':
+                console.log('User \'s science.')
+                break
+            default:
+                console.log(`Unknown action clicked: '${event.action}'`)
+                break
+        }
+    })
+
+    /*
+    标签
+    默认情况下，我们每调用一次 showNotification 方法，就发送一条通知，每条之间都是独立的，互相展开的。
+    因此可以想见，如果连续发送多条通知，用户的手机上会充满来自同一个网站的通知，
+    用户很容易产生负面情绪。
+    tag 的取值类型是字符串类型，是一个唯一的ID。两个相同ID的通知会被归类到一起。
+     */
+
+    /*
+    重新通知 renotify
+    renotify 配置项是和 tag 一同使用的。
+    在使用 tag 的同时，设置 renotify 为 true 可以让浏览器在替换通知时提示声音或者震动。
+     */
+
+    /*
+    静默通知 silent
+     */
+
+    /*
+    用户交互 requireInteraction
+    默认情况下，PC下的Google Chrome在展现通知一部分时间后隐藏通知；
+    而Android系统上的Google Chrome会一直显示通知，直到用户交互，例如点击关闭按钮。
+     */
+    registration.showNotification('Require Interaction Notification', {
+        body: 'With "requireInteraction: \'true\'".',
+        // 必须要用户交互才会消失通知
+        requireInteraction: true
+    });
+</script>
+</body>
+</html>

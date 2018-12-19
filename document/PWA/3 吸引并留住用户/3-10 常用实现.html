@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    通知关闭事件
+    notificationclose 用于分析用户行为
+     */
+    self.addEventListener('notificationclose', event => {
+        let dismissedNotification = event.notification
+        let promiseChain = notificationCloseAnalytics()
+        event.waitUntil(promiseChain)
+    })
+
+    /*
+    通知事件的数据传递
+
+    将通知事件的数据传递到SW
+
+    data属性
+     */
+    registration.showNotification('Notification With Data', {
+        body: 'This notification has data attached to it that is printed to the console when it\'s clicked.',
+        data: {
+            time: (new Date()).toString(),
+            message: 'Hello World!'
+        }
+    })
+    const notificationData = event.notification.data
+    console.log('The data notification had the following parameters:')
+    Object.keys(notificationData).forEach(key => {
+        console.log(`  ${key}: ${notificationData[key]}`)
+    })
+
+    /*
+    打开页面
+    clients.openWindow()
+     */
+    let examplePage = '/demos/notification-examples/example-page.html';
+    let promiseChain = clients.openWindow(examplePage);
+    event.waitUntil(promiseChain);
+
+    /*
+    激活窗口
+     */
+    let urlToOpen = new URL(examplePage, self.location.origin).href
+
+    // Clients 接口提供对 Client 对象的访问. 通过在  service worker 中使用 self.clients 访问它.
+    let promiseChain = clients.matchAll({
+        type: 'window',
+        includeUncontrolled: true
+    })
+        .then(windowClients => {
+            let matchingClient = null
+
+            for (let i = 0, max = windowClients.length; i < max; i++) {
+                let windowClient = windowClients[i]
+                if (windowClient.url === urlToOpen) {
+                    matchingClient = windowClient
+                    break
+                }
+            }
+
+            return matchingClient
+                ? matchingClient.focus()
+                : clients.openWindow(urlToOpen)
+        })
+    event.waitUntil(promiseChain)
+
+    /*
+    合并通知
+     */
+    const userName = 'X'
+    let promiseChain = registration.getNotifications() // 获取所有的通知
+        .then(notifications => {
+            let currentNotification
+            for(let i = 0, max = notifications.length; i < max; i++) {
+                if (notifications[i].data && notifications[i].data.userName === userName) {
+                    currentNotification = notifications[i]
+                    break
+                }
+            }
+            return currentNotification
+        })
+    promiseChain.then(currentNotification => {
+        let notificationTitle
+        let options = {
+            icon: userIcon
+        }
+
+        if (currentNotification) {
+            // 找到之前X发送信息的通知，整合通知。
+            let messageCount = currentNotification.data.newMessageCount + 1
+
+            options.body = `You have ${messageCount} new messages from ${userName}.`
+            options.data = {
+                userName: userName,
+                newMessageCount: messageCount
+            }
+            notificationTitle = `New Messages from ${userName}`
+
+            // 把之前的信息删除
+            currentNotification.close()
+        }
+        else {
+            // 没找到，则常规处理
+            options.body = `"${userMessage}"`
+            options.data = {
+                userName: userName,
+                newMessageCount: 1
+            }
+            notificationTitle = `New Message from ${userName}`
+        }
+        return registration.showNotification(notificationTitle, options)
+    })
+
+    /*
+    不要总是发送通知
+    1、是用户正在浏览我们的站点时
+     */
+
+    function isClientFocused() {
+        return clients.matchAll({
+            type: 'window',
+            includeUncontrolled: true
+        })
+            .then(windowClients => {
+                let clientIsFocused = false
+
+                for (let i = 0, max = windowClients.length; i < max; i++) {
+                    if (windowClients[i].focused) {
+                        clientIsFocused = true
+                        break
+                    }
+                }
+
+                return clientIsFocused
+            })
+    }
+    const promiseChain = isClientFocused()
+        .then(clientIsFocused => {
+            // 窗口处于激活状态，不需要发送通知
+            if (clientIsFocused) {
+                console.log('Don\'t need to show a notification.');
+                return;
+            }
+
+            // 需要发送通知
+            return self.registration.showNotification('Had to show a notification.');
+        });
+
+    event.waitUntil(promiseChain)
+
+    /*
+    向页面发送信息
+     */
+    const promiseChain = isClientFocused()
+        .then(clientIsFocused => {
+            // 如果处于激活状态，向页面发送数据
+                if (clientIsFocused) {
+                windowClients.forEach(windowClient => {
+                    windowClient.postMessage({
+                        message: 'Received a push message.',
+                        time: new Date().toString()
+                    })
+                })
+            }
+            // 否则发送通知
+            else {
+                return self.registration.showNotification('No focused windows', {
+                    body: 'Had to show a notification instead of messaging each page.'
+                })
+            }
+        })
+
+    event.waitUntil(promiseChain)
+    navigator.serviceWorker.addEventListener('message', event => {
+        console.log('Received a message from service worker: ', event.data)
+    })
+</script>
+</body>
+</html>

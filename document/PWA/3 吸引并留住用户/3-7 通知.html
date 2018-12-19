@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    使用方法
+    1、检测浏览器兼容性，获取通知权限
+    2、注册 service worker ，获取注册对象
+    3、使用 showNotification 方法弹出通知
+     */
+
+    window.addEventListener('load', () => {
+        if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+            // 不支持SW或者push
+            return
+        }
+        let PromiseChain = new Promise((resolve, reject) => {
+            const permissionPromise = Notification.requestPermission(result => {
+                resolve(result)
+            })
+            if (permissionPromise) {
+                permissionPromise.then(resolve)
+            }
+        }).then(result => {
+            if (result === 'granted') {
+                execute()
+            }
+            else {
+                console.log('no permission')
+            }
+        })
+    })
+    function registerServiceWorker() {
+        return navigator.serviceWorker.register('service-worker.js')
+            .then(registration => {
+                console.log('Service worker successfully registered.')
+                return registration
+            })
+            .catch(err => {
+                console.error('Unable to register service worker.', err)
+            })
+    }
+    function execute() {
+        registerServiceWorker().then(registration => {
+            registration.showNotification('Hello World!')
+        })
+    }
+
+    /*
+    参数
+    title 必填 通知的标题
+    options 选填 众多配置项对象
+        {
+            视觉相关
+            主要涉及通知的各类视觉相关的配置项，从而展现不同样式的通知，例如标题，内容，图标，图片等等。
+            "body": "<String>",
+            "icon": "<URL String>",
+            "image": "<URL String>",
+            "badge": "<URL String>",
+            "vibrate": "<Array of Integers>",
+            "sound": "<URL String>",
+            "dir": "<String of 'auto' | 'ltr' | 'rtl'>",
+
+            行为相关
+            主要涉及通知的行为控制，例如点击通知，多个通知的折叠，通知弹出时的声音等等。
+
+            "tag": "<String>",
+            "data": "<Anything>",
+            "requireInteraction": "<boolean>",
+            "renotify": "<Boolean>",
+            "silent": "<Boolean>",
+
+            视觉行为均会影响
+            "actions": "<Array of Strings>",
+
+            定时发送时间戳
+            "timestamp": "<Long>"
+        }
+
+     */
+
+</script>
+</body>
+</html>
