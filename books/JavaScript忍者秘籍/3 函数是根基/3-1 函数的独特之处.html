@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    函数式特性
+    1、函数是第一型对象：对象拥有的特性，函数基本上都拥有
+    2、浏览器都事件查询
+    3、回调
+     */
+
+    /*
+    比较器排序
+    函数可以当作参数
+     */
+    let a = [1, 3, 2]
+    a.sort((aa, bb) => {
+        return aa - bb
+    })
+    a.sort((aa, bb) => {
+        return bb - aa
+    })
+</script>
+</body>
+</html>
