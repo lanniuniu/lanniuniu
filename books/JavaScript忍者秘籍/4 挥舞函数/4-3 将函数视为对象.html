@@ -7,7 +7,40 @@
 <body>
 <script>
     /*
-    函数存储
+    函数同对象一样，可以拥有属性
+
+    函数存储：将函数储存在对象中
+
+    自记忆函数
+    1、在函数调用以前就拥有计算结构 享有性能优势
+    2、为了提升内存，任何类型的缓存都需要牺牲内存
+     */
+    const computer = (value) => {
+        if (!computer.answers) {
+            computer.answers = {}
+        }
+        if (computer.answers[value]) {
+            return computer.answers[value]
+        }
+        /*
+        do something
+         */
+    }
+
+    /*
+    缓存记忆DOM元素
+    记忆缓存的代码非常简单 不会增加整个查询过程的复杂性
+    做性能分析 发生了5倍的性能提升
+     */
+    const getElements = (name) => {
+        if (!getElements.cache) {
+            getElements.cache = {}
+        }
+        return getElements.cache[name] = getElements.cache[name] || document.getElementsByName(name)
+    }
+
+    /*
+    伪造数组方法
      */
 </script>
 </body>

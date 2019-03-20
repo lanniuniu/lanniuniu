@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    1、使用apply调用可变参数的函数
+     */
+
+    /*
+    2、函数重载
+     */
+    function addMethods(object, name, fn) {
+        var old = object[name] // 保留原有函数，因为调用的时候，可能不匹配传入参数的个数
+        object.name = function () { // 创建一个新匿名函数作为新方法
+            if (fn.length === arguments) { // 如果形参和实参个数相同，直接调用
+                return fn.apply(this, arguments)
+            } else if (typeof old === 'function') { // 不匹配，则调用原有的函数
+                return old.apply(this, arguments)
+            }
+        }
+    }
+</script>
+</body>
+</html>
