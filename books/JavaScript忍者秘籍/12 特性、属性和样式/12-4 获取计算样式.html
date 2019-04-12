@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    IE9和IE9之后的
+    window.getComputedStyle(element) 返回可以进行属性查询的借口 然后使用getPropertyValue()
+    来检索特定样式
+
+    IE9之前的
+    元素的currentStyle属性
+     */
+
+    /**
+     * 查询当时的样式
+     * @param element
+     * @param styleName
+     * @returns {string}
+     */
+    const getCurrentStyle = (element, styleName) => {
+        if (window.hasOwnProperty('getComputedStyle')) {
+            // ie9 及其以后
+            return getComputedStyle(element).getPropertyValue(styleName)
+        } else if (element.currentStyle) {
+            // ie9之前
+            return element.currentStyle['styleName']
+        }
+    }
+</script>
+</body>
+</html>
