@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    DOM Model 与 IE Model的不同 导致对event事件会用不同的操作
+     */
+
+    /*
+    DOM Model       IE Model                代表意义
+    target          srcElement              原始源
+    relatedTarget   toElement(fromElement)  事件触发的关联元素，如mouseover等
+    preventDefault  returnValue设置为空       阻止默认行为发生
+    stopPropagation cancelBubble设置为true    阻止冒泡
+    pageX(pageY)    clientX(Y) scrollTop/Left clinetTop/Left 算出pageX/Y
+    which           charCode(keyCode)       键盘事件的按键码
+    button          位掩码（左1 右2 中4）       鼠标点击
+     */
+</script>
+</body>
+</html>
