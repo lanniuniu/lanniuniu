@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // d3 式的函数式编程
+    const D3Function = (color) => {
+        let instance = {}
+        instance.render = () => {
+            console.log(1)
+            const p = document.createElement('p')
+            p.style.color = color
+            p.innerText = '111'
+            document.body.insertAdjacentElement('beforeend', p)
+            return instance
+        }
+        instance.h1 = (text) => {
+            console.log(2)
+            const p = document.createElement('h1')
+            p.style.color = color
+            p.innerText = text
+            document.body.insertAdjacentElement('beforeend', p)
+            return instance
+        }
+        instance.h6 = (text) => {
+            console.log(3)
+            const p = document.createElement('h6')
+            p.style.color = color
+            p.innerText = text
+            document.body.insertAdjacentElement('beforeend', p)
+            return instance
+        }
+        return instance
+    }
+    const hua = D3Function('red').h1('h1').h6('h6')
+    hua.render()
+
+    /*
+    工作原理
+    1、JavaScript中 函数即对象
+        和普通对象的区别就是 函数可以执行 有两个隐藏属性 函数上下文和函数代码
+    2、 静态变量作用域
+    3、可变参数函数
+    4、函数级联调用 每个子函数都返回了实例 所以可以级联调用
+     */
+
+</script>
+</body>
+</html>
