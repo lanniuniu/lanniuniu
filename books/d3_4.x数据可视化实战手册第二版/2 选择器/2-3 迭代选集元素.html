@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script></head>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<script>
+    d3.selectAll('p')
+        .each(function (p, j) {
+            console.log(this)
+            d3.select(this).append('span').text(j)
+        })
+
+    /*
+    selection.each(d, i)
+        d: 这个元素的数据绑定
+        i: 索引值
+        this: 隐形参数 指向当前DOM元素引用
+
+    selection.append()
+        创建参数命名的新元素
+        添加的当前选集的最后个子元素后
+        返回添加后的当前选集
+     */
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<table>
+    <tr>
+        <th>time</th>
+        <th>time2</th>
+        <th>time3</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+</table>
+<script>
+    /*
+    node() 返回第一个DOM
+    nodes() 返回所有的元素节点对象
+     */
+    const tr = d3.selectAll('tr')
+    const header = tr.node()
+    const allTr = tr.nodes()
+    console.log(header)
+    console.log(allTr)
+</script>
+</body>
+</html>
