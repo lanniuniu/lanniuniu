@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<style>
+    .h-bar {
+        background-color: mediumpurple;
+        color: white;
+        margin: 1px 0;
+    }
+</style>
+<body>
+<script>
+    /*
+    D3在响应的DOM元素中添加了一个名为__data__的属性，并通过这个属性将数据和图形联系起来
+    而这个属性是动态修饰函数的第一个参数
+     */
+    const data = [10, 15, 30, 50, 80, 65, 55, 30, 20, 10, 8]
+    const render = (data) => {
+        const bars = d3.select('body')
+            .selectAll('div.h-bar')
+            .data(data)
+        bars.enter()
+            .append('div')
+            .attr('class', 'h-bar')
+            .merge(bars)
+            .style('width', (d) => {
+                return (d * 10) + 'px'
+            })
+            .text((d) => {
+                return d
+            })
+        bars.exit()
+            .remove() // 保证改变数据后，再跳用render函数时所有的图形和数据是同步的
+    }
+    setInterval(() => {
+        data.shift()
+        data.push(Math.round(Math.random() * 100))
+        render(data)
+    }, 1000)
+    render(data)
+</script>
+</body>
+</html>
