@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+    <style>
+        .h-bar {
+            height: 30px;
+            background-color: mediumpurple;
+            margin: 1px;
+            color: red;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="control">
+    <button onclick="load()">Generate Data Set</button>
+</div>
+<div id="content"></div>
+
+<script>
+    const render = data => {
+        d3.selectAll('div.h-bar').remove()
+        const bars = d3.select('#content').selectAll('div.h-bar').data(data)
+        bars.enter().append('div')
+            .attr('class', 'h-bar')
+            .style('width', d => {
+                return `${d.number}px`
+            })
+            .text(d => {
+                return d.number
+            })
+        bars.exit()
+            .remove()
+    }
+    const generateDatum = callback => {
+        setInterval(() => {
+            callback(null, {
+                number: Math.ceil(Math.random() * 500)
+            })
+        }, Math.ceil(Math.random() * 1000))
+    }
+    const load = () => {
+        const q = d3.queue()
+        for (let i = 0; i < 10; i++) {
+            q.defer(generateDatum)
+        }
+        q.awaitAll((error, data) => {
+            render(data)
+        })
+    }
+</script>
+</body>
+</html>

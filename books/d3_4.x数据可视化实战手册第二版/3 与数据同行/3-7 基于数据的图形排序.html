@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+    <style>
+        .h-bar {
+            margin: 2px;
+            background-color: mediumpurple;
+            color: red;
+            padding-left: 10px;
+        }
+        .selected {
+            border: 2px solid yellow;
+            position: relative;
+            right: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="control">
+    <button onclick="sort(compareByExpense)">
+        Sort By Expense
+    </button>
+    <button onclick="sort(compareByCategory)">
+        Sort By Category
+    </button>
+    <button onclick="sort()">
+        Clear
+    </button>
+</div>
+<script>
+    /*
+    使用sort排序
+    参数 a b表示两个需要进行比较的数据
+    返回 负数（a在b前面）整数（a在b后面）0（随机）
+     */
+
+    const data = [
+        {
+            expense: 10, category: 'Retail'
+        },
+        {
+            expense: 15, category: 'Gas'
+        },
+        {
+            expense: 30, category: 'Retail'
+        },
+        {
+            expense: 30, category: 'Dining'
+        },
+        {
+            expense: 81, category: 'Gas'
+        },
+        {
+            expense: 5, category: 'Retail'
+        },
+        {
+            expense: 35, category: 'Gas'
+        },
+        {
+            expense: 50, category: 'Dining'
+        }
+    ]
+    const render = (data, comparator) => {
+        const bars = d3.select('body').selectAll('div.h-bar').data(data)
+        bars.enter().append('div').attr('class', 'h-bar')
+        d3.selectAll('div.h-bar')
+            .style('width', d => {
+                return `${d.expense * 5}px`
+            })
+            .text(d => {
+                return d.category
+            })
+        if (comparator) {
+            bars.sort(comparator)
+        }
+    }
+    const compareByExpense = (a, b) => {
+        return a.expense < b.expense ? -1 : 1
+    }
+    const compareByCategory = (a, b) => {
+        return a.category < b.category ? -1 : 1
+    }
+    render(data)
+    const sort = comparator => {
+        render(data, comparator)
+    }
+</script>
+</body>
+</html>

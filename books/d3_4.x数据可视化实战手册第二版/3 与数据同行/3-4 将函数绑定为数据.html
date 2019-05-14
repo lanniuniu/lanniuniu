@@ -34,13 +34,13 @@
     const render = () => {
         const divs = d3.select('body').selectAll('div').data(newData)
         divs.enter().append('div')
-        divs.attr('class', 'v-bar')
-            .style('height', (d, i) => {
-                return `${d(i)}px`
-            })
-            .text((d, i) => {
-                return d(i)
-            })
+                    .attr('class', 'v-bar')
+                    .style('height', (d, i) => {
+                        return `${d(i)}px`
+                    })
+                    .text((d, i) => {
+                        return d(i)
+                    })
         divs.exit().remove()
     }
     setInterval(() => {

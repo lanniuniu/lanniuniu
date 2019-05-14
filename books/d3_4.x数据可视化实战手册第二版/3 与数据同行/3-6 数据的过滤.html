@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+    <style>
+        .h-bar {
+            margin: 2px;
+            background-color: mediumpurple;
+            color: red;
+            padding-left: 10px;
+        }
+        .selected {
+            border: 2px solid yellow;
+            position: relative;
+            right: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="control">
+    <button onclick="select('Retail')">
+        Retail
+    </button>
+    <button onclick="select('Gas')">
+        Gas
+    </button>
+    <button onclick="select('Dining')">
+        Dining
+    </button>
+    <button onclick="select()">
+        Clear
+    </button>
+</div>
+<script>
+    const data = [
+        {
+            expense: 10, category: 'Retail'
+        },
+        {
+            expense: 15, category: 'Gas'
+        },
+        {
+            expense: 30, category: 'Retail'
+        },
+        {
+            expense: 30, category: 'Dining'
+        },
+        {
+            expense: 81, category: 'Gas'
+        },
+        {
+            expense: 5, category: 'Retail'
+        },
+        {
+            expense: 35, category: 'Gas'
+        },
+        {
+            expense: 50, category: 'Dining'
+        }
+    ]
+
+    /*
+    selection.filter() 使用函数作为参数，
+     */
+
+    const render = (data, category) => {
+        const bars = d3.select('body').selectAll('div.h-bar').data(data)
+        bars.enter()
+            .append('div')
+            .attr('class', 'h-bar')
+            .style('width', d => {
+                return `${d.expense * 5}px`
+            })
+            .text(d => {
+                return d.category
+            })
+        d3.selectAll('div.h-bar').attr('class', 'h-bar')
+        bars.filter(d => {
+            return d.category === category
+        }).classed('selected', true)
+    }
+    render(data)
+    const select = category => {
+        render(data, category)
+    }
+</script>
+</body>
+</html>
