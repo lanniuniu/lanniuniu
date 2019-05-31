@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+    <style>
+        .fixed-cell {
+            border: 1px solid black;
+            display: block;
+            margin-bottom: 1px;
+        }
+    </style>
+</head>
+<body>
+<div id="time">
+
+</div>
+<script>
+    const start = new Date(2016, 0, 1),
+        end = new Date(2016, 11, 31),
+        range = [0, 200],
+        /*
+        时间尺度，其实是连续尺度
+         */
+        time = d3.scaleTime().domain([start, end]).rangeRound(range),
+        max = 12,
+        data = []
+    for (let i = 0; i < max; ++i) {
+        const date = new Date(start.getTime())
+        date.setMonth(start.getMonth() + i)
+        data.push(date)
+    }
+
+    const render = (date, scale, selector) => {
+        d3.select(selector).selectAll('div.fixed-cell').data(data)
+            .enter().append('div')
+            .classed('fixed-cell', true)
+            .style('margin-left', d => {
+                return `${scale(d)}px`
+            })
+            .html(d => {
+            /*
+            时间格式化
+            %x 日期部分 %X时间部分
+            等
+             */
+            const format = d3.timeFormat('%x')
+            return `${format(d)}<br>${scale(d)}px`
+        })
+    }
+    render(data, time, '#time')
+</script>
+</body>
+</html>

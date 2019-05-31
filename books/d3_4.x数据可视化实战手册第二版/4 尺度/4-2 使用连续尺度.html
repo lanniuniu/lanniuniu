@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+    <style>
+        .cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 50px;
+            margin-left: 2px;
+        }
+        div {
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+<div id="linear">f(n)=n</div>
+<div id="linearCapped">f(n) = an + b f(n)<=20 f(n)>=1</div>
+<div id="pow">f(n)=n ^ 2</div>
+<div id="powCapped">f(n) = a*n^2 + b  f(n)<=10 && f(n)>=1</div>
+<div id="log">f(n)=log(n)</div>
+<div id="logCapped">f(n)=a*log(n)+b</div>
+<script>
+    /*
+    连续尺度能够把一个连续的定义域映射到一个连续到值域
+    包括线性尺度、幂级尺度、对数尺度、时间尺度
+     */
+    const render = (data, scale, selector) => {
+        d3.select(selector).selectAll('div').data(data).enter()
+            .append('div').classed('cell', true).style('display', 'inline-block')
+            .text(d => {
+                return d3.format('.2')(scale(d), 2)
+            })
+    }
+
+    const max = 11, data = []
+    for (let i = 1; i < max; ++i) data.push(i)
+
+    // d3.scale.linear() 线性尺度 默认返回 定义域和值域均为[0, 1]
+    // f(n) = n
+    const linear = d3.scaleLinear().domain([1, 10]).range([1, 10])
+    render(data, linear, '#linear')
+
+    // f(n) = an + b f(n) = an + b f(n)>=1 f(n)<=20
+    // d3会自动计算a b的值 来满足不等式
+    const linearCapped = d3.scaleLinear().domain([1, 10]).range([1, 20])
+    render(data, linearCapped, '#linearCapped')
+
+    // d3.scale.pow() 幂级尺度 返回指数为1的默认幂级尺度
+    // f(n) = n ^ 2
+    // e+ 以10为底的指数
+    const pow = d3.scalePow().exponent(2)
+    render(data, pow, '#pow')
+
+    // f(n) = a*n^2 + b  f(n)<=10 && f(n)>=1
+    const powCapped = d3.scalePow().exponent(2).domain([1, 10])
+        .range([1, 10]) // 和range()大致一致，差别是会四舍五入取整
+    render(data, powCapped, '#powCapped')
+
+    // d3.scale.log() 对数尺度 默认返回底数为10的对数 f(n)=log(n)
+    const log = d3.scaleLog()
+    render(data, log, '#log')
+
+    // f(n)=a*log(n)+b f(n)<=10 && f(n)>=1
+    const logCapped = d3.scaleLog().domain([1,10]).rangeRound([1, 10])
+    render(data, logCapped, '#logCapped')
+</script>
+</body>
+</html>
