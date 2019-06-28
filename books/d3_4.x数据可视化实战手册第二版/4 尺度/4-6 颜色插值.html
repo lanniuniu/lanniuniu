@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<div id="color">
+    <span>linear color Interpolation<br></span>
+</div>
+<div id="color-diverge">
+    <span>Poly-Linear color Interpolation<br></span>
+</div>
+<div class="control-group">
+    <button onclick="render(data, divergingScale(5), '#color-diverge')">Pivot at 5</button>
+    <button onclick="render(data, divergingScale(10), '#color-diverge')">Pivot at 10</button>
+    <button onclick="render(data, divergingScale(15), '#color-diverge')">Pivot at 15</button>
+    <button onclick="render(data, divergingScale(20), '#color-diverge')">Pivot at 20</button>
+</div>
+<script>
+    const [max, data] = [21, []]
+    const colorScale = d3.scaleLinear().domain([0, max]).range(['white', '#4169e1'])
+    /* 分段线性尺度 是一种非均匀的线性尺度
+        它在一个线性尺度上提供多个线性域
+        divergingScale 结合了
+        d3.scaleLinear().domain([0, pivot])
+            .range(['white', '#4169e1'])
+            d3.scaleLinear().domain([pivot, max])
+            .range(['4169e1', 'white'])
+     */
+    const divergingScale = (pivot) => {
+        return d3.scaleLinear().domain([0, pivot, max])
+            .range(['white', '#4169e1', 'white'])
+    }
+    for (let i = 0; i < max; i++) data.push(i)
+
+    const render = (data, scale, selector) => {
+        const cells = d3.select(selector).selectAll('div.cell').data(data)
+        cells.enter().append('div').merge(cells).classed('cell', true)
+            .style('display', 'inline-block')
+            .style('width', '20px')
+            .style('text-align', 'center')
+            .style('background-color', d => {
+                return scale(d)
+            })
+            .text((d, i) => i)
+    }
+    render(data, colorScale, '#color')
+    render(data, divergingScale(5), '#color-diverge')
+</script>
+</body>
+</html>

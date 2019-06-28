@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="../d3.js"></script>
+    <style>
+
+    </style>
 </head>
 <body>
-<script></script>
+
+<script>
+    /*
+    插值器
+    定义：
+        给定函数f(x)在x0、x1、···、xn 处的值。现有x',其值在上述去值点区间。
+        那么，求f(x')近似值的过程就叫插值
+    D3内置了许多内置插值器
+    */
+
+    /*
+    数值插值器
+    返回一个函数
+     */
+    const interpolate = d3.interpolateNumber(0, 100) // 值域[1, 100]
+    console.log(interpolate(0.1))
+    console.log(interpolate(0.99))
+
+    const max = 11, data = []
+    const sizeScale = d3.scaleLinear().domain([0, max]).range([
+        'italic bold 12px/30px Georgia, serif',
+        'italic bold 120px/180px Georgia, serif',
+    ]) // 自动找到字符串的数字部分，进行线性数字插值
+    for (let i = 0; i < max; i++) data.push(i)
+    const render =  (data, scale, selector) => {
+        const cells = d3.select(selector).selectAll('div.cell').data(data)
+        cells.enter().append('div').classed('cell', true)
+            .style('display', 'inline-block')
+            .append('span').style('font', (d, i) => {
+                return scale(d)
+            })
+            .text((d, i) => i)
+    }
+    render(data, sizeScale, 'body')
+</script>
 </body>
 </html>
