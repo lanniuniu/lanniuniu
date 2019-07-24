@@ -7,7 +7,22 @@
 </head>
 <body>
 <script>
-    
+    const [max, data] = [21, []]
+    const compoundScale = d3.scalePow().exponent(2).domain([0, max])
+        .range([
+            {color: '#add8e6', height: '15px'},
+            {color: '#4169e1', height: '150px'},
+        ])
+    // 值域为复合尺度插值
+    for (let i = 0; i < max; i++) data.push(i)
+    const render = (data, scale, selector) => {
+        const bars = d3.select(selector).selectAll('div.cell').data(data)
+        bars.enter().append('div').classed('v-bar', true)
+            .style('height', d => scale(d).height)
+            .style('background-color', d => scale(d).color)
+            .text((d, i) => i)
+    }
+    render(data, compoundScale, document.querySelector('body'))
 </script>
 </body>
 </html>
