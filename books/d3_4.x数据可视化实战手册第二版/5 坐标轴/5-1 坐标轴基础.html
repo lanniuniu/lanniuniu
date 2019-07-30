@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<div>
+    <button onclick="renderAll(d3.axisBottom)">horizontal bottom</button>
+    <button onclick="renderAll(d3.axisTop)">horizontal top</button>
+    <button onclick="renderAll(d3.axisLeft)">vertical left</button>
+    <button onclick="renderAll(d3.axisRight)">vertical right</button>
+</div>
+<script>
+    let [height, width, margin, offset, svg] = [
+        500, 500, 25, 50
+    ]
+    let axisWidth = width - 2 * margin
+    const createSvg = () => {
+        svg = d3.select('body').append('svg')
+            .attr('class', 'axis')
+            .attr('width', width)
+            .attr('height', height)
+    }
+    /**
+     *
+     * @param fn d3.axisBottom 朝向函数
+     * @param scale
+     * @param i
+     */
+    const renderAxis = (fn, scale, i) => {
+        const axis = fn().scale(scale).ticks(5) // ticks 分成的尺度
+        svg.append('g')
+            .attr('transform', () => {
+                if ([d3.axisTop, d3.axisBottom].indexOf(fn) >= 0) {
+                    return `translate(${margin}, ${i * offset})`
+                } else {
+                    return `translate(${i * offset}, ${margin})`
+                }
+            }).call(axis) // 将axis对象传入d3.selection.call() 
+    }
+    const renderAll = (fn) => {
+        if (svg) svg.remove()
+        createSvg()
+        renderAxis(fn,
+            d3.scaleLinear().domain([0, 1000]).range([0, axisWidth]),
+            1)
+        renderAxis(fn,
+            d3.scalePow().exponent(2).domain([0, 1000]).range([0, axisWidth]),
+            2)
+        renderAxis(fn,
+            d3.scaleTime().domain([new Date(2016, 0, 1), new Date(2017, 0, 1)]).range([0, axisWidth]),
+            3)
+    }
+</script>
+</body>
+</html>
