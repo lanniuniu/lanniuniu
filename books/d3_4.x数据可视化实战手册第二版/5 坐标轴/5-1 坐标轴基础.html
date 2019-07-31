@@ -30,7 +30,7 @@
      * @param i
      */
     const renderAxis = (fn, scale, i) => {
-        const axis = fn().scale(scale).ticks(5) // ticks 分成的尺度
+        const axis = fn().scale(scale).ticks(5) // ticks 分成的尺度 可能会根据可用空间和他自己的计算 少几个或多几个
         svg.append('g')
             .attr('transform', () => {
                 if ([d3.axisTop, d3.axisBottom].indexOf(fn) >= 0) {
@@ -38,7 +38,7 @@
                 } else {
                     return `translate(${i * offset}, ${margin})`
                 }
-            }).call(axis) // 将axis对象传入d3.selection.call() 
+            }).call(axis) // 将axis对象传入d3.selection.call()
     }
     const renderAll = (fn) => {
         if (svg) svg.remove()

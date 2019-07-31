@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<script>
+    const [height, width, margin] = [500, 500, 25]
+    const axisWidth = width - 2 * margin
+    const svg = d3.select('body').append('svg')
+        .attr('class', 'axis')
+        .attr('width', width)
+        .attr('height', height)
+
+    const scale = d3.scaleLinear().domain([0, 1]).range([0, axisWidth])
+    const axis = d3.axisBottom().scale(scale)
+        .ticks(10) // 分成10格
+        .tickSize(12) // 默认6px 这里把刻度线的长度设置为12px
+        .tickPadding(10) // 设置刻度线和标注的距离
+        .tickFormat(d3.format('.0%')) // 标注的保留位数 这里的0 表示保留几位小数
+    svg.append('g').attr('transform', () => {
+        return `translate(${margin}, ${margin})`
+    }).call(axis)
+</script>
+</body>
+</html>
