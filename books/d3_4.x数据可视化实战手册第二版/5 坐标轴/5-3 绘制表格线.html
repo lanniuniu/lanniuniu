@@ -34,7 +34,7 @@
     }
     const renderYAxis = () => {
         const axisLength = height - 2 * margin
-        const scale = d3.scaleLinear().domain([0, 100]).range([0, axisLength])
+        const scale = d3.scaleLinear().domain([100, 0]).range([0, axisLength])
         const yAxis = d3.axisLeft().scale(scale)
         svg.append('g').attr('class', 'y-axis').attr('transform', () => {
             return `translate(${margin}, ${margin})`
