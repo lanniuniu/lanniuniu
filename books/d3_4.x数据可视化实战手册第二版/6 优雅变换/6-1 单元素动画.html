@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    /*
+    d3 过渡实现了一种基于插值的动画，插值提供了关键帧，而关键帧的过渡形成了动画
+     */
+    const duration = 5000
+    d3.select('body').append('div').classed('box', true)
+        .style('background-color', '#e9967a')
+        .transition() // 定义一个过渡
+        .duration(duration) // 过渡持续时间
+        .style('background-color', '#add8e6')
+        .style('margin-left', '600px')
+        .style('width', '100px')
+        .style('height', '100px')
+</script>
+</body>
+</html>

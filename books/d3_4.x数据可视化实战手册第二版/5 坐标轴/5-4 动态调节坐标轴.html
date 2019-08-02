@@ -30,8 +30,8 @@
         const max = Math.round(Math.random() * 100)
         xAxis.scale().domain([0, max]) // 更改坐标轴的定义域
         yAxis.scale().domain([max, 0])
-        svg.select('g.x-axis').transition().call(xAxis) // 使用call 更改视图
-        svg.select('g.y-axis').transition().call(yAxis)
+        svg.select('g.x-axis').transition().call(xAxis) // 使用call更改视图
+        svg.select('g.y-axis').transition().call(yAxis) // transition() 使用d3的转换
         renderXGridLines()
         renderYGridLines()
     }
