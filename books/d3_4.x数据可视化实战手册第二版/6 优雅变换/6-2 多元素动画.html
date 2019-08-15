@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+    <style>
+        .v-bar {
+            width: 30px;
+            background-color: #0e77ca;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<script>
+    /**
+     * 数据生成
+     * @param data
+     */
+    const [data, duration, chartHeight, chartWidth] = [[], 500, 100, 680]
+    let [id] = [0]
+
+    const push = data => {
+        data.push({
+            id: ++id,
+            value: Math.round(Math.random() * chartHeight)
+        })
+    }
+    //
+    const barLeft = i => {
+        return i * (30 + 2)
+    }
+
+    // bar高度
+    const barHeight = d => {
+        return d.value
+    }
+
+    for (let i = 0; i < 20; i++) push(data)
+    const render = data => {
+        const selection = d3.select('body').selectAll('div.v-bar')
+            .data(data, d => d.id) // data的第二个参数 称为对象标识函数 确保返回对象的一致性 才能有滑动效果
+        // enter
+        selection.enter()
+            .append('div')
+            .attr('class', 'v-bar')
+            .style('z-index', '0')
+            .style('position', 'absolute')
+            .style('top', `${chartHeight}px`)
+            .style('left', (d, i) => {
+                return `${barLeft(i + 1)}px` //
+            })
+            .style('height',`0px`)
+            .append('span')
+
+        // update
+        selection
+            .transition()
+            .duration(duration)
+            .style('top', d => {
+                return `${chartHeight - barHeight(d)}px`
+            })
+            .style('left', (d, i) => `${barLeft(i)}px`)
+            .style('height', d => {
+                return `${barHeight(d)}px`
+            })
+            .select('span')
+            .text(d => d.value)
+            .style('color', 'white')
+        // exit
+        selection.exit() // 返回没有被可视化的选集 即是最左边那个
+            .transition().duration(duration)
+            .style('left', (d, i) => `${barLeft(-1)}px`)
+            .remove()
+    }
+    setInterval(() => {
+        data.shift()
+        push(data)
+        render(data)
+    }, 2000)
+    render(data)
+    d3.select('body').append('div')
+        .attr('class', 'baseline')
+        .style('position', 'fixed')
+        .style('z-index', '1')
+        .style('top', `${chartHeight}px`)
+        .style('left', '0')
+        .style('width', `${chartWidth}px`)
+</script>
+</body>
+</html>
