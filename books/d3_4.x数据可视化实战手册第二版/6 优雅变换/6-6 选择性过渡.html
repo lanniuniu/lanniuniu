@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+    <style>
+        .fixed-cell {
+            width: 100px;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const [data, duration] = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'], 1500]
+    d3.select('body').selectAll('div').data(data).enter()
+    .append('div').attr('class', 'fixed-cell')
+    .style('top', (d, i) => `${40 * i}px`)
+    .style('background-color', 'steelblue')
+    .style('color', 'white')
+    .style('left', '500px')
+    .text(d => d)
+    .transition().duration(duration) // 仍然是级联过渡
+    .style('left', '10px')
+    .filter(d => d === 'C') // 通过filter 生成子选集
+    .transition().duration(duration)
+    .style('left', '500px')
+</script>
+</body>
+</html>

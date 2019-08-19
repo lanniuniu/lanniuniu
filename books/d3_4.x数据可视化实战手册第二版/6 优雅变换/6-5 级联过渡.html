@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<script>
+    const body = d3.select('body')
+
+    const teleports = s => {
+        s.transition().duration(1000)
+            .style('width', '200px')
+            .style('height', '1px')
+        .transition().duration(500)
+            .style('left', '600px')
+        .transition().duration(1000)
+            .style('left', '800px')
+            .style('height', '80px')
+            .style('width', '80px')
+    }
+
+    body.append('div').style('position', 'fixed')
+    .style('background-color', 'steelblue')
+    .style('left', '10px')
+    .style('width', '80px')
+    .style('height', '80px')
+    .call(teleports) // d3.selection.call 对一个D3选集调用该函数，保证复杂过渡效果对可重用性
+</script>
+</body>
+</html>
