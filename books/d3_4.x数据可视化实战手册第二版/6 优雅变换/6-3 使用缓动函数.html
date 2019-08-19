@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+    <style>
+        .fixed-cell {
+            width: 200px;
+            height: 40px;
+            position: absolute;
+        }
+        section {
+            position: relative;
+            left: 500px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    /*
+    过渡——时间的函数，时间进度（均匀，除非在黑洞）映射为数值的变化 形成了对象的运动、或者形变
+     */
+    const data = [
+        {
+            name: 'A',
+            fn: d3.easeLinear,
+        },
+        {
+            name: 'B',
+            fn: d3.easeCubic, // 默认
+        },
+        {
+            name: 'C',
+            fn: d3.easeCubicIn,
+        },
+        {
+            name: 'D',
+            fn: d3.easeSin,
+        },
+        {
+            name: 'E',
+            fn: d3.easeSinIn,
+        },
+        {
+            name: 'F',
+            fn: d3.easeExp,
+        },
+        {
+            name: 'G',
+            fn: d3.easeBack,
+        },
+        {
+            name: 'H',
+            fn: d3.easeBounce,
+        },
+        {
+            name: 'I',
+            fn: d3.easeElastic,
+        },
+        {
+            name: 'J',
+            fn: t => t ** 2,
+        },
+    ]
+    const colors = d3.scaleOrdinal(d3.schemeCategory20)
+    d3.select('body').append('section').selectAll('div').data(data).enter()
+        .append('div')
+        .attr('class', 'fixed-cell')
+        .style('top', (d, i) => `${i * 40}px`)
+        .style('background-color', (d, i) => colors(i))
+        .style('color', 'white')
+        .style('left', '500px')
+        .text(d => d.name)
+    d3.selectAll('div').each(function(d){ // 缓动函数不支持全局设置缓动，只能对每个函数进行设置
+        d3.select(this).transition()
+            .ease(d.fn) // d3提供缓动模式修饰符，能和任何缓动函数相结合形成特殊效果
+            // 可以自定义缓动函数 关于时间t的函数 定义域[0, 1]
+            .duration(1500)
+            .style('left', '10px')
+    })
+    /*
+    常见缓动模式修饰符
+    in: 默认
+    out: 反响
+    inout: 镜像
+    outin: 反向镜像
+     */
+
+</script>
+</body>
+</html>
