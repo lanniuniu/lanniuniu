@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<script>
+    /*
+
+     */
+    const [width, height, margin] = [500, 500, 50]
+    const x = d3.scaleLinear().domain([0, 10]).range([margin, width - margin])
+    const y = d3.scaleLinear().domain([0, 10]).range([height, margin])
+
+    const data = [
+        [
+            {
+                x: 0, y: 5
+            },
+            {
+                x: 1, y: 9
+            },
+            {
+                x: 2, y: 7
+            },
+            {
+                x: 3, y: 5
+            },
+            {
+                x: 4, y: 3
+            },
+            {
+                x: 6, y: 4
+            },
+            {
+                x: 7, y: 2
+            },
+            {
+                x: 8, y: 3
+            },
+            {
+                x: 9, y: 2
+            },
+        ],
+        d3.range(10).map(i => {
+            return {
+                x: i,
+                y: Math.sin(i) + 5
+            }
+        })
+    ]
+    const line = d3.line()
+        .x(d => x(d.x))
+        .y(d => y(d.y))
+    const svg = d3.select('body').append('svg')
+    svg.attr('height', height)
+       .attr('width', width)
+    svg.selectAll('path.line')
+        .data(data) // 由于可以选择到两个数据 所以data可以有两个数组
+        .enter()
+        .append('path')
+        .attr('class', 'line')
+        .attr('d', d => line(d))
+
+</script>
+</body>
+</html>

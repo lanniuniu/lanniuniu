@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<h4>Interpolation Mode:</h4>
+<div class="control-group"></div>
+<button onclick="render(d3.curveLinear)">linear</button>
+<button onclick="render(d3.curveLinearClosed)">linear closed</button>
+<button onclick="render(d3.curveStepBefore)">step before</button>
+<button onclick="render(d3.curveStepAfter)">step after</button>
+<button onclick="render(d3.curveBasis)">basis</button>
+<button onclick="render(d3.curveBasisOpen)">basis open</button>
+<script>
+    /*
+
+     */
+    const [width, height, margin] = [500, 500, 30]
+    const x = d3.scaleLinear().domain([0, 10]).range([margin, width - margin])
+    const y = d3.scaleLinear().domain([0, 10]).range([height - margin, margin])
+    const data = [
+        [
+            {
+                x: 0, y: 5
+            },
+            {
+                x: 1, y: 9
+            },
+            {
+                x: 2, y: 7
+            },
+            {
+                x: 3, y: 5
+            },
+            {
+                x: 4, y: 3
+            },
+            {
+                x: 6, y: 4
+            },
+            {
+                x: 7, y: 2
+            },
+            {
+                x: 8, y: 3
+            },
+            {
+                x: 9, y: 2
+            },
+        ],
+        d3.range(10).map(i => {
+            return {
+                x: i,
+                y: Math.sin(i) + 5
+            }
+        })
+    ]
+    const svg = d3.select('body').append('svg')
+    svg.attr('height', height)
+        .attr('width', width)
+
+    // renderAxis(svg)
+    const render = mode => {
+        const line = d3.line()
+            .x(d => x(d.x))
+            .y(d => y(d.y))
+            .curve(mode) // 线条生成器
+        svg.selectAll('path.line')
+            .data(data)
+            .enter()
+            .append('path')
+            .attr('class', 'line')
+            .attr('fill', 'none')
+            .attr('stroke', 'silver')
+        svg.selectAll('path.line')
+            .data(data)
+            .attr('d', (d) => {
+                return line(d)
+            })
+    }
+
+    const renderDots = svg => {
+        data.forEach(list => {
+            svg.append('g').selectAll('circle').data(list)
+                .enter().append('circle').attr('class', 'dot')
+                .attr('cx', d => x(d.x))
+                .attr('cy', d => y(d.y))
+                .attr('r', '4.5')
+        })
+    }
+
+    render(d3.curveLinear)
+    renderDots(svg)
+
+</script>
+</body>
+</html>
