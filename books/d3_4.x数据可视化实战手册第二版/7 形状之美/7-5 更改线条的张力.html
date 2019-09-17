@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<h6>点击下面按钮进行线条张力调整</h6>
+<div>
+    <button onclick="render(0)">0</button>
+    <button onclick="render(0.2)">0.2</button>
+    <button onclick="render(0.4)">0.4</button>
+    <button onclick="render(0.6)">0.6</button>
+    <button onclick="render(0.8)">0.8</button>
+    <button onclick="render(1)">1</button>
+</div>
+<script>
+    const [width, height, margin, duration] = [500, 500, 30, 500]
+    const x = d3.scaleLinear().domain([0, 10]).range([margin, width - margin])
+    const y = d3.scaleLinear().domain([0, 1]).range([height - margin, margin])
+    const data = d3.range(10).map(i => {
+        return {
+            x: i,
+            y: (Math.sin(i * 3) + 1) / 2
+        }
+    })
+    const svg = d3.select('body').append('svg')
+    svg.attr('height', height)
+        .attr('width', width)
+    const render = tension => {
+        const line = d3.line()
+            .curve(d3.curveCardinal.tension(tension)) // 使用tension()函数调整张力
+            .x(d => x(d.x))
+            .y(d => y(d.y))
+        svg.selectAll('path.line')
+            .data([tension])
+            .enter()
+            .append('path')
+            .classed('line', true)
+            .attr('fill', 'none')
+            .attr('stroke', 'silver')
+        svg.selectAll('path.line').data([tension])
+            .transition().duration(duration)
+            .ease(d3.easeLinear)
+            .attr('d', d => line(data))
+        svg.selectAll('circle').data(data)
+            .enter().append('circle').attr('class', 'dot')
+            .attr('cx', d => x(d.x))
+            .attr('cy', d => y(d.y))
+            .attr('r', '4.5')
+    }
+    render(1)
+</script>
+</body>
+</html>

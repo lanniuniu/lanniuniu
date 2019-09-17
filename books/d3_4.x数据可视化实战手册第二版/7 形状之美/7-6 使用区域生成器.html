@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<script>
+    /*
+
+     */
+    const [width, height, margin, duration] = [500, 500, 30, 500]
+    const x = d3.scaleLinear().domain([0, 10]).range([margin, width - margin])
+    const y = d3.scaleLinear().domain([0, 10]).range([height - margin, margin])
+    const data = d3.range(11).map(i => ({x: i, y: Math.sin(i) * 3 + 5}))
+    const svg = d3.select('body').append('svg')
+    svg.attr('height', height)
+        .attr('width', width)
+    const render = () => {
+        const line = d3.line()
+            .x(d => x(d.x))
+            .y(d => y(d.y))
+        svg.selectAll('path.line').data([data])
+            .enter().append('path').attr('class', 'line')
+        svg.selectAll('path.line').data([data])
+            .attr('d', d => line(d))
+            .attr('fill', 'none')
+            .attr('stroke', 'silver')
+        const area = d3.area() // 区域生成器 二维齐次坐标系
+            .x(d => x(d.x)) // 定义改区域x坐标序列
+            .y0(y(0)) // 区域下边界
+            .y1(d => y(d.y)) // 区域上边界
+            // 也可以定义左边界和右边界 如果上下边界一样 就只定义y
+        svg.selectAll('path.area').data([data])
+            .enter()
+            .append('path')
+            .attr('class', 'area')
+            .attr('d', d => area(d))
+            .attr('fill', 'blueviolet')
+    }
+    render()
+</script>
+</body>
+</html>
