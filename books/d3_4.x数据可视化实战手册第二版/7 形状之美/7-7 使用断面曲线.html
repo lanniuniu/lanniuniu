@@ -38,6 +38,9 @@
     svg.attr('height', height)
         .attr('width', width)
     const render = mode => {
+        /*
+        曲线模式可以通过曲线函数同时设置线条生成器和区域生成器
+         */
         const line = d3.line()
             .x(d => x(d.x))
             .y(d => y(d.y))

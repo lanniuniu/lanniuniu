@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<script>
+    /*
+
+     */
+    const [width, height] = [400, 400]
+    const fullAngle = 2 * Math.PI
+    colors = d3.scaleOrdinal(d3.schemeCategory20)
+    const svg = d3.select('body').append('svg')
+        .attr('class', 'pie')
+        .attr('height', height)
+        .attr('width', width)
+
+    const render = (innerRadius, endAngle) => {
+        if (!endAngle) endAngle = fullAngle
+        const data = [
+            {
+                startAngle: 0, endAngle: 0.1 * endAngle
+            },
+            {
+                startAngle: 0.1 * endAngle, endAngle: 0.2 * endAngle
+            },
+            {
+                startAngle: 0.2 * endAngle, endAngle: 0.4 * endAngle
+            },
+            {
+                startAngle: 0.4 * endAngle, endAngle: 0.6 * endAngle
+            },
+            {
+                startAngle: 0.6 * endAngle, endAngle: 0.7 * endAngle
+            },
+            {
+                startAngle: 0.7 * endAngle, endAngle: 0.9 * endAngle
+            },
+            {
+                startAngle: 0.9 * endAngle, endAngle: endAngle
+            },
+        ]
+        const arc = d3.arc() // 创建圆弧生产器
+            .outerRadius(200) // 外圆半径
+            .innerRadius(innerRadius) // 内圆半径
+        svg.select('g').remove()
+        svg.append('g').attr('transform', 'translate(200, 200)')
+            .selectAll('path.arc')
+            .data(data)
+            .enter()
+            .append('path')
+            .attr('class', 'arc')
+            .attr('fill', (d, i) => colors(i))
+            .attr('d', (d, i) => arc(d, i))
+    }
+    render(0)
+</script>
+<button onclick="render(0)">circle</button>
+<button onclick="render(100)">annulus(donut)</button>
+<button onclick="render(0, Math.PI)">circular sector</button>
+<button onclick="render(100, Math.PI)">annulus sector</button>
+</body>
+</html>
