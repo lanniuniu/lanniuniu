@@ -8,6 +8,58 @@
 <body>
 <script>
     const [width, height] = [400, 400]
+    const endAngle = 2 * Math.PI
+    const colors = d3.scaleOrdinal(d3.schemeCategory20c)
+    const svg = d3.select('body').append('svg')
+        .attr('class', 'pie')
+        .attr('height', height)
+        .attr('width', width)
+    const render = (innerRadius) => {
+        const data = [
+            {
+                startAngle: 0, endAngle: 0.1 * endAngle
+            },
+            {
+                startAngle: 0.1 * endAngle, endAngle: 0.2 * endAngle
+            },
+            {
+                startAngle: 0.2 * endAngle, endAngle: 0.4 * endAngle
+            },
+            {
+                startAngle: 0.4 * endAngle, endAngle: 0.6 * endAngle
+            },
+            {
+                startAngle: 0.6 * endAngle, endAngle: 0.7 * endAngle
+            },
+            {
+                startAngle: 0.7 * endAngle, endAngle: 0.9 * endAngle
+            },
+            {
+                startAngle: 0.9 * endAngle, endAngle: endAngle
+            },
+        ]
+        const arc = d3.arc()
+            .outerRadius(200)
+            .innerRadius(innerRadius)
+        svg.select('g').remove()
+        svg.append('g').attr('transform', 'translate(200, 200)')
+            .selectAll('path.arc')
+            .data(data)
+            .enter()
+            .append('path')
+            .attr('fill', (d, i) => colors(i))
+            .transition().duration(1000)
+            .attrTween('d', d => { // 渐变函数
+                const start = {
+                    startAngle: 0, endAngle: 0
+                }
+                const interpolate = d3.interpolate(start, d)
+                return function (t) {
+                    return arc(interpolate(t))
+                }
+            })
+    }
+    render(100)
 </script>
 </body>
 </html>
