@@ -114,8 +114,8 @@
                             + ")";
                     })
                     .attr("d",
-                        d3.symbol() // <-E
-                            .type(_symbolTypes(i))
+                        d3.symbol() // 符号生成器
+                            .type(_symbolTypes(i)) // 各种种类的符号生成器
                     );
             });
         }
