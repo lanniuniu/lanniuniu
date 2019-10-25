@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../d3.js"></script>
+</head>
+<body>
+<script>
+    const pieChart = () => {
+        const _chart = {}
+        let [_width, _height] = [500, 500]
+        let _data = []
+        let _colors = d3.scaleOrdinal(d3.schemeCategory10)
+        let _svg, _bodyG, _pieG, _radius = 200, _innerRadius = 100, _duration = 1000
+        function renderBody(svg) {
+            if (!_bodyG) {
+                _bodyG = svg.append('g').attr('class', 'body')
+            }
+            renderPie()
+        }
+
+        function renderPie() {
+            const pie = d3.pie()
+                .sort(d => d.id)
+                .value(d => d.value)
+            const arc = d3.arc()
+                .outerRadius(_radius)
+                .innerRadius(_innerRadius)
+            if (!_pieG) {
+                _pieG = _bodyG.append('g')
+                    .attr('class', 'pie')
+                    .attr('transform', `translate(${_radius}, ${_radius})`)
+                renderSlices(pie, arc)
+                renderLabels(pie, arc)
+            }
+        }
+
+        function renderSlices(pie, arc) {
+            let slices =  _pieG.selectAll('path.arc').data(pie(_data))
+            slices.enter().append('path').merge(slices)
+                .attr('class', arc)
+                .attr('fill', (d, i) => _colors(i))
+                .transition()
+                .duration(_duration)
+                .attrTween('d', function (d) {
+                    console.log(this.__current__)
+                    let currentArc = this.__current__
+                    if (!currentArc) {
+                        currentArc = {
+                            startAngle: 0,
+                            endAngle: 0
+                        }
+                        let interpolate = d3.interpolate(currentArc, d)
+                        this.__current__ = interpolate(1)
+                        return function (t) {
+                            return arc(interpolate(t))
+                        }
+                    }
+                })
+        }
+
+        function renderLabels(pie, arc) {
+            const labels = _pieG.selectAll('text.label').data(pie(_data))
+            labels.enter().append('text')
+                .merge(labels)
+                .attr('class', 'label')
+                .transition(_duration)
+                .attr('transform', d => `translate(${arc.centroid(d)})`)
+                .attr('dy', '0.35em')
+                .attr('text-anchor', 'middle')
+                .text(d=> d.data.id)
+        }
+        _chart.render = () => {
+            if (!_svg) {
+                _svg = d3.select('body').append('svg')
+                    .attr('height', _height)
+                    .attr('width', _width)
+            }
+            renderBody(_svg)
+        }
+        _chart.width = function (w) {
+            if (!arguments.length) return _width;
+            _width = w;
+            return _chart;
+        };
+        _chart.height = function (h) {
+            if (!arguments.length) return _height;
+            _height = h;
+            return _chart;
+        };
+        _chart.colors = function (c) {
+            if (!arguments.length) return _colors;
+            _colors = c;
+            return _chart;
+        };
+        _chart.radius = function (r) {
+            if (!arguments.length) return _radius;
+            _radius = r;
+            return _chart;
+        };
+        _chart.innerRadius = function (r) {
+            if (!arguments.length) return _innerRadius;
+            _innerRadius = r;
+            return _chart;
+        };
+        _chart.data = function (d) {
+            if (!arguments.length) return _data;
+            _data = d;
+            return _chart;
+        };
+        return _chart
+    }
+    function randomData() {
+        return Math.random() * 9 + 1;
+    }
+    function update() {
+        for (var j = 0; j < data.length; ++j) data[j].value = randomData();
+        chart.render();
+    }
+    var numberOfDataPoint = 6,
+    data = d3.range(numberOfDataPoint).map(function (i) {
+        return {id: i, value: randomData()};
+    });
+    var chart = pieChart()
+        .radius(200)
+        .innerRadius(100)
+        .data(data);
+    chart.render();
+</script>
+<div class="control-group">
+    <button onclick="update()">Update</button>
+</div>
+</body>
+</html>
