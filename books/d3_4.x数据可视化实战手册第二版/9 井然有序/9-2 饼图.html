@@ -44,7 +44,6 @@
                 .transition()
                 .duration(_duration)
                 .attrTween('d', function (d) {
-                    console.log(this.__current__)
                     let currentArc = this.__current__
                     if (!currentArc) {
                         currentArc = {
@@ -128,8 +127,5 @@
         .data(data);
     chart.render();
 </script>
-<div class="control-group">
-    <button onclick="update()">Update</button>
-</div>
 </body>
 </html>
