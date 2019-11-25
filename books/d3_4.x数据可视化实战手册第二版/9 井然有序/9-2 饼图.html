@@ -7,6 +7,8 @@
 </head>
 <body>
 <script>
+    // 饼图
+    // d3.pie() 返回的仍然是数据 只是加入关键数据
     const pieChart = () => {
         const _chart = {}
         let [_width, _height] = [500, 500]
@@ -38,6 +40,7 @@
 
         function renderSlices(pie, arc) {
             let slices =  _pieG.selectAll('path.arc').data(pie(_data))
+            console.log(slices)
             slices.enter().append('path').merge(slices)
                 .attr('class', arc)
                 .attr('fill', (d, i) => _colors(i))
@@ -113,15 +116,11 @@
     function randomData() {
         return Math.random() * 9 + 1;
     }
-    function update() {
-        for (var j = 0; j < data.length; ++j) data[j].value = randomData();
-        chart.render();
-    }
-    var numberOfDataPoint = 6,
-    data = d3.range(numberOfDataPoint).map(function (i) {
+    let numberOfDataPoint = 6
+    let data = d3.range(numberOfDataPoint).map(function (i) {
         return {id: i, value: randomData()};
     });
-    var chart = pieChart()
+    let chart = pieChart()
         .radius(200)
         .innerRadius(100)
         .data(data);
