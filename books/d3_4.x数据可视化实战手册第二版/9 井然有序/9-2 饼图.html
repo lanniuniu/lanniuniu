@@ -68,7 +68,7 @@
                 .merge(labels)
                 .attr('class', 'label')
                 .transition(_duration)
-                .attr('transform', d => `translate(${arc.centroid(d)})`)
+                .attr('transform', d => `translate(${arc.centroid(d)})`) // 圆弧的中心点
                 .attr('dy', '0.35em')
                 .attr('text-anchor', 'middle')
                 .text(d=> d.data.id)
