@@ -36,15 +36,19 @@ CSS Sprites: 使用background-position来调整背景图像的位置
 五、前端数据加密
 
 六、http相关问题
-
+http和https的区别
 七、webpack相关
+webpack plugin和loader
+
 
 八、状态管理器相关
 
 九、vue相关
-
+vuex原理
+vue router原理
+vue 双向绑定原理
 十、nodejs相关
-
+module.export export. 区别
 十一、es6相关
 
 十二、算法
@@ -58,4 +62,5 @@ CSS Sprites: 使用background-position来调整背景图像的位置
 4、nginx
 5、小程序
 6、敏捷开发
+7.v8的gc
  */
