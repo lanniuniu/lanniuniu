@@ -15,7 +15,22 @@
 <body>
 <p>1</p>
 <script>
+    function f(n) {
+        let arr = []
+        for (let i = 0; i < n; i++) {
+            let data
+            if (i <= 1) {
+                data = 0
+            } else {
+                data = i - 2
+            }
 
+            console.log(data)
+            arr.push(data)
+        }
+        return arr[n]
+    }
+    f(3)
 </script>
 </body>
 </html>
