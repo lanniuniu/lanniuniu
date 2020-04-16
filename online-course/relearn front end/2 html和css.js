@@ -74,5 +74,21 @@ track 字幕
 audio
 iframe sandbox 防止安全问题
 
-7、
+7、animation 和 transition
+transition: 属性 时长 时间曲线 延迟
+animation 中可以使用transition 来定义关键帧
+贝塞尔曲线
+
+8、DTD（document type define）文档类型定义
+html5之前的DTD很复杂 现在简化为<!DOCTYPE html> 定义为html 为sgml的子集
+
+9、颜色原理
+rgb 计算机领域的三原色 rgba 阿尔法
+cmyk 美术课 颜料三原色 红黄蓝 品红 黄 青
+hsl h色相 s纯度 l明度
+
+10、ARIA 向html中添加语义和其他元数据 满足用户的辅助技术的需要
+好处：1、残障人士 2、可访问性（各种设备、环境、人群访问） 3、
+
+分类：1、widget角色（可交互组件，类似各种UI库） 2、结构角色（html文档结构） 3、窗体角色
  */
