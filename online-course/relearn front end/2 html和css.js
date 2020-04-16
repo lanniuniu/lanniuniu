@@ -54,5 +54,25 @@ meta标签还有很多各种各样的属性，可以提供丰富的功能
 复杂选择器连接：空格（后代） >(子) ~（后继） +（直接后继）||（列选择）
 伪元素：::after ::before ::first-line ::first-letter
 
-5、标签
+5、链接标签 a link area
+注意：不显示 需要插件或者搜索引擎识别
+link：超链接类（rss订阅、pre、next、作者、帮助、版权、搜索）、外部资源链接类（icon、stylesheet、预处理、）
+area：区域型链接 实现区域性触发链接 和map、img 配合使用 有圆形、矩形、多边形
+
+6、替换型元素
+srcset 根据屏幕条件选取图片的能力
+picture元素也可以
+
+<picture>
+    img
+    source 支持媒体查询 picture video audio 都可以使用他来指定源
+</picture>
+
+video
+track 字幕
+
+audio
+iframe sandbox 防止安全问题
+
+7、
  */
