@@ -41,8 +41,13 @@ HotModuleReplacementPlugin
 
 9、文件指纹
 Hash：整个项目
-Chunkhash：不同的入口文件
-Contenthash：文件内容
+Chunkhash：不同的入口文件 js
+Contenthash：文件内容 css
+
+10、文件压缩
+html: html-webpack-plugin
+js：内置uglifyjs-webpack-plugin
+css: optimize-css-asset-plugin cssnano
  */
 
 
