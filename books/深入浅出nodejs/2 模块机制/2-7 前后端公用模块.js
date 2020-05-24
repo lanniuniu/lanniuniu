@@ -13,3 +13,20 @@ define(['dep1', 'dep2', ...], function(dep1, dep2) {
 
 4、CommonJS 现实意义很大 弥补了js的弱结构性 配合node 才有了npm 才有了当下的前端
  */
+
+/**
+ * 兼容所有的环境 amd cmd node 浏览器
+ * @param functionName
+ * @param definition
+ */
+function all(functionName, definition) {
+    const hasDefine = typeof define === 'function' // 是否是amd cmd
+    const hasExport = typeof module !== 'undefined' && module.export //是否是node
+    if (hasDefine) {
+        define(definition)
+    } else if (hasExport) {
+        module.export = definition()
+    } else {
+        this[functionName] = definition
+    }
+}
