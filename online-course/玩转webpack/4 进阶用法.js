@@ -23,4 +23,34 @@ js：raw-loader
 7、公共资源分离
 基础库分离：html-webpack-externals-plugin
 splitChunksPlugin
+
+8、摇树优化 tree shaking
+把无用的代码删除
+默认支持 生产模式默认开启
+
+9、scope hoisting
+原理：把所有模块的代码按照引用顺序放到一个函数作用域中 适当重命名一些变量防止变量名冲突~
+目的：减少内存开销、函数声明代码
+moduleConcatenationPlugin 生产环境默认开启
+
+10、代码分割和懒加载
+动态import babel插件 @babel/plugin-syntax-dynamic-import
+import().then
+
+11、eslint
+规范
+落地：CI/CD、webpack构建集成
+eslint-loader
+继承各大库
+
+12、webpack打包库
+output: {
+    library
+    libraryTarget
+    libraryExport
+}
+
+13、ssr
+减少请求条数
+减少白屏时间 SEO友好
  */
