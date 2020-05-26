@@ -53,4 +53,25 @@ output: {
 13、ssr
 减少请求条数
 减少白屏时间 SEO友好
+
+14、优化构建信息
+stats 统计信息
+friendly-errors-webpack-plugin
+
+15、错误捕获、异常处理
+code 0 为成功  其他为失败
+
+16、构建配置包
+通过多个配置文件来管理不同环境的构建
+将构建配置设计出一个库
+抽成一个工具进行管理
+所有配置写成一个 用--env参数进行hack
+
+webpack-merge 可以merge webpack的配置
+
+17、eslint规范构建脚本
+eslint [目录]
+eslint [目录] --fix 可以处理空格类报错
+
+18、
  */
