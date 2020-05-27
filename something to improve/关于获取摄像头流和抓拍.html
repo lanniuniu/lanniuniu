@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web获取摄像头和拍照</title>
+</head>
+<body>
+<div>
+    <button id="take">拍照</button>
+</div>
+
+<video src="" id="video"></video>
+<img src="" alt="" id="photo">
+<canvas id="canvas" style="display:none"></canvas>
+
+<script>
+    const video = document.getElementById('video')
+
+    navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: {
+            width: { ideal: 1280 },
+            height: { ideal: 720 }
+        }
+    }).then(mediaStream => {
+        video.srcObject = mediaStream
+        video.onloadedmetadata = function() {
+            video.play()
+        }
+        console.log(mediaStream.getVideoTracks())
+    })
+
+    document.getElementById('take').addEventListener('click', () => {
+        let canvas = document.getElementById('canvas')
+        canvas.width = video.videoWidth
+        canvas.height = video.videoHeight
+        canvas.getContext('2d').drawImage(video, 0, 0)
+        let data = canvas.toDataURL('image/webp')
+        document.getElementById('photo').setAttribute('src', data)
+    })
+</script>
+</body>
+</html>
