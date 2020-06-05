@@ -119,30 +119,5 @@ webpack 内置的stats 构建的统计信息
 在package script中使用  --json > stats.json
 配置文件
 
-25、构建速度分析
-speed-measure-webpack-plugin
-总耗时
-每个插件或者loader的耗时
-
-26、构建体积分析
-webpack-bundle-analyzer
-
-第三方包的体积大小
-自己写的组件大小
-
-27、使用高版本的webpack和node
-随着软件的优化，可以不断优化性能
-所以使用高版本的webpack和node 可以简化构建时间
-
-28、多进程 多实例的构建
-thread-loader 每解析一个模块 thread-loader会将模块和模块的依赖分配到worker线程中
-
-29、多进程 多实例的并行压缩
-parallel-uglify-plugin
-terser-webpack-plugin 开启parallel参数
-
-30、分包：预编译资源模块
-将多个框架包和业务包分别打成一个包 简化html 减少http请求
-DLLPlugin 使用它分包
  */
 
