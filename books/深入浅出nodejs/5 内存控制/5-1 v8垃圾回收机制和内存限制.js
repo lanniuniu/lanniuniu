@@ -15,5 +15,10 @@
 
 新生代 scavenge算法 牺牲空间换时间的算法 一分为2 form to   多次to了就会被搞到老生代去
 老生代 Mark-Sweep & Mark-Compact   标记清除只清除没有被标记的对象（死亡对象）
+增量标记等技术来减少垃圾回收的最大停顿时间
+
+4、查看垃圾回收日志
+node --trace_gc
+node --prof 性能日志 使用linux-tick-processor工具用于统计日志
  */
 
