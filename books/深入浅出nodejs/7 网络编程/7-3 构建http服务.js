@@ -11,4 +11,7 @@ http.request()
 
 5、http代理
 http.globalAgent
+
+6、客户端事件
+response socket connect upgrade continue
  */
