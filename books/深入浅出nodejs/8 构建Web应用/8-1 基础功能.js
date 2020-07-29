@@ -14,5 +14,9 @@
 
 6、session
 7、缓存
+Etag Expires
 
+8、Basic认证
+当客户端与服务器端进行请求时 允许通过用户名 密码 实现的一种身份认证方式
+Authorization 报文中的字段 由认证方式和加密值构成 base64编码
  */
