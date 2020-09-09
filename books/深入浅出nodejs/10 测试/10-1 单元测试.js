@@ -45,6 +45,8 @@ BDD 行为驱动开发
 
 异步测试 添加Done()作为参数 使用了才会进行下一个测试
 
+UI自动化测试 cypress
+
 超时设置
 
 测试覆盖率 jscover
@@ -54,5 +56,5 @@ mock 模拟异常
 
 /*
 工程化 makefile
-持续集成
+持续集成 travis-ci
  */
