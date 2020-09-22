@@ -7,16 +7,22 @@
         /*
         使用滤镜blur效果不佳，因为它对文字也进行了模糊处理
          */
-        body, main::before{
-            background: url("../../../static/img/cat.jpg") 0 / cover fixed;
-            padding: 30px;
+        body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
         main{
+            width: 100%;
+            height: 100%;
             position: relative;
             background: hsla(0,0%,100%,0.3);
             overflow: hidden;
         }
         main::before{
+            background: url("../../../static/img/cat.jpg") 0 / cover fixed;
             content: '';
             position: absolute;
             top: 0;
