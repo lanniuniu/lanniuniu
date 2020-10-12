@@ -11,4 +11,19 @@ webpack入口文件 node_modules/webpack/bin/webpack.js
 
 4、许多类继承于Tapable
 tapable是一个类似于Node.js的EventEmitter的库  主要控制钩子(HOOK)函数的发布和订阅 控制着webpack的插件系统
+而webpack会使用到compiler extend tapable
+ */
+
+const hook = new SyncHook(['arg1', 'arg2', 'arg3'])
+
+// 绑定事件到webpack事件流
+hook.tap('hook', (arg1, arg2, arg3) => {
+    // do some
+})
+
+// 执行
+hook.call(1, 2 , 3)
+
+/*
+5、执行webpack.js compiler会把plugin 和 插件 注入进去
  */
