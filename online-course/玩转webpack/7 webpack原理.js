@@ -26,4 +26,9 @@ hook.call(1, 2 , 3)
 
 /*
 5、执行webpack.js compiler会把plugin 和 插件 注入进去
+
+6、webpack执行步骤
+准备阶段 将内部插件挂载到实例上 入口初始化 compiler Module ModuleFactory
+模块构建和chunk生成
+文件生成
  */
