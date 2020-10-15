@@ -14,7 +14,7 @@ document/webpack/practice-v2.0/node_modules/
 #webpack
 document/webpack/new_bid_front/
 
-node_modules
+**/node_modules
 
 #d3源码
 books/d3_4.x数据可视化实战手册第二版/source_code/
