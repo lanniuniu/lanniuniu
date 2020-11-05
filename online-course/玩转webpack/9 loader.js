@@ -27,4 +27,6 @@ webpack默认开启缓存 使用this.cacheable(false)关闭缓存
 
 8、文件输出
 this.emitFile()
+
+9、spriteSmith 雪碧图合并
  */
