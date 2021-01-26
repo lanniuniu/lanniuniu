@@ -67,7 +67,8 @@ module.export export. 区别
 十一、es6相关
 1、判断是否为数组、对象
   instanceof类型判断 isArray()可以判断数组 Object.keys()判断是否为空对象 for in
-
+2、== 和 === 的区别
+==先进行类型转化，再比较值的大小 而 === 会直接比较
 十二、算法
 
 十三、模块化
