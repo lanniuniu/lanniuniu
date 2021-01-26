@@ -65,6 +65,8 @@ vue 双向绑定原理
 十、nodejs相关
 module.export export. 区别
 十一、es6相关
+1、判断是否为数组、对象
+  instanceof类型判断 isArray()可以判断数组 Object.keys()判断是否为空对象 for in
 
 十二、算法
 
@@ -80,4 +82,5 @@ module.export export. 区别
 7、v8的gc
 8、技术困难、项目难点、及解决方式
 9、HR面 团队架构、团队文化、职业的发展前景和晋升机制
+10、多做一些前端编程题，应对面试。不经常做题，TM在面试的时候，贼紧张
  */
